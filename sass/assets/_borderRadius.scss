@@ -1,0 +1,37 @@
+/*Borders radius*/
+.border-1{
+    border-radius: 5px;
+}
+
+.border-2{
+    border-radius: 10px;
+}
+
+.border-3{
+    border-radius: 15px;
+}
+
+.border-4{
+    border-radius: 20px;
+}
+
+.border-5{
+    border-radius: 25px;
+}
+
+/*Borders radius solo en partes concretas*/
+.border-3-top{
+    border-radius: 15px 15px 0 0;
+}
+
+.border-3-bottom{
+    border-radius: 0 0 15px 15px;
+}
+
+.border-3-left{
+    border-radius: 15px 0 0 15px;
+}
+
+.border-3-right{
+    border-radius: 0 15px 15px 0;
+}

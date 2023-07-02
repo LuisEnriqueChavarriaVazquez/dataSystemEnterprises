@@ -1,6 +1,7 @@
 //Assets generales (Contienen elementos de estilos como sombras, colores o elementos como menus y tarjetas)
 @use "assets/_colors.scss";
 @use "assets/_shadows.scss";
+@use "assets/_borderRadius.scss";
 @use "assets/_lateralMenu.scss";
 
 //Pages
@@ -15,13 +16,19 @@
 
 //Pagina default
 * {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+}
+
+body{
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 html {
     width: 100%;
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: var(--cl-green-2);
 }
 
 ::selection {
