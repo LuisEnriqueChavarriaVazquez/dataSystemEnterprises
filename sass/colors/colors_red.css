@@ -1,0 +1,28 @@
+:root{
+    /*Colores fondo*/
+    --clw: #FFF;
+    --clbk: rgb(38, 39, 41);
+
+    --cl-grey-1: rgb(240, 240, 240);
+    --cl-grey-2: rgb(230, 230, 230);
+    --cl-grey-3: rgb(215, 215, 215);
+    --cl-grey-4: rgb(200, 200, 200);
+    --cl-grey-5: rgb(185, 185, 185);
+    --cl-grey-6: rgb(170, 170, 170);
+    --cl-grey-7: rgb(155, 155, 155);
+
+    --cl-green-0: #F2D1D1ff;
+    --cl-green-1: rgb(221, 151, 151);
+    --cl-green-2: #B01818ff;
+    --cl-green-3: #980D0Dff;
+    --cl-green-4: rgb(119, 11, 11);
+    --cl-green-5: rgb(88, 7, 7);
+    --cl-green-6: rgb(59, 5, 5);
+
+
+    /*Textos*/
+    --clw-tx: rgb(247, 247, 247);
+    --clbk-tx: rgb(40, 40, 40);
+    --clg-tx: rgb(70, 70, 70);
+    --clgreen-tx: rgb(7, 88, 60);
+}

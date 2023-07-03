@@ -119,6 +119,22 @@
 }
 
 
+.extra-button{
+    background-color: var(--cl-green-5);
+
+    i,p{
+        color: var(--clw-tx);
+    }
+
+    &:hover{
+        background-color: var(--cl-green-6);
+
+        i,p{
+            color: var(--clw-tx);
+        }
+    }
+}
+
 /*Link para el menu lateral*/
 .linkOpt{
     display: flex;
