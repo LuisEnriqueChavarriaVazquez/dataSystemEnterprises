@@ -100,3 +100,33 @@
         }
     }
 }
+
+/*Active button lateral menu*/
+.active-button{
+    background-color: var(--cl-grey-2);
+
+    i,p{
+        color: var(--clgreen-tx);
+    }
+
+    &:hover{
+        background-color: var(--cl-grey-5);
+
+        i,p{
+            color: var(--clg-tx);
+        }
+    }
+}
+
+
+/*Link para el menu lateral*/
+.linkOpt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
