@@ -1,0 +1,40 @@
+.container-config-colors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 200px;
+    gap: 30px;
+
+    .palette{
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        background-color: var(--cl-grey-1);
+        box-shadow: 5px 5px 0 var(--cl-grey-3);
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--cl-grey-1);
+            box-shadow: 10px 10px 0 var(--cl-grey-4);
+        }
+
+        .peletteColor{
+            width: 100%;
+            height: 100%;
+
+            padding: 10px 15px;
+            font-size: 25px;
+            font-weight: 600;
+            color: var(--clw-tx);
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+
+        }
+    }
+}
