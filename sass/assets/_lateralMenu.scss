@@ -3,23 +3,30 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20vh 50vh 10vh;
+    grid-template-rows: 20vh 58vh auto;
 }
 
 /*Iconos contenedores*/
 .mainContainer-menu-icon,
-.mainContainer-menu-options,
-.mainContainer-menu-close{
+.mainContainer-menu-options{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    transition: all .2s ease;
 }
 
 .mainContainer-menu-icon{
+    padding: 30px 10px;
+
     .icon{
-        width: 65%;
+        width: 60%;
     }
+}
+
+.iconSchoolMini{
+    width: 100% !important;
 }
 
 .mainContainer-menu-option{
@@ -60,12 +67,23 @@
 }
 
 .mainContainer-menu-option-close{
+    width: 80% !important;
+    margin: 0 5px 10px 5px !important;
     grid-template-columns: 1fr 0fr !important;
 }
 
 .mainContainer-menu-close{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+
+    transition: all .2s ease;
+
+    margin: 0 0 20px 0;
+
     i{
-        background-color: var(--cl-green-4);
+        background-color: var(--cl-green-5);
         color: var(--clw-tx);
         width: 90%;
         padding: 20px;
@@ -78,7 +96,7 @@
         cursor: pointer;
 
         &:hover{
-            background-color: var(--cl-green-5);
+            background-color: var(--cl-green-6);
         }
     }
 }
