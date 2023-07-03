@@ -13,12 +13,13 @@
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-template-rows: auto;
-    background-color: var(--cl-grey-4);
+    background-color: var(--cl-grey-2);
+    box-shadow: 5px 5px 0 var(--cl-grey-3);
     cursor: pointer;
 
     &:hover{
         background-color: var(--cl-green-3);
-        box-shadow: 10px 12px 0 var(--cl-green-4);
+        box-shadow: 12px 12px 0 var(--cl-green-4);
     }
 
     .card-image{
@@ -33,6 +34,24 @@
 
         position: relative;
         top: -40px;
+    }
+
+    .card-imageTitle{
+        display: flex;
+        justify-content: baseline;
+        align-items: flex-end;
+
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--clg-tx);
+
+        margin-bottom: 20px;
+
+        transition: all .1 ease-in;
+
+        &:hover{
+            color: var(--clw-tx);
+        }
     }
 }
 
