@@ -6,6 +6,7 @@
 @use "assets/_displayNone.scss";
 @use "assets/_wavesEffect.scss";
 @use "assets/_loader.scss";
+@use "assets/_cards.scss";
 
 //Pages
 @use "pages/_index.scss";
@@ -20,6 +21,7 @@
 * {
     box-sizing: border-box !important;
     transition: all ease .2s;
+    font-family: 'Poppins','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body{
