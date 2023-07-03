@@ -14,14 +14,14 @@ contenidoPrincipal.addEventListener('scroll', function() {
     var clientHeight = contenidoPrincipal.clientHeight; //altura total de la caja sin scroll (solo visible)
   
     //Cuando hallamos recorrido una distancia igual a la altura visible
-    if (scrollPosition-20 > clientHeight) {
+    if (scrollPosition > clientHeight) {
         mainContainerElementInitialState.setAttribute('style', 'padding: 0px;');
         menuContenidoPrincipal.setAttribute('style', 'border-radius: 0px;');
         contenidoPrincipal.setAttribute('style', 'border-radius: 0px;');
-    }else{
-        mainContainerElementInitialState.setAttribute('style', 'padding: 25px;');
-        menuContenidoPrincipal.setAttribute('style', 'border-radius: 25px 0 0 25px;');
-        contenidoPrincipal.setAttribute('style', 'border-radius: 0 25px 25px 0;');
+    }else if(scrollPosition <= 200){
+        mainContainerElementInitialState.setAttribute('style', 'padding: 30px;');
+        menuContenidoPrincipal.setAttribute('style', 'border-radius: 15px 0 0 15px;');
+        contenidoPrincipal.setAttribute('style', 'border-radius: 0 15px 15px 0;');
     }
 });
   
