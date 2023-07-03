@@ -3,6 +3,7 @@
 @use "assets/_shadows.scss";
 @use "assets/_borderRadius.scss";
 @use "assets/_lateralMenu.scss";
+@use "assets/_displayNone.scss";
 
 //Pages
 @use "pages/_index.scss";
@@ -16,6 +17,7 @@
 //Pagina default
 * {
     box-sizing: border-box !important;
+    transition: all ease .2s;
 }
 
 body{
