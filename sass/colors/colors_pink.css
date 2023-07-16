@@ -11,17 +11,17 @@
     --cl-grey-6: rgb(170, 170, 170);
     --cl-grey-7: rgb(155, 155, 155);
 
-    --cl-green-0: #F2D1E3ff;
-    --cl-green-1: rgb(221, 151, 201);
-    --cl-green-2: #B0187Cff;
-    --cl-green-3: #980D62ff;
-    --cl-green-4: rgb(119, 11, 89);
-    --cl-green-5: rgb(88, 7, 56);
-    --cl-green-6: rgb(59, 5, 37);
+    --cl-green-0: #F2D1E6ff;
+    --cl-green-1: rgb(221, 151, 199);
+    --cl-green-2: rgb(141, 18, 125);
+    --cl-green-3: rgb(128, 12, 97);
+    --cl-green-4: rgb(95, 9, 65);
+    --cl-green-5: rgb(77, 6, 51);
+    --cl-green-6: rgb(59, 5, 40);
 
     /*Textos*/
     --clw-tx: rgb(247, 247, 247);
     --clbk-tx: rgb(40, 40, 40);
     --clg-tx: rgb(70, 70, 70);
-    --clgreen-tx: rgb(119, 11, 89);
+    --clgreen-tx: rgb(119, 11, 81);
 }
