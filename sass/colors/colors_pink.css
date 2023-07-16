@@ -25,3 +25,20 @@
     --clg-tx: rgb(70, 70, 70);
     --clgreen-tx: rgb(119, 11, 81);
 }
+
+/*Cards con la seccion de informacion*/
+#endeudamiento{
+    background-image: url('../../img/icons/endeudamiento_pink.svg');
+}
+
+#rentabilidad{
+    background-image: url('../../img/icons/rentabilidad_pink.svg');
+}
+
+#rotacion{
+    background-image: url('../../img/icons/rotacion_pink.svg');
+}
+
+#liquidez{
+    background-image: url('../../img/icons/liquidez_pink.svg');
+}

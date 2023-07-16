@@ -25,3 +25,20 @@
     --clg-tx: rgb(70, 70, 70);
     --clgreen-tx: rgb(7, 68, 66);
 }
+
+/*Cards con la seccion de informacion*/
+#endeudamiento{
+    background-image: url('../../img/icons/endeudamiento_aqua.svg');
+}
+
+#rentabilidad{
+    background-image: url('../../img/icons/rentabilidad_aqua.svg');
+}
+
+#rotacion{
+    background-image: url('../../img/icons/rotacion_aqua.svg');
+}
+
+#liquidez{
+    background-image: url('../../img/icons/liquidez_aqua.svg');
+}
