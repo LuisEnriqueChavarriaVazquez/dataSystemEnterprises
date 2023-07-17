@@ -20,7 +20,7 @@
 }
 
 .cardText{
-    font-size: 22px;
+    font-size: 20px;
 
     width: 100%;
     height: 100%;
@@ -31,9 +31,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
 
     font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
     font-weight: 500;
 
     color: var(--clbk-tx);
+}
+
+.importantNote{
+    border-left: 4px var(--cl-green-4) solid;
+    background-color: var(--cl-grey-3);
+
+    padding: 20px;
 }
