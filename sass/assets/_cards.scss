@@ -10,6 +10,9 @@
 }
 
 .card{
+
+    height: 100%;
+
     display: grid;
     grid-template-columns: 1.5fr 2fr;
     grid-template-rows: auto;
@@ -18,8 +21,7 @@
     cursor: pointer;
 
     &:hover{
-        background-color: var(--cl-green-3);
-        box-shadow: 12px 12px 0 var(--cl-green-4);
+        box-shadow: 11px 9px 0 var(--cl-grey-5);
     }
 
     .card-image{
@@ -48,10 +50,6 @@
         margin-bottom: 20px;
 
         transition: all 0s ease-in !important;
-
-        &:hover{
-            color: var(--clw-tx);
-        }
     }
 }
 

@@ -1,0 +1,8 @@
+/*Lo que hacemos es quitar todos los estilos a los links con esta clase*/
+
+.linkNeutral{
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto */
+    cursor: pointer; /* Cambia el cursor al estilo predeterminado */
+    height: auto;
+}
