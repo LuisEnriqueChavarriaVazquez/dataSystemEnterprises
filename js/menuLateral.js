@@ -82,7 +82,6 @@ function cerrarMenu() {
 
   //Ajustamos el tamaño del contendor de textos en general
   let cardText = document.querySelectorAll('.cardText p');
-  console.log('cardText: ', cardText);
   let cardTextarr = [...cardText];
   if (cardTextarr) {
     cardTextarr.forEach((e) => {
