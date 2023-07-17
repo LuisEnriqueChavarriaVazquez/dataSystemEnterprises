@@ -17,12 +17,14 @@
 
 <!--External-->
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script defer src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
 <script defer src="js/tabsInfo.js"></script>
+<script defer src="js/external/modals.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -117,6 +119,8 @@
                                 <p class="formulaStyle border-3">
                                     $$\text{Apalancamiento sobre activo total} = \frac{\text{Pasivo total}}{\text{Deuda total}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalOne-endeudamiento"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+                                
                                 <p class="importantNote border-3-right">
                                     Cuando la razón de apalancamiento es demasiado elevada, aumenta el riesgo de incumplimiento de las deudas y obligaciones por parte de la empresa.
                                 </p>
@@ -131,6 +135,8 @@
                                 <p class="formulaStyle border-3">
                                     $$\text{Razón de cobertura de intereses} = \frac{\text{Utilidad de operación}}{\text{Intereses}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalTwo-endeudamiento"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
                                 <p class="importantNote border-3-right">
                                     Cuando la razón de cobertura de intereses cae por debajo de 1.0, la empresa se ve amenazada debido a su incapacidad para pagar los intereses a su vencimiento, lo cual la puede llevar a la bancarrota.
                                 </p>
