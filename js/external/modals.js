@@ -1,4 +1,4 @@
-//El framework es sweet alert https://sweetalert.js.org/docs/
+//El framework es sweet alert https://sweetalert2.github.io/v9.html#examples
 
 /**
  * Rotacion
@@ -84,7 +84,7 @@ if (buttonSectionTwo) {
           Swal.fire({
             title: "Resultado",
             html: `
-                Rotación de cuentas por cobrar:
+                Rotación de inventarios:
                 ${
                   (parseInt(answers[0]) + parseInt(answers[1])) /
                   2 /
@@ -123,7 +123,7 @@ if (buttonSectionThree) {
           Swal.fire({
             title: "Resultado",
             html: `
-            Rotación de cuentas por cobrar:
+            Rotación de activos fijos:
             ${parseInt(answers[0]) / parseInt(answers[1])} veces.
             `,
             confirmButtonText: "Cerrar",
@@ -158,7 +158,7 @@ if (buttonSectionFour) {
           Swal.fire({
             title: "Resultado",
             html: `
-          Rotación de cuentas por cobrar:
+            Rotación de activos totales:
                 ${parseInt(answers[0]) / parseInt(answers[1])} veces.
             `,
             confirmButtonText: "Cerrar",
@@ -199,7 +199,7 @@ if (buttonSectionOneRentabilidad) {
           Swal.fire({
             title: "Resultado",
             html: `
-          Rotación de cuentas por cobrar:
+            Margen de utilidad:
           ${(parseInt(answers[0]) / parseInt(answers[1])) * 100} %.
           `,
             confirmButtonText: "Cerrar",
@@ -236,7 +236,7 @@ if (buttonSectionTwoRentabilidad) {
           Swal.fire({
             title: "Resultado",
             html: `
-            Rotación de cuentas por cobrar:
+            Rendimiento sobre activos totales (RAT):
             ${(parseInt(answers[0]) / parseInt(answers[1])) * 100} %.
             `,
             confirmButtonText: "Cerrar",
@@ -273,7 +273,7 @@ if (buttonSectionThreeRentabilidad) {
           Swal.fire({
             title: "Resultado",
             html: `
-            Rotación de cuentas por cobrar:
+            Rendimiento sobre el capital contable:
             ${(parseInt(answers[0]) / parseInt(answers[1])) * 100} %.
             `,
             confirmButtonText: "Cerrar",
@@ -315,7 +315,7 @@ if (buttonSectionOneEndeudamiento) {
           Swal.fire({
             title: "Resultado",
             html: `
-            Rotación de cuentas por cobrar:
+            Apalancamiento sobre activo total:
             ${(parseInt(answers[0]) / parseInt(answers[1])) * 100} %.
             `,
             confirmButtonText: "Cerrar",
@@ -353,9 +353,182 @@ if (buttonSectionTwoEndeudamiento) {
           Swal.fire({
             title: "Resultado",
             html: `
-              Rotación de cuentas por cobrar:
+              Rozón de cobertura de intereses:
               ${parseInt(answers[0]) / parseInt(answers[1])} veces.
               `,
+            confirmButtonText: "Cerrar",
+          });
+        }
+      });
+  });
+}
+
+/**
+ * Buttons para la liquidez y sus modals
+ */
+
+let buttonSectionOneLiquidez = document.getElementById(
+  "buttonModalOne-liquidez"
+);
+
+if (buttonSectionOneLiquidez) {
+  buttonSectionOneLiquidez.addEventListener("click", () => {
+    Swal.mixin({
+      input: "text",
+      confirmButtonText: "Siguiente →",
+      showCancelButton: true,
+      progressSteps: ["1", "2"],
+    })
+      .queue([
+        {
+          title: "Activo circulante",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Pasivo circulante",
+          text: "Ingrese los valores en el input",
+        },
+      ])
+      .then((result) => {
+        if (result.value) {
+          const answers = result.value;
+          Swal.fire({
+            title: "Resultado",
+            html: `
+                Razón de liquidez:
+                ${parseInt(answers[0]) / parseInt(answers[1])} veces.
+                `,
+            confirmButtonText: "Cerrar",
+          });
+        }
+      });
+  });
+}
+
+let buttonSectionTwoLiquidez = document.getElementById(
+  "buttonModalTwo-liquidez"
+);
+
+if (buttonSectionTwoLiquidez) {
+  buttonSectionTwoLiquidez.addEventListener("click", () => {
+    Swal.mixin({
+      input: "text",
+      confirmButtonText: "Siguiente →",
+      showCancelButton: true,
+      progressSteps: ["1", "2", "3"],
+    })
+      .queue([
+        {
+          title: "Activo circulante",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Inventario",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Pasivo circulante",
+          text: "Ingrese los valores en el input",
+        },
+      ])
+      .then((result) => {
+        if (result.value) {
+          const answers = result.value;
+          Swal.fire({
+            title: "Resultado",
+            html: `
+                Prueba del ácido:
+                ${
+                  (parseInt(answers[0]) - parseInt(answers[1])) /
+                  parseInt(answers[2])
+                } veces.
+                `,
+            confirmButtonText: "Cerrar",
+          });
+        }
+      });
+  });
+}
+
+let buttonSectionThreeLiquidez = document.getElementById(
+  "buttonModalThree-liquidez"
+);
+
+if (buttonSectionThreeLiquidez) {
+  buttonSectionThreeLiquidez.addEventListener("click", () => {
+    Swal.mixin({
+      input: "text",
+      confirmButtonText: "Siguiente →",
+      showCancelButton: true,
+      progressSteps: ["1", "2"],
+    })
+      .queue([
+        {
+          title: "Activo circulante",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Pasivo circulante",
+          text: "Ingrese los valores en el input",
+        },
+      ])
+      .then((result) => {
+        if (result.value) {
+          const answers = result.value;
+          Swal.fire({
+            title: "Resultado",
+            html: `
+                Capital de trabajo:
+                ${
+                  parseInt(answers[0]) - parseInt(answers[1])
+                } unidades monetarias.
+                `,
+            confirmButtonText: "Cerrar",
+          });
+        }
+      });
+  });
+}
+
+let buttonSectionFourLiquidez = document.getElementById(
+  "buttonModalFour-liquidez"
+);
+
+if (buttonSectionFourLiquidez) {
+  buttonSectionFourLiquidez.addEventListener("click", () => {
+    Swal.mixin({
+      input: "text",
+      confirmButtonText: "Siguiente →",
+      showCancelButton: true,
+      progressSteps: ["1", "2"],
+    })
+      .queue([
+        {
+          title: "Rotación de inventarios",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Rotación de cuentas por cobrar",
+          text: "Ingrese los valores en el input",
+        },
+        {
+          title: "Rotación de cuentas por pagar",
+          text: "Ingrese los valores en el input",
+        },
+      ])
+      .then((result) => {
+        if (result.value) {
+          const answers = result.value;
+          Swal.fire({
+            title: "Resultado",
+            html: `
+                Ciclo operativo:
+                ${
+                  parseInt(answers[0]) +
+                  parseInt(answers[1]) -
+                  parseInt(answers[2])
+                } días.
+                `,
             confirmButtonText: "Cerrar",
           });
         }

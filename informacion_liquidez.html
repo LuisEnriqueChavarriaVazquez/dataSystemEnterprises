@@ -75,7 +75,7 @@
             
             <section class="informacionContainer">
                 <section class="informacionContainer_title">
-                    <p>Rentabilidad</p>
+                    <p>Liquidez</p>
                 </section>
                 
                 <section class="page">
@@ -83,78 +83,106 @@
                         <ul class="tabs-controls">
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link tabs-controls__link--active" data-id="1">
-                                    Índices de rentabilidad
+                                    Índices de liquidez
                                 </a>
                             </li>
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link" data-id="2">
-                                    Margen de utilidad
+                                    Razón de liquidez
                               </a>
                             </li>
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link" data-id="3">
-                                    Rendimiento sobre activos totales (RAT)
+                                    Prueba del ácido
                                 </a>
                             </li>
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link" data-id="4">
-                                    Rendimiento sobre el capital contable
+                                    Capital de trabajo
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="5">
+                                    Ciclo operativo
                                 </a>
                             </li>
                         </ul>
                     </section>
                     <section class="cards-container-tabs">
                         <div class="card-tabs border-3 card--current" id="1">
-                            <p class="cardTitle border-3-top">Índices de rentabilidad</p>
+                            <p class="cardTitle border-3-top">Índices de liquidez</p>
                             <div class="cardText">
                                 <p>
-                                    La rentabilidad se define como la capacidad que tiene la empresa para generar rendimiento sobre las ventas, los activos totales y el patrimonio (capital contable). A continuación se muestran los índices de rentabilidad más usados.
+                                    Indican la capacidad que tiene la empresa para cumplir con sus obligciones en el corto plazo a medida que se van venciendo, o sea, la capacidad que tienen para convertir el activo circulante en dinero.
                                 </p>
                             </div>
                         </div>
                         <div class="card-tabs border-3" id="2">
-                            <p class="cardTitle border-3-top">Margen de utilidad</p>
+                            <p class="cardTitle border-3-top">Razón de liquidez</p>
                             <div class="cardText">
                                 <p>
-                                    También llamado margen de rentabilidad, indica el porcentaje de utilidad en relación con las ventas.
+                                    También llamada razón circulante o razón corriente, indica el número de veces que con el activo circulante se puede pagar el pasivo circulante.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Margen de utilidad} = \frac{\text{Utilidad Neta}}{\text{Ventas Netas}}$$
+                                    $$\text{Razón de liquidez} = \frac{\text{Activo Circulante}}{\text{Pasivo Circulante}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalOne-liquidez"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
                                 <p class="importantNote border-3-right">
-                                    Puede leerse como: por cada unidad monetaria que entra por concepto de ventas, X unidades son de utilidad.
+                                    Esta razón significa que, por cada unidad monetaria que la empresa debe a corto plazo, se tienen X unidades para pagar.
+                                    <br>
+                                    Si la razón es mayor a uno, se puede decir que sí hay liquidez.
                                 </p>
                             </div>
                         </div>
                         <div class="card-tabs border-3" id="3">
-                            <p class="cardTitle border-3-top">Rendimiento sobre activos totales (RAT)</p>
+                            <p class="cardTitle border-3-top">Prueba del ácido</p>
                             <div class="cardText">
                                 <p>
-                                    También conocido como rendimiento sobre la inversión, o por sus siglas en inglés ROA, indica el porcentaje de utilidad que se obtiene con el empleo de todos los recursos (activos) propios y ajenos de la empresa.
+                                    También llamada razón de liquidez inmediata, es una medición más estricta de la liquidez de una empresa que la razón circulante. Indica qué tanto se pueden pagar las obligaciones en el corto plazo sin tener que convertir los inventarios en efectivo inmediatamente.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rendimientos sobre activos totales} = \frac{\text{Utilidad Neta}}{\text{Ventas Total}}$$
+                                    $$\text{Prueba del ácido} = \frac{\text{Activo circulante - Inventario}}{\text{Pasivo Circulante}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalTwo-liquidez"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
                                 <p class="importantNote border-3-right">
-                                    Por cada unidad monetaria invertida en activos, la empresa obtiene X unidades monetarias de utilidad neta.
-                                </p>
-                                <p>
-                                    A mayor rendimiento, mayores beneficios ha generado el activo total, por lo tanto, un valor más alto significa una situación más prospera para la empresa.
+                                    Al activo circulante se le quitan los inventarios por tratarse del activo menos líquido, de esta manera se sabe que tanta liquidez tiene una empresa sin recurrir a la venta de sus inventarios.
                                 </p>
                             </div>
                         </div>
                         <div class="card-tabs border-3" id="4">
-                            <p class="cardTitle border-3-top">Rendimiento sobre el capital contable</p>
+                            <p class="cardTitle border-3-top">Capital de trabajo</p>
                             <div class="cardText">
                                 <p>
-                                    Mide el rendimiento que obtiene una empresa sobre el capital de los accionistas.
+                                    Se llama capital de trabajo al dinero que tiene la empresa para poder operar adecuadamente.Expresa en términos monetarios el valor que le quedaría a la empresa después de pagar todos sus pasivos a corto plazo, en el caso de que tuvieran que ser pagados de inmediato.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rendimiento sobre capital contable} = \frac{\text{Utilidad Neta}}{\text{Capital Contable}}$$
+                                    $$\text{Capital de trabajo} = \text{Activo circulante−Pasivo circulante}$$
+                                </p>
+                                <a class="btn waves-effect" id="buttonModalThree-liquidez"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
+                                <p class="importantNote border-3-right">
+                                    Si la diferencia da un número positivo, la empresa tiene un superávit e indica un buen funcionamiento; de lo contrario, tiene un déficit e indica un mal funcionamiento.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-tabs border-3" id="5">
+                            <p class="cardTitle border-3-top">Ciclo operativo</p>
+                            <div class="cardText">
+                                <p>
+                                    También llamado ciclo de conversión de efectivo, demuestra la efectividad en la que la compañía transforma sus inventarios en ventas y las ventas en efectivo para poder pagar a sus proveedores y acreedores
+                                </p>
+                                <p class="formulaStyle border-3">
+                                    $$\text{Capital operativo} = \text{RI+RCC−RCP}$$
                                 </p>
                                 <p class="importantNote border-3-right">
-                                    Se puede interpretar de la siguiente manera: por cada unidad monetaria invertida en patrimonio, se obtienen X unidades de la utilidad.
+                                    Donde: <br>
+                                    &nbsp;&nbsp;&nbsp;RI=Rotación de inventarios <br>
+                                    &nbsp;&nbsp;&nbsp;RCC= Rotación de cuentas por cobrar <br>
+                                    &nbsp;&nbsp;&nbsp;RCP= Rotación de cuentas por pagar <br>
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalFour-liquidez"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
                             </div>
                         </div>
                     </section>
