@@ -15,8 +15,14 @@
 <script defer src="js/loader.js"></script>
 <script defer src="js/colorPicker.js"></script>
 
+<!--External-->
+<script defer src="js/external/jquery-3.7.0.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
+<script defer src="js/tabsInfo.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -35,21 +41,21 @@
             <!--Options-->
             <section class="mainContainer-menu-options">
                 <a href="informacion.html" class="linkOpt">
-                    <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
+                    <div class="mainContainer-menu-option active-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-arrow-left"></i>
                         <p class="titleOption">Regresar</p>
                     </div>
                 </a>
 
                 <a href="configuracion.html" class="linkOpt">
-                    <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
+                    <div class="mainContainer-menu-option extra-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-gear"></i>
                         <p class="titleOption">Configuracion</p>
                     </div>
                 </a>
 
                 <a href="manual.html" class="linkOpt">
-                    <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
+                    <div class="mainContainer-menu-option extra-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-question"></i>
                         <p class="titleOption">Manual</p>
                     </div>
@@ -58,7 +64,7 @@
 
             <!--Close-->
             <div class="mainContainer-menu-close" id="closeMenu">
-                <i class="fa-sharp fa-solid fa-xmark waves-effect waves-light border-2"></i>
+                <i class="fa-sharp fa-solid fa-xmark waves-effect waves-light border-3"></i>
             </div>
 
         </section>
@@ -70,8 +76,86 @@
                     <p>Rentabilidad</p>
                 </section>
                 
-                <section>
-
+                <section class="page">
+                    <section class="tabs-container-controls">
+                        <ul class="tabs-controls">
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link tabs-controls__link--active" data-id="1">
+                                    Índices de rentabilidad
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="2">
+                                    Margen de utilidad
+                              </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="3">
+                                    Rendimiento sobre activos totales (RAT)
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="4">
+                                    Rendimiento sobre el capital contable
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="cards-container-tabs">
+                        <div class="card-tabs border-3 card--current" id="1">
+                            <p class="cardTitle border-3-top">Índices de rentabilidad</p>
+                            <div class="cardText">
+                                <p>
+                                    La rentabilidad se define como la capacidad que tiene la empresa para generar rendimiento sobre las ventas, los activos totales y el patrimonio (capital contable). A continuación se muestran los índices de rentabilidad más usados.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-tabs border-3" id="2">
+                            <p class="cardTitle border-3-top">Margen de utilidad</p>
+                            <div class="cardText">
+                                <p>
+                                    También llamado margen de rentabilidad, indica el porcentaje de utilidad en relación con las ventas.
+                                </p>
+                                <p class="formulaStyle border-3">
+                                    $$\text{Margen de utilidad} = \frac{\text{Utilidad Neta}}{\text{Ventas Netas}}$$
+                                </p>
+                                <p class="importantNote border-3-right">
+                                    Puede leerse como: por cada unidad monetaria que entra por concepto de ventas, X unidades son de utilidad.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-tabs border-3" id="3">
+                            <p class="cardTitle border-3-top">Rendimiento sobre activos totales (RAT)</p>
+                            <div class="cardText">
+                                <p>
+                                    También conocido como rendimiento sobre la inversión, o por sus siglas en inglés ROA, indica el porcentaje de utilidad que se obtiene con el empleo de todos los recursos (activos) propios y ajenos de la empresa.
+                                </p>
+                                <p class="formulaStyle border-3">
+                                    $$\text{Rendimientos sobre activos totales} = \frac{\text{Utilidad Neta}}{\text{Ventas Total}}$$
+                                </p>
+                                <p class="importantNote border-3-right">
+                                    Por cada unidad monetaria invertida en activos, la empresa obtiene X unidades monetarias de utilidad neta.
+                                </p>
+                                <p>
+                                    A mayor rendimiento, mayores beneficios ha generado el activo total, por lo tanto, un valor más alto significa una situación más prospera para la empresa.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-tabs border-3" id="4">
+                            <p class="cardTitle border-3-top">Rendimiento sobre el capital contable</p>
+                            <div class="cardText">
+                                <p>
+                                    Mide el rendimiento que obtiene una empresa sobre el capital de los accionistas.
+                                </p>
+                                <p class="formulaStyle border-3">
+                                    $$\text{Rendimiento sobre capital contable} = \frac{\text{Utilidad Neta}}{\text{Capital Contable}}$$
+                                </p>
+                                <p class="importantNote border-3-right">
+                                    Se puede interpretar de la siguiente manera: por cada unidad monetaria invertida en patrimonio, se obtienen X unidades de la utilidad.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                 </section>
             </section>
 
