@@ -1,0 +1,129 @@
+$itemsCount: 6; // Adjust if tabs number changes
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+// Layout
+.page {
+  width: 100%;
+  height: calc(100vh - 257px);
+  min-height: 700px;
+  overflow: hidden;
+}
+
+// Tabs
+.tabs-container-controls{
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--cl-green-3);
+}
+
+.tabs-controls {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tabs-controls__link {
+  position: relative;
+  display: block;
+  padding: 16px 32px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--clw-tx);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: var(--clw);
+    border-radius: 2px;
+    margin: auto;
+    content: '';
+    transition: width 0.4s;
+  }
+}
+
+.tabs-controls__link--active {
+  &:after {
+    width: 100%;
+  }
+}
+
+// Cards
+.cards-container-tabs {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - 257px);
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-tabs {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  background-color: var(--cl-grey-2);
+  box-shadow: 3px 3px 0 var(--cl-grey-3);
+  box-sizing: border-box;
+  padding: 40px;
+
+  transition: all 0.3s, opacity 0.2s;
+
+  &.hidden {
+    z-index: 100;
+    background-color: var(--clw);
+    color: var(--clw-tx);
+    opacity: 0;
+
+    transition: color 0.5s, background-color 0.5s, transform 1s, opacity 0.2s 0.4s;
+
+    h1 {
+      color: var(--clw-tx);
+
+      transition: color 0.5s
+    }
+
+    @for $i from 1 through $itemsCount {
+      &:nth-of-type(#{$i}) {
+        transform: rotate(random(100) - 100 + deg) translateX((random(1) + 100) * 1%) translateY(random(60) * -1%) scale(random(10)*0.1) skewX(random(12) + deg) skewY(random(12) + deg);
+      }
+    }
+  }
+
+  @for $i from 1 through $itemsCount {
+    $zIndexStartValue: $itemsCount + 1; // we don't want an item with 0 index
+    $xValue: ($i - 1) * 10px; // we want to start translating from 0
+    $yValue: ($i - 1) * 10px; // we want to start translating from 0
+    $zIndexValue: $itemsCount - $i; // reverse the z-index, so first item is on top
+
+    &:nth-of-type(#{$i}) {
+      z-index: $zIndexValue;
+      transform: translateX(#{$xValue}) translateY(#{$yValue});
+    }
+  }
+}
