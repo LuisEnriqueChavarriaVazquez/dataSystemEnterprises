@@ -37,11 +37,19 @@
     font-weight: 500;
 
     color: var(--clbk-tx);
+
+    p{
+        margin: 5px 0;
+        width: 67vw;
+        text-align: justify;
+    }
 }
 
 .importantNote{
     border-left: 4px var(--cl-green-4) solid;
     background-color: var(--cl-grey-3);
+
+    width: 67vw;
 
     padding: 20px;
 }

@@ -5,7 +5,7 @@ $itemsCount: 5; // Adjust if tabs number changes
 // Layout
 .page {
   width: 100%;
-  height: calc(100vh - 257px);
+  height: calc(90vh);
   min-height: 700px;
   overflow: hidden;
 }
@@ -13,7 +13,7 @@ $itemsCount: 5; // Adjust if tabs number changes
 // Tabs
 .tabs-container-controls{
     width: auto;
-    height: 66px;
+    height: 50px;
 
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@ $itemsCount: 5; // Adjust if tabs number changes
   justify-content: center;
 
   width: auto;
-  height: 66px;
+  height: 50px;
 
   max-width: auto;
   margin: 0;
@@ -54,14 +54,14 @@ $itemsCount: 5; // Adjust if tabs number changes
   text-transform: uppercase;
   text-decoration: none;
 
-  padding: 20px;
+  padding: 10px;
 
   display: block;
 
   //border: solid 3px #000;
 
   width: auto;
-  height: 66px;
+  height: 50px;
 
   &:after {
     position: absolute;
@@ -90,18 +90,18 @@ $itemsCount: 5; // Adjust if tabs number changes
   position: relative;
   z-index: 1;
   width: 100%;
-  height: calc(100vh - 257px);
-  margin: 0 auto;
+  height: calc(90vh);
+  margin: 40px auto;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .card-tabs {
   position: absolute;
-  width: 70%;
-  height: 50vh;
+  width: 80%;
+  height: 65vh;
   background-color: var(--cl-grey-2);
   box-shadow: 3px 3px 0 var(--cl-grey-3);
   box-sizing: border-box;
@@ -123,7 +123,6 @@ $itemsCount: 5; // Adjust if tabs number changes
 
     h1 {
       color: var(--clw-tx);
-
       transition: color 0.5s
     }
 
