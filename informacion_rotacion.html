@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,12 +18,14 @@
 
 <!--External-->
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script defer src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
 <script defer src="js/tabsInfo.js"></script>
+<script defer src="js/external/modals.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -68,14 +71,15 @@
             </div>
 
         </section>
-        
+
         <section class="contenedor border-3-right" id="contenidoPrincipal">
-            
+
             <section class="informacionContainer">
                 <section class="informacionContainer_title">
                     <p>Rotación</p>
                 </section>
-                
+
+                <!--Menu de tabs-->
                 <section class="page">
                     <section class="tabs-container-controls">
                         <ul class="tabs-controls">
@@ -87,7 +91,7 @@
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link" data-id="2">
                                     Rotación de cuentas por cobrar
-                              </a>
+                                </a>
                             </li>
                             <li class="tabs-controls__item waves-effect">
                                 <a href="#" class="tabs-controls__link" data-id="3">
@@ -106,44 +110,63 @@
                             </li>
                         </ul>
                     </section>
+
+                    <!--Cards de contenido-->
                     <section class="cards-container-tabs">
                         <div class="card-tabs border-3 card--current" id="1">
                             <p class="cardTitle border-3-top">Índices de rotación</p>
                             <div class="cardText">
                                 <p>
-                                    Indican cuánto ha invertido una empresa en un determinado activo o grupo de estos, en relación con el ingreso que produce. 
-                                    
+                                    Indican cuánto ha invertido una empresa en un determinado activo o grupo de estos,
+                                    en relación con el ingreso que produce.
+
                                 </p>
                                 <p class="importantNote border-3-right">
-                                    En general, estas razones miden la eficiencia de una empresa para administrar y utilizar sus activos.
+                                    En general, estas razones miden la eficiencia de una empresa para administrar y
+                                    utilizar sus activos.
                                 </p>
+
                             </div>
                         </div>
                         <div class="card-tabs border-3" id="2">
                             <p class="cardTitle border-3-top">Rotación de cuentas por cobrar</p>
                             <div class="cardText">
                                 <p>
-                                    Demuestra el número de días en promedio que la empresa tarda en cobrar a sus deudores, o sea, el tiempo en el que convierte sus cuentas por cobrar en efectivo.
+                                    Demuestra el número de días en promedio que la empresa tarda en cobrar a sus
+                                    deudores, o sea, el tiempo en el que convierte sus cuentas por cobrar en efectivo.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rotación de Cuentas por Cobrar} = \frac{{(\text{Cuentas por Cobrar al inicio} + \text{Cuentas por Cobrar al final del periodo}/2)}}{(\frac{\text{Ventas Netas}}{\text{Duración del periodo en días}})}$$
+                                    $$\text{Rotación de Cuentas por Cobrar} = \frac{{(\text{Cuentas por Cobrar al
+                                    inicio} + \text{Cuentas por Cobrar al final del periodo}/2)}}{(\frac{\text{Ventas
+                                    Netas}}{\text{Duración del periodo en días}})}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalOne-rotacion"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
                             </div>
                         </div>
                         <div class="card-tabs border-3" id="3">
                             <p class="cardTitle border-3-top">Rotación de inventarios</p>
                             <div class="cardText">
                                 <p>
-                                    Permite observar el tiempo que tarda en sustituirse el inventario antiguo por uno nuevo. Esta razón se mide en días.
+                                    Permite observar el tiempo que tarda en sustituirse el inventario antiguo por uno
+                                    nuevo. Esta razón se mide en días.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rotación de inventarios} = \frac{{(\text{Inventario inicial del periodo} + \text{Inventario al final del periodo}/2)}}{(\frac{\text{Costo de ventas}}{\text{Duración del periodo en días}})}$$
+                                    $$\text{Rotación de inventarios} = \frac{{(\text{Inventario inicial del periodo} +
+                                    \text{Inventario al final del periodo}/2)}}{(\frac{\text{Costo de
+                                    ventas}}{\text{Duración del periodo en días}})}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalTwo-rotacion"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+                                
                                 <p class="importantNote border-3-right">
-                                    No es conveniente mantener por mucho tiempo los inventarios por los costos que esto implica.
+                                    No es conveniente mantener por mucho tiempo los inventarios por los costos que esto
+                                    implica.
                                 </p>
                                 <p>
-                                    La actividad que realiza la empresa es un factor determinante para establecer el ciclo y considerarlo adecuado, una empresa dedicada a la fabricación de bienes tendrá un un ciclo económico lento, mientras que una empresa dedicada a la comercialiación de productos de consumo generalizado tendrá una rotación de inventarios ágil.
+                                    La actividad que realiza la empresa es un factor determinante para establecer el
+                                    ciclo y considerarlo adecuado, una empresa dedicada a la fabricación de bienes
+                                    tendrá un un ciclo económico lento, mientras que una empresa dedicada a la
+                                    comercialiación de productos de consumo generalizado tendrá una rotación de
+                                    inventarios ágil.
                                 </p>
                             </div>
                         </div>
@@ -151,13 +174,19 @@
                             <p class="cardTitle border-3-top">Rotación de activos fijos</p>
                             <div class="cardText">
                                 <p>
-                                    Mide la eficacia de la empresa para utilizar su planta y equipo (activos fijos) y ayudar a generar ventas. Puede utilizarse como índice de orientación para determinar el exceso de inversión en activo fijo o la insuficiencia de ventas.
+                                    Mide la eficacia de la empresa para utilizar su planta y equipo (activos fijos) y
+                                    ayudar a generar ventas. Puede utilizarse como índice de orientación para determinar
+                                    el exceso de inversión en activo fijo o la insuficiencia de ventas.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rotación de Activos Fijos} = \frac{\text{Ventas Netas}}{\text{Activos Fijos Promedio}}$$
+                                    $$\text{Rotación de Activos Fijos} = \frac{\text{Ventas Netas}}{\text{Activos Fijos
+                                    Promedio}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalThree-rotacion"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
                                 <p class="importantNote border-3-right">
-                                    Puede interpretarse como: por cada unidad monetaria de activo fijo se generan X unidades de ventas.
+                                    Puede interpretarse como: por cada unidad monetaria de activo fijo se generan X
+                                    unidades de ventas.
                                 </p>
                             </div>
                         </div>
@@ -165,16 +194,28 @@
                             <p class="cardTitle border-3-top">Rotación de activos totales</p>
                             <div class="cardText">
                                 <p>
-                                    Esta razón financiera es muy útil para la empresa, pues indica si es productiva o no, de acuerdo con los activos que se tienen en la entidad. Esta razón mide la eficacia de la empresa al utilizar su activo total y así contribuir a generar un mayor nivel de ventas.
+                                    Esta razón financiera es muy útil para la empresa, pues indica si es productiva o
+                                    no, de acuerdo con los activos que se tienen en la entidad. Esta razón mide la
+                                    eficacia de la empresa al utilizar su activo total y así contribuir a generar un
+                                    mayor nivel de ventas.
                                 </p>
                                 <p class="formulaStyle border-3">
-                                    $$\text{Rotación de Activos totales} = \frac{\text{Ventas Netas}}{\text{Activos totales}}$$
+                                    $$\text{Rotación de Activos totales} = \frac{\text{Ventas Netas}}{\text{Activos
+                                    totales}}$$
                                 </p>
+                                <a class="btn waves-effect" id="buttonModalFour-rotacion"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+
                                 <p>
-                                    Cuando el resultado es menor a 1.0 significa que no se vendió ni siquiera una vez el valor de los activos, lo que quiere decir que la empresa tiene activos subutilizados o que no están generando ningún valor, por lo que debe decidirse qué hacer con ellos, hacerlos productivos o desecharlos y venderlos.
+                                    Cuando el resultado es menor a 1.0 significa que no se vendió ni siquiera una vez el
+                                    valor de los activos, lo que quiere decir que la empresa tiene activos subutilizados
+                                    o que no están generando ningún valor, por lo que debe decidirse qué hacer con
+                                    ellos, hacerlos productivos o desecharlos y venderlos.
                                 </p>
                                 <p class="importantNote border-3-right">
-                                    Es importante considerar que el resultado variará de acuerdo con la actividad que desarrolle la empresa, ya que una unidad económica del ramo industrial tendrá una fuerte inversión en activos fijos y una comercial su mayor inversión radicará en activos circulantes.
+                                    Es importante considerar que el resultado variará de acuerdo con la actividad que
+                                    desarrolle la empresa, ya que una unidad económica del ramo industrial tendrá una
+                                    fuerte inversión en activos fijos y una comercial su mayor inversión radicará en
+                                    activos circulantes.
                                 </p>
                             </div>
                         </div>
@@ -193,5 +234,9 @@
     </div>
 
 
+    
+
+
 </body>
+
 </html>

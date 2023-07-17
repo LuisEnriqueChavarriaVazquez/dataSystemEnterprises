@@ -1,0 +1,59 @@
+.swal2-overlay {
+    background-color: rgba(0, 0, 0, 0.692);
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.swal2-modal {
+    background-color: var(--cl-grey-2);
+    box-shadow: 10px 10px 0 var(--cl-grey-4) !important;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.swal2-progress-step,
+.swal2-progress-step-line{
+    background-color: var(--cl-green-1) !important;
+}
+
+.swal2-active-progress-step{
+    background-color: var(--cl-green-2) !important;
+}
+
+.swal2-confirm{
+    background-color: var(--cl-green-3) !important;
+}
+
+.swal2-input{
+    background-color: var(--clw);
+    color: var(--clbk-tx);
+    box-shadow: 5px 5px 0 var(--cl-grey-2) !important;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--cl-grey-1) !important;
+        box-shadow: 8px 8px 0 var(--cl-grey-2) !important;
+    }
+}
+
+.swal2-title {
+    font-size: 24px !important;
+}
+
+.swal2-footer {
+    background-color: var(--clw);
+    margin-top: 20px;
+    border-top: 1px solid var(--cl-grey-3);
+    overflow: hidden;
+}
+
+.swal2-button {
+    background-color: var(--cl-grey-1);
+    color: var(--clbk-tx);
+    box-shadow: 5px 5px 0 var(--cl-grey-2) !important;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--cl-grey-2) !important;
+        box-shadow: 8px 8px 0 var(--cl-grey-3) !important;
+    }
+}
