@@ -100,38 +100,6 @@
                     <p>Inicio</p>
                 </section>
 
-                <section style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column; height: 270vh;">
-                    <div id="contenido" style="width: auto; height: auto;"></div>
-                    <div id="contenido_two" style="width: auto; height: auto;"></div>
-                </section>
-
-                <script>
-                    // URL del archivo HTML en GitHub (crudo/raw)
-                    var url = 'https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/coca-cola-femsa-l-balance-sheet.html';
-                    var url_two = 'https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/coca-cola-femsa-l-income-statement.html';
-
-                    // Realizar la solicitud GET al archivo HTML
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(html => {
-                            // Acceder al contenido del archivo HTML
-                            document.getElementById('contenido').innerHTML = html;
-                        })
-                        .catch(error => {
-                            console.error('Error al cargar el archivo:', error);
-                        });
-
-                    fetch(url_two)
-                        .then(response => response.text())
-                        .then(html => {
-                            // Acceder al contenido del archivo HTML
-                            document.getElementById('contenido_two').innerHTML = html;
-                        })
-                        .catch(error => {
-                            console.error('Error al cargar el archivo:', error);
-                        });
-                </script>
-
             </section>
 
         </section>

@@ -1,0 +1,24 @@
+.containerTables{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+
+    position: relative;
+
+    height: 3750px;
+    width: 100%;
+}
+
+
+#balance_sheet{
+    width: auto; 
+    height: auto; 
+    margin: 10px 100px;
+}
+
+#income_statement{
+    width: auto; 
+    height: auto; 
+    margin: 10px 100px;
+}

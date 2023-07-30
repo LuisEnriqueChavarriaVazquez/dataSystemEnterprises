@@ -12,12 +12,14 @@
 @use "assets/_formulaStyle.scss";
 @use "assets/_modals.scss";
 @use "assets/_button.scss";
+@use "assets/_tables.scss";
 
 //Pages
 @use "pages/_index.scss";
 @use "pages/_informacion.scss";
 @use "pages/_configuracion.scss";
-@use "pages/tabsInfo.scss";
+@use "pages/_tabsInfo.scss";
+@use "pages/_empresas.scss";
 
 //Fuentes
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
