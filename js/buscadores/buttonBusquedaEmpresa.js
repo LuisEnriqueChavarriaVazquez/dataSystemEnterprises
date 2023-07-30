@@ -52,6 +52,12 @@ function peticionEmpresa(listaEmpresas){
                 <div class="income_statement">${html}</div>
             </div>
             `;
+
+            //Mensaje de listo
+            mdtoast('Busqueda de empresa lista.', { 
+                interaction: false,
+                duration: 1000
+            });
         })
         .catch((error) => {
             console.error("Recurso no disponible:", error);
