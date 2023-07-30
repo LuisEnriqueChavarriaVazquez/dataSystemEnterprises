@@ -24,3 +24,6 @@ fetch(url_two)
   .catch((error) => {
     console.error("Recurso no disponible:", error);
   });
+
+
+  
