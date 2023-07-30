@@ -45,6 +45,22 @@
     }
 }
 
+.tableTitle{
+    font-size: 28px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 25px;
+
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
+    color: var(--cl-green-4);
+    background-color: var(--cl-grey-2);
+
+    border-radius: 10px;
+}
+
 .importantNote{
     border-left: 4px var(--cl-green-4) solid;
     background-color: var(--cl-grey-3);
