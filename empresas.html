@@ -21,8 +21,8 @@
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
 
 <!--Buscador de empresas-->
-<script defer src="js/buscadores/buscadorEmpresas.js"></script>
 <script defer src="js/buscadores/estilosInputBusquedaEmpresaSola.js"></script>
+<script defer src="js/buscadores/buttonBusquedaEmpresa.js"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
@@ -109,18 +109,19 @@
                     <p>Datos de empresa</p>
                 </section>
 
+                <!--Buscador de las empresas-->
                 <section class="inputBrowser_empresas">
+                    <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                     <select multiple data-placeholder="Selección de empresas" id="test">
                     </select>
                 </section>
 
                 <section class="containerTables">
-                    <div class="tableTitle">Hoja de balance</div>
-                    <div id="balance_sheet"></div>
-                    <div class="tableTitle">Estado de resultados</div>
-                    <div id="income_statement"></div>
+                    <!--Informacion de las empresas-->
+                    
                 </section>
-
             </section>
 
         </section>

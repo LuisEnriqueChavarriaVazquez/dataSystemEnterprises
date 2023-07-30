@@ -20,3 +20,16 @@
         box-shadow: 7px 7px 0 var(--cl-grey-3);
     }
 }
+
+.buttonBrwoser_empresas{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background-color: var(--cl-green-4);
+    color: var(--clw-tx);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

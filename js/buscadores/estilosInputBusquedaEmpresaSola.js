@@ -157,6 +157,7 @@ fetch(url_nombres_solos)
     // Aquí puedes trabajar con los datos obtenidos del archivo JSON
     // Extraer el array de nombres_extraidos
     array_nombres_solos = data.nombres_extraidos;
+    array_nombres_solos = array_nombres_solos.sort();
   })
   .catch((error) => {
     console.error("Error al obtener el archivo JSON de balance:", error);

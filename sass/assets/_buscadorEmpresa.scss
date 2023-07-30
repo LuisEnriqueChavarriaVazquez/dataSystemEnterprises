@@ -16,6 +16,10 @@ html {
     justify-content: center;
     align-items: center;
 
+    position: absolute;
+    left: 540px;
+    top: 55px;
+
     width: 100%;
 }
 
@@ -23,7 +27,7 @@ $textColor: #1E2330;
 $primary: var(--cl-green-3);
 
 .selectMultiple {
-    width: 240px;
+    width: 600px;
     position: relative;
     select {
         display: none;
@@ -55,7 +59,7 @@ $primary: var(--cl-green-3);
                 display: block;
                 width: 2px;
                 height: 8px;
-                border-bottom: 8px solid #99A3BA;
+                border-bottom: 8px solid var(--cl-green-3);
                 top: 43%;
                 transition: all .3s ease;
             }
@@ -69,7 +73,7 @@ $primary: var(--cl-green-3);
             }
         }
         span {
-            color: #99A3BA;
+            color: var(--cl-green-3);
             display: block;
             position: absolute;
             left: 12px;
@@ -104,7 +108,7 @@ $primary: var(--cl-green-3);
                 width: 100%;
                 position: absolute;
                 display: block;
-                background: rgba(#E4ECFA, .7);
+                background: var(--cl-green-0);
                 z-index: -1;
                 border-radius: 4px;
             }
@@ -203,6 +207,8 @@ $primary: var(--cl-green-3);
         transform-origin: 0 0;
         filter: drop-shadow(0 12px 20px rgba(#162A5A, .08));
         transition: all .4s ease, transform .4s cubic-bezier(.87,-.41,.19,1.44), filter .3s ease .2s;
+        overflow-y: scroll;
+        height: 600px;
         li {
             color: $textColor;
             background: #fff;

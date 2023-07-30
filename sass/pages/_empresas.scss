@@ -1,13 +1,32 @@
 .containerTables{
     display: flex; 
-    justify-content: center; 
+    justify-content: flex-start; 
     align-items: center; 
     flex-direction: column; 
 
     position: relative;
 
-    height: 3780px;
+    height: auto;
     width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.containerColorTables{
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    flex-direction: column; 
+
+    position: relative;
+
+    height: auto;
+    width: 65%;
+
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--cl-grey-1);
 }
 
 
