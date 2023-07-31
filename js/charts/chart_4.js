@@ -4,10 +4,10 @@ const labels_chart_4 = ["Julio", "Junio", "Mayo", "Abril", "Marzo", "Febrero", "
 const data_chart_4 = {
   labels: labels_chart_4,
   datasets: [{
-    label: 'My First Dataset',
+    label: 'Datos de la empresa 1',
     data: [65, 59, 80, 81, 56, 55, 40],
     fill: false,
-    borderColor: 'rgb(75, 192, 192)',
+    borderColor: backgroundColor_dinamico[3],
     tension: 0.1
   }]
 };

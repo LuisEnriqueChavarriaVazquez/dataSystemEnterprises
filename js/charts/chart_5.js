@@ -1,18 +1,12 @@
 const chart_5 = document.getElementById("chart_5");
 
 const data_chart_5 = {
-  labels: ["Red", "Green", "Yellow", "Grey", "Blue"],
+  labels: ["Empresa 1", "Empresa 2", "Empresa 3", "Empresa 4", "Empresa 5"],
   datasets: [
     {
-      label: "My First Dataset",
+      label: "Datos de las empresas",
       data: [11, 16, 7, 3, 14],
-      backgroundColor: [
-        "rgb(255, 99, 132)",
-        "rgb(75, 192, 192)",
-        "rgb(255, 205, 86)",
-        "rgb(201, 203, 207)",
-        "rgb(54, 162, 235)",
-      ],
+      backgroundColor: backgroundColor_dinamico,
     },
   ],
 };
