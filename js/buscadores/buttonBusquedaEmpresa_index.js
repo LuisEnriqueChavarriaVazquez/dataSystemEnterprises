@@ -27,7 +27,7 @@ function peticionEmpresa(listaEmpresas){
 
     containerListCompanies[0].innerHTML += `
     <div class="card-message">
-        <div class="card-image card-imageInfo border-4" id="busqueda"></div>
+        <div class="card-image card-imageInfo border-4" id="listo"></div>
         <p class="textMessage">${listaEmpresas.length} empresas han sido agregadas</p>
     </div>
     `;
