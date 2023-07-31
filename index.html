@@ -25,8 +25,8 @@
 <script defer src="js/external/mdtoast.min.js"></script>
 
 <!--Buscador de empresas-->
-<script defer src="js/buscadores/estilosInputBusquedaEmpresaSola.js"></script>
-<script defer src="js/buscadores/buttonBusquedaEmpresa.js"></script>
+<script defer src="js/buscadores/estilosInputBusquedaEmpresaSola_index.js"></script>
+<script defer src="js/buscadores/buttonBusquedaEmpresa_index.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -111,11 +111,16 @@
 
                 <!--Buscador de las empresas-->
                 <section class="inputBrowser_empresas" id="inputBrowser_empresas">
-                    <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton">
+                    <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton_index">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <select multiple data-placeholder="Selección de empresas" id="test">
+                    <select multiple data-placeholder="Selección de empresas" id="test_index">
                     </select>
+                </section>
+
+                <!--Listado de empresas seleccionadas-->
+                <section class="containerListCompanies">
+                    <div class="listCompanies"></div>
                 </section>
 
             </section>

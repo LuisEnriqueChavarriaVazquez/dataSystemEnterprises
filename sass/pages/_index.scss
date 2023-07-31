@@ -3,15 +3,15 @@
 *   Tenemos los estilos de los contenedores principales.
 */
 
-.mainContainer{
-    grid-template-columns: .25fr 1fr;
+.mainContainer {
+    grid-template-columns: 0.25fr 1fr;
 }
 
-.mainContainer-close{
-    grid-template-columns: .1fr 1.3fr;
+.mainContainer-close {
+    grid-template-columns: 0.1fr 1.3fr;
 }
 
-.mainContainerStyle{
+.mainContainerStyle {
     display: grid;
     grid-template-rows: auto;
     box-sizing: border-box;
@@ -24,7 +24,37 @@
     position: fixed;
 }
 
-.contenedor{
+.contenedor {
     background-color: var(--clw);
     overflow-x: scroll;
+}
+
+//
+/*Contenedores para el listado de empresas seleccionado*/
+
+.containerListCompanies{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCompanies {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 30px;
+}
+
+.companyItem{
+    background-color: var(--cl-grey-2);
+    border-radius: 10px;
+    padding: 3px 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
