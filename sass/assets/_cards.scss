@@ -1,4 +1,4 @@
-.container-cards{
+.container-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -9,8 +9,7 @@
     height: 100%;
 }
 
-.card{
-
+.card {
     height: 100%;
 
     display: grid;
@@ -20,11 +19,11 @@
     box-shadow: 5px 5px 0 var(--cl-grey-3);
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         box-shadow: 11px 9px 0 var(--cl-grey-5);
     }
 
-    .card-image{
+    .card-image {
         background-color: var(--cl-grey-1);
         background-position: center;
         background-repeat: no-repeat;
@@ -38,7 +37,7 @@
         top: -40px;
     }
 
-    .card-imageTitle{
+    .card-imageTitle {
         display: flex;
         justify-content: baseline;
         align-items: flex-end;
@@ -53,7 +52,7 @@
     }
 }
 
-.card-imageInfo{
+.card-imageInfo {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -67,16 +66,15 @@
     height: 500px;
 }
 
-
-.card-message{
-    width: 500px;
+.card-message {
+    width: 600px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
 
     margin-top: 50px;
 
-    div{
+    div {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -85,9 +83,23 @@
         padding: 50px;
     }
 
-    p{
+    p {
         text-align: center;
         width: 100%;
     }
-}
 
+    .buttonContainer-company {
+        width: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        padding: 10px;
+
+        a{
+            color: var(--clg-tx);
+            background-color: var(--cl-grey-1);
+            width: 100%;
+        }
+    }
+}

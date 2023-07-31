@@ -28,7 +28,11 @@ function peticionEmpresa(listaEmpresas){
     containerListCompanies[0].innerHTML += `
     <div class="card-message">
         <div class="card-image card-imageInfo border-4" id="listo"></div>
-        <p class="textMessage">${listaEmpresas.length} empresas han sido agregadas</p>
+        <p class="textMessage">${listaEmpresas.length} empresa(s) han sido agregadas</p>
+        <div class="buttonContainer-company">
+            <a href="rankingGeneral.html" class="btn waves-effect"><i class="fa-solid fa-ranking-star"></i> &nbsp;Ranking general</a>
+            <a href="ranking.html" class="btn waves-effect"><i class="fa-solid fa-chart-simple"></i> &nbsp;Rankings</a>
+        </div>
     </div>
     `;
 
