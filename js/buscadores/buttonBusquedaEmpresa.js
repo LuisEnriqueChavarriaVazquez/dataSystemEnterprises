@@ -3,6 +3,7 @@ let elements_to_search = document.getElementsByClassName('shown');
 
 //Button para realizar la busqueda
 let searchCompanyButton = document.getElementById('searchCompanyButton');
+let searchCompanyButton_index_all = document.getElementById('searchCompanyButton_index_all');
 
 //Procedemos a hacer la busqueda de elementos cuando demos click al boton
 searchCompanyButton.addEventListener('click', () => {
@@ -18,6 +19,13 @@ searchCompanyButton.addEventListener('click', () => {
     peticionEmpresa(elementosEncontrados);
     
         
+});
+
+//Procedemos a hacer la busqueda de todos los elementos...
+searchCompanyButton_index_all.addEventListener('click', () => {
+
+    peticionEmpresa(array_nombres_solos);
+
 });
 
 //Hacemos la peticion de la empresa, basado en la lista de empresas que el usuario pidio

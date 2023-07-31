@@ -11,7 +11,7 @@ html {
     }
 }
 
-.inputBrowser_empresas{
+.inputBrowser_empresas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,12 +23,36 @@ html {
     width: 100%;
 }
 
-.fixedBrowser{
+@media (max-width: 1900px) {
+    .inputBrowser_empresas {
+        left: 420px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .inputBrowser_empresas {
+        left: 360px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .inputBrowser_empresas {
+        left: 260px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .inputBrowser_empresas {
+        left: 200px;
+    }
+}
+
+.fixedBrowser {
     top: 25px;
     z-index: 10000;
 }
 
-$textColor: #1E2330;
+$textColor: #1e2330;
 $primary: var(--cl-green-3);
 
 .selectMultiple {
@@ -45,10 +69,10 @@ $primary: var(--cl-green-3);
         background: #fff;
         font-size: 14px;
         min-height: 44px;
-        box-shadow: 0 4px 16px 0 rgba(#162A5A, .12);
-        transition: box-shadow .3s ease;
+        box-shadow: 0 4px 16px 0 rgba(#162a5a, 0.12);
+        transition: box-shadow 0.3s ease;
         &:hover {
-            box-shadow: 0 4px 24px -1px rgba(#162A5A, .16);
+            box-shadow: 0 4px 24px -1px rgba(#162a5a, 0.16);
         }
         .arrow {
             right: 1px;
@@ -59,14 +83,14 @@ $primary: var(--cl-green-3);
             position: absolute;
             &:before,
             &:after {
-                content: '';
+                content: "";
                 position: absolute;
                 display: block;
                 width: 2px;
                 height: 8px;
                 border-bottom: 8px solid var(--cl-green-3);
                 top: 43%;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
             }
             &:before {
                 right: 12px;
@@ -85,7 +109,7 @@ $primary: var(--cl-green-3);
             cursor: pointer;
             top: 8px;
             line-height: 28px;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
             &.hide {
                 opacity: 0;
                 visibility: hidden;
@@ -106,7 +130,7 @@ $primary: var(--cl-green-3);
                 white-space: nowrap;
             }
             &:before {
-                content: '';
+                content: "";
                 left: 0;
                 top: 0;
                 bottom: 6px;
@@ -127,7 +151,7 @@ $primary: var(--cl-green-3);
                 display: block;
                 &:before,
                 &:after {
-                    content: '';
+                    content: "";
                     display: block;
                     width: 2px;
                     height: 10px;
@@ -146,19 +170,19 @@ $primary: var(--cl-green-3);
             }
             &.notShown {
                 opacity: 0;
-                transition: opacity .3s ease;
+                transition: opacity 0.3s ease;
                 &:before {
                     width: 28px;
-                    transition: width .45s cubic-bezier(.87,-.41,.19,1.44) .2s;
+                    transition: width 0.45s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.2s;
                 }
                 i {
                     opacity: 0;
-                    transition: all .3s ease .3s;
+                    transition: all 0.3s ease 0.3s;
                 }
                 em {
                     opacity: 0;
                     transform: translate(-6px, 0);
-                    transition: all .4s ease .3s;
+                    transition: all 0.4s ease 0.3s;
                 }
                 &.shown {
                     opacity: 1;
@@ -177,20 +201,20 @@ $primary: var(--cl-green-3);
             &.remove {
                 &:before {
                     width: 28px;
-                    transition: width .4s cubic-bezier(.87,-.41,.19,1.44) 0s;
+                    transition: width 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s;
                 }
                 i {
                     opacity: 0;
-                    transition: all .3s ease 0s;
+                    transition: all 0.3s ease 0s;
                 }
                 em {
                     opacity: 0;
                     transform: translate(-12px, 0);
-                    transition: all .4s ease 0s;
+                    transition: all 0.4s ease 0s;
                 }
                 &.disappear {
                     opacity: 0;
-                    transition: opacity .5s ease 0s;
+                    transition: opacity 0.5s ease 0s;
                 }
             }
         }
@@ -208,10 +232,13 @@ $primary: var(--cl-green-3);
         visibility: hidden;
         opacity: 0;
         border-radius: 8px;
-        transform: translate(0, 20px) scale(.8);
+        transform: translate(0, 20px) scale(0.8);
         transform-origin: 0 0;
-        filter: drop-shadow(0 12px 20px rgba(#162A5A, .08));
-        transition: all .4s ease, transform .4s cubic-bezier(.87,-.41,.19,1.44), filter .3s ease .2s;
+        filter: drop-shadow(0 12px 20px rgba(#162a5a, 0.08));
+        transition:
+            all 0.4s ease,
+            transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44),
+            filter 0.3s ease 0.2s;
         overflow-y: scroll;
         height: 600px;
         li {
@@ -221,7 +248,12 @@ $primary: var(--cl-green-3);
             cursor: pointer;
             overflow: hidden;
             position: relative;
-            transition: background .3s ease, color .3s ease, transform .3s ease .3s, opacity .5s ease .3s, border-radius .3s ease .3s;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease 0.3s,
+                opacity 0.5s ease 0.3s,
+                border-radius 0.3s ease 0.3s;
             &:first-child {
                 border-radius: 8px 8px 0 0;
                 &:last-child {
@@ -239,13 +271,13 @@ $primary: var(--cl-green-3);
                 color: #fff;
             }
             &:after {
-                content: '';
+                content: "";
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 width: 6px;
                 height: 6px;
-                background: rgba(#000, .4);
+                background: rgba(#000, 0.4);
                 opacity: 0;
                 border-radius: 100%;
                 transform: scale(1, 1) translate(-50%, -50%);
@@ -267,14 +299,16 @@ $primary: var(--cl-green-3);
                 transform: scale(0);
                 opacity: 0;
                 &:after {
-                    animation: ripple .4s ease-out;
+                    animation: ripple 0.4s ease-out;
                 }
             }
             &.notShown {
                 display: none;
                 transform: scale(0);
                 opacity: 0;
-                transition: transform .35s ease, opacity .4s ease;
+                transition:
+                    transform 0.35s ease,
+                    opacity 0.4s ease;
                 &.show {
                     transform: scale(1);
                     opacity: 1;
@@ -284,7 +318,7 @@ $primary: var(--cl-green-3);
     }
     &.open {
         & > div {
-            box-shadow: 0 4px 20px -1px rgba(#162A5A, .12);
+            box-shadow: 0 4px 20px -1px rgba(#162a5a, 0.12);
             .arrow {
                 &:before {
                     transform: rotate(-50deg);
@@ -298,7 +332,7 @@ $primary: var(--cl-green-3);
             transform: translate(0, 12px) scale(1);
             opacity: 1;
             visibility: visible;
-            filter: drop-shadow(0 16px 24px rgba(#162A5A, .16));
+            filter: drop-shadow(0 16px 24px rgba(#162a5a, 0.16));
         }
     }
 }
@@ -317,4 +351,3 @@ $primary: var(--cl-green-3);
         transform: scale(50, 50);
     }
 }
-
