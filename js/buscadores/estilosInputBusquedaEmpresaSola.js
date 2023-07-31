@@ -129,6 +129,7 @@ let array_income = "";
 let array_balance_sheet = "";
 let array_nombres_solos = "";
 
+//Los siguiente fetch son para jalar los datos de la empresa
 fetch(url_nombre_empresa_income)
   .then((response) => response.json())
   .then((data) => {
@@ -163,10 +164,11 @@ fetch(url_nombres_solos)
     console.error("Error al obtener el archivo JSON de balance:", error);
   });
 
+//////////////////
 //Metemos las opciones de las empresas (nombres en el input)
 setTimeout(() => {
-    let selectorOpciones = document.getElementById("test");
-    let lista_empresa = document.getElementById("lista_empresa");
+  let selectorOpciones = document.getElementById("test");
+  let lista_empresa = document.getElementById("lista_empresa");
   console.log(array_income);
   console.log(array_balance_sheet);
   console.log(array_nombres_solos);
@@ -183,3 +185,21 @@ setTimeout(() => {
       `;
   });
 }, 500);
+
+///////////////////
+//Accedemos al contenedor del buscador para poder hacer que cambie con el scroll
+let inputBrowser_empresas = document.getElementById('inputBrowser_empresas');
+contenidoPrincipal.addEventListener('scroll', function() {
+    var scrollPosition = contenidoPrincipal.scrollTop; //Position actual de scroll en div
+    var scrollHeight = contenidoPrincipal.scrollHeight; //altura total de la caja de contenido con scroll
+    var clientHeight = contenidoPrincipal.clientHeight; //altura total de la caja sin scroll (solo visible)
+  
+    //Cuando hallamos recorrido una distancia igual a la altura visible
+    console.log('scrollPosition: ', scrollPosition);
+    if (scrollPosition > clientHeight) {
+        inputBrowser_empresas.classList.add('fixedBrowser');
+    }else if(scrollPosition <= 200){
+        inputBrowser_empresas.classList.remove('fixedBrowser');
+    }
+});
+

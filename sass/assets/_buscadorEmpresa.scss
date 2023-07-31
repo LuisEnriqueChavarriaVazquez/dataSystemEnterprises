@@ -23,6 +23,11 @@ html {
     width: 100%;
 }
 
+.fixedBrowser{
+    top: 25px;
+    z-index: 10000;
+}
+
 $textColor: #1E2330;
 $primary: var(--cl-green-3);
 
