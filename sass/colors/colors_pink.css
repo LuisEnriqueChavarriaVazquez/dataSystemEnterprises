@@ -50,3 +50,19 @@
 #listo{
     background-image: url('../../img/icons/listo_pink.svg');
 }
+
+#index_rotacion{
+    background-image: url('../../img/icons/rotacion_indice_pink.svg');
+}
+
+#index_endeudamiento{
+    background-image: url('../../img/icons/endeudamiento_indice_pink.svg');
+}
+
+#index_liquidez{
+    background-image: url('../../img/icons/liquidez_indice_pink.svg');
+}
+
+#index_rentabilidad{
+    background-image: url('../../img/icons/rentabilidad_indice_pink.svg');
+}
