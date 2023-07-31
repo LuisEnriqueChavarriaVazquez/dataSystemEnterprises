@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+
+<link rel="stylesheet" href="sass/styles.css">
+<link id="colorGetMemory" rel="stylesheet" href="">
+
+<!--external-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script defer src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+
+<!--Scripts para funcionamiento-->
+<script defer src="js/menuLateral.js"></script>
+<script defer src="js/scrollMarginRemove.js"></script>
+<script defer src="js/loader.js"></script>
+<script defer src="js/colorPicker.js"></script>
+<script defer src="js/contact.js"></script>
+
+<!--Assets-->
+<script defer src="js/assets/wavesEffect.js"></script>
+
+<!--Icons-->
+<script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
+
+
+
+<body>
+
+    <section class="mainContainer mainContainerStyle" id="mainContainerElement">
+        <section class="menu border-3-left" id="menuContenidoPrincipal">
+
+            <!--Icons-->
+            <div class="mainContainer-menu-icon">
+                <img class="icon" id="iconSchool" src="img/icon.svg">
+            </div>
+
+
+            <!--Options-->
+            <section class="mainContainer-menu-options">
+                <a href="index.html" class="linkOpt">
+                    <div class="mainContainer-menu-option active-button border-3 waves-effect waves-light">
+                        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                        <p class="titleOption">Regresar</p>
+                    </div>
+                </a>
+
+                <a href="configuracion.html" class="linkOpt">
+                    <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
+                        <i class="fa-sharp fa-solid fa-gear"></i>
+                        <p class="titleOption">Configuracion</p>
+                    </div>
+                </a>
+
+                <a href="manual.html" class="linkOpt">
+                    <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
+                        <i class="fa-sharp fa-solid fa-question"></i>
+                        <p class="titleOption">Manual</p>
+                    </div>
+                </a>
+            </section>
+
+            <!--Close-->
+            <div class="mainContainer-menu-close" id="closeMenu">
+                <i class="fa-sharp fa-solid fa-xmark waves-effect waves-light border-2"></i>
+            </div>
+
+
+        </section>
+
+        <section class="contenedor border-3-right" id="contenidoPrincipal">
+
+            <section class="informacionContainer">
+
+                <section class="informacionContainer_title">
+                    <p>Contacto</p>
+                </section>
+
+
+                <section class="contactContainer">
+                    <div class="blog-slider">
+                        <div class="blog-slider__wrp swiper-wrapper">
+                            <div class="blog-slider__item swiper-slide">
+                                <div class="blog-slider__img">
+
+                                    <img src="img/pictures/Josefina.jpeg"
+                                        alt="">
+                                </div>
+                                <div class="blog-slider__content">
+                                    <span class="blog-slider__code">
+                                        johernadezjs@ipn.mx
+                                    </span>
+                                    <div class="blog-slider__title">M. en C. Josefina Hernandez Jaime</div>
+                                    <div class="blog-slider__text">
+
+                                        Áreas de interés: Finanzas, proyectos de inversión, Educación Basada en
+                                        Competencias,
+                                        diseño y construcción de materiales
+                                        y recursos didácticos digitales.
+
+                                    </div>
+                                    <a href="mailto: johernadezjs@ipn.mx" class="blog-slider__button">Contactar</a>
+                                </div>
+                            </div>
+                            <div class="blog-slider__item swiper-slide">
+                                <div class="blog-slider__img">
+                                    <img src="img/pictures/Eduardo.jpeg"
+                                        alt="">
+                                </div>
+                                <div class="blog-slider__content">
+                                    <span class="blog-slider__code">
+                                        erodriguezf@ipn.mx
+                                    </span>
+                                    <div class="blog-slider__title">M. en A. Eduardo Rodríguez Flores</div>
+                                    <div class="blog-slider__text">
+
+                                        Áreas de interés: Finanzas, proyectos de inversión, motivación, diseño y
+                                        construcción de
+                                        materiales y recursos didácticos digitales.
+
+                                    </div>
+                                    <a href="mailto: erodriguezf@ipn.mx" class="blog-slider__button">Contactar</a>
+                                </div>
+                            </div>
+
+                            <div class="blog-slider__item swiper-slide">
+                                <div class="blog-slider__img">
+                                    <img src="img/pictures/Yasmin.jpeg"
+                                        alt="">
+                                </div>
+                                <div class="blog-slider__content">
+                                    <span class="blog-slider__code">
+                                        yjimenezg@ipn.mx
+                                    </span>
+                                    <div class="blog-slider__title">Dra. Yasmín Ivette Jiménez Galán</div>
+                                    <div class="blog-slider__text">
+                                        Áreas de interés: Educación Basada en Competencias, Perspectiva de género en
+                                        educación.
+                                    </div>
+                                    <a href="mailto: yjimenezg@ipn.mx" class="blog-slider__button">Contactar</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="blog-slider__pagination"></div>
+                    </div>
+                </section>
+
+
+            </section>
+
+        </section>
+
+
+    </section>
+
+    <!--Carga de pantalla-->
+    <div id="loader">
+        <span class="loader"></span>
+        <p>Cargando...</p>
+    </div>
+
+
+</body>
+
+</html>
