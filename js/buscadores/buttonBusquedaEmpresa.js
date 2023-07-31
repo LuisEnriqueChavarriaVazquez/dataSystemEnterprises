@@ -64,4 +64,13 @@ function peticionEmpresa(listaEmpresas){
         });
         
     });
+
+    if(listaEmpresas.length == 0){
+        contenedorDatosEmpresas[0].innerHTML += `
+        <div class="card-message">
+            <div class="card-image card-imageInfo border-4" id="busqueda"></div>
+            <p class="textMessage">Seleccione alguna empresa en la barra superior.</p>
+        </div>
+        `;
+    }
 }
