@@ -169,9 +169,9 @@ fetch(url_nombres_solos)
 setTimeout(() => {
   let selectorOpciones = document.getElementById("test");
   let lista_empresa = document.getElementById("lista_empresa");
-  console.log(array_income);
-  console.log(array_balance_sheet);
-  console.log(array_nombres_solos);
+  //console.log(array_income);
+  //console.log(array_balance_sheet);
+  //console.log(array_nombres_solos);
 
   array_nombres_solos.forEach((nombre_empresa) => {
     selectorOpciones.innerHTML += `
@@ -195,7 +195,7 @@ contenidoPrincipal.addEventListener('scroll', function() {
     var clientHeight = contenidoPrincipal.clientHeight; //altura total de la caja sin scroll (solo visible)
   
     //Cuando hallamos recorrido una distancia igual a la altura visible
-    console.log('scrollPosition: ', scrollPosition);
+    //console.log('scrollPosition: ', scrollPosition);
     if (scrollPosition > clientHeight) {
         inputBrowser_empresas.classList.add('fixedBrowser');
     }else if(scrollPosition <= 200){
