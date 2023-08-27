@@ -2,6 +2,7 @@
     padding: 10px 20px;
     border-radius: 0.5rem;
     text-decoration: none;
+    font-family: var(--fuente_text) !important;
 
     width: 200px;
 
@@ -28,6 +29,7 @@
     border-radius: 8px;
     background-color: var(--cl-green-4);
     color: var(--clw-tx);
+    font-family: var(--fuente_text) !important;
 
     display: flex;
     justify-content: center;

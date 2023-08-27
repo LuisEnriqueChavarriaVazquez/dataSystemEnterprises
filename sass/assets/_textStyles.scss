@@ -12,11 +12,12 @@
     justify-content: flex-start;
     align-items: center;
 
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-family: var(--fuente_title);
     font-weight: 600;
 
     background-color: var(--cl-grey-3);
     color: var(--clg-tx);
+    font-family: var(--fuente_title);
 }
 
 .cardText{
@@ -33,15 +34,16 @@
     align-items: flex-start;
     flex-direction: column;
 
-    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
     font-weight: 500;
 
     color: var(--clbk-tx);
-
+    
     p{
         width: 67vw;
         margin: 5px 0;
         text-align: justify;
+        font-family: var(--fuente_text) !important;
+        font-size: 16px;
     }
 }
 
@@ -52,7 +54,7 @@
     margin-bottom: 5px;
     padding: 5px 25px;
 
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-family: var(--fuente_title);
     font-weight: 600;
 
     color: var(--cl-green-4);
@@ -68,6 +70,8 @@
     width: 67vw;
 
     padding: 10px 20px;
+
+    font-family: var(--fuente_text);
 }
 
 .textMessage{
@@ -76,8 +80,13 @@
     margin: 0;
     padding: 20px;
 
-    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--fuente_text);
     font-weight: 700;
 
     color: var(--clbk-tx);
+}
+
+.fontTextCard{
+    color: var(--clgreen-tx) !important;
+    background-color: var(--cl-grey-2);
 }

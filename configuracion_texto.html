@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración de colores</title>
+    <title>Configuración de fuentes</title>
 </head>
 
 <link rel="stylesheet" href="sass/styles.css">
 <link id="colorGetMemory" rel="stylesheet" href="">
 <link id="fontGetMemory" rel="stylesheet" href="">
+
+
+<!--Fuentes para diseño de las tarjetas de fuentes-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellota+Text&family=Comic+Neue&family=DM+Sans&family=Fredoka&family=Jost&family=Merriweather&family=Nunito&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
 
 <!--External-->
 <link rel="stylesheet" href="sass/external/mdtoast.min.css">
@@ -20,8 +26,8 @@
 <script defer src="js/scrollMarginRemove.js"></script>
 <script defer src="js/loader.js"></script>
 <script defer src="js/colorPicker.js"></script>
-<script defer src="js/colorPickerConfig.js"></script>
 <script defer src="js/fontPicker.js"></script>
+<script defer src="js/fontPickerConfig.js"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
@@ -51,7 +57,7 @@
                 </a>
 
                 <a href="configuracion.html" class="linkOpt">
-                    <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
+                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-palette"></i>
                         <p class="titleOption">Colores</p>
                     </div>
@@ -65,7 +71,7 @@
                 </a>
                 
                 <a href="configuracion_texto.html" class="linkOpt">
-                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
+                    <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-font"></i>
                         <p class="titleOption">Fuentes</p>
                     </div>
@@ -91,62 +97,63 @@
 
             <section class="informacionContainer">
                 <section class="informacionContainer_title">
-                    <p>Colores</p>
+                    <p>Fuentes</p>
                 </section>
             
                 <section class="container-config-colors">
 
-                    <div class="palette border-3" id="verde">
-                        <div class="peletteColor border-2" style="background-color: #0D8F61ff;">
-                            Verde
+                    
+                    <div class="palette border-3" id="fuente_dos">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Poppins', Arial, Helvetica, sans-serif;">
+                            Poppins (Default)
                         </div>
                     </div>
 
-                    <div class="palette border-3" id="huelum">
-                        <div class="peletteColor border-2" style="background-color: rgb(119, 11, 81);">
-                            Huelum
+                    <div class="palette border-3" id="fuente_uno">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Roboto', Arial, Helvetica, sans-serif;">
+                            Roboto
                         </div>
                     </div>
 
-                    <div class="palette border-3" id="azul">
-                        <div class="peletteColor border-2" style="background-color: #1875B0ff;">
-                            Azul
+                    <div class="palette border-3" id="fuente_tres">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Nunito', Arial, Helvetica, sans-serif;">
+                            Nunito
                         </div>
                     </div>
 
-                    <div class="palette border-3" id="rojo">
-                        <div class="peletteColor border-2" style="background-color: #980D0Dff;">
-                            Rojo
+                    <div class="palette border-3" id="fuente_cuatro">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Merriweather', Arial, Helvetica, sans-serif;">
+                            Merriweather
                         </div>
                     </div>
 
-                    <div class="palette border-3" id="aqua">
-                        <div class="peletteColor border-2" style="background-color: #0D7F7Dff;">
-                            Aqua
+                    <div class="palette border-3" id="fuente_cinco">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Jost', Arial, Helvetica, sans-serif;">
+                            Jost
                         </div>
                     </div>
                     
-                    <div class="palette border-3" id="purpura">
-                        <div class="peletteColor border-2" style="background-color: #620D98ff;">
-                            Purpura
+                    <div class="palette border-3" id="fuente_seis">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Fredoka', Arial, Helvetica, sans-serif;">
+                            Fredoka
                         </div>
                     </div>
                     
-                    <div class="palette border-3" id="rosa">
-                        <div class="peletteColor border-2" style="background-color: #980D62ff;">
-                            Rosa
+                    <div class="palette border-3" id="fuente_siete">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'DM Sans', Arial, Helvetica, sans-serif;">
+                            DM Sans
                         </div>
                     </div>
                     
-                    <div class="palette border-3" id="cafe">
-                        <div class="peletteColor border-2" style="background-color: #805E4Dff;">
-                            Café
+                    <div class="palette border-3" id="fuente_ocho">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Comic Neue', Arial, Helvetica, sans-serif;">
+                            Comic Neue
                         </div>
                     </div>
 
-                    <div class="palette border-3" id="naranja">
-                        <div class="peletteColor border-2" style="background-color: #98440Dff;">
-                            Naranja
+                    <div class="palette border-3" id="fuente_nueve">
+                        <div class="peletteColor fontTextCard border-2" style="font-family: 'Bellota Text', Arial, Helvetica, sans-serif;">
+                            Bellota Text
                         </div>
                     </div>
                     

@@ -1,6 +1,4 @@
 $itemsCount: 5; // Adjust if tabs number changes
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
 // Layout
 .page {
@@ -51,6 +49,7 @@ $itemsCount: 5; // Adjust if tabs number changes
   font-size: 15px;
   font-weight: 700;
   color: var(--clw-tx);
+  font-family: var(--fuente_title);
   text-transform: uppercase;
   text-decoration: none;
 
@@ -117,12 +116,14 @@ $itemsCount: 5; // Adjust if tabs number changes
     z-index: 100;
     background-color: var(--clw);
     color: var(--clw-tx);
+    font-family: var(--fuente_text);
     opacity: 0;
 
     transition: color 0.5s, background-color 0.5s, transform 1s, opacity 0.2s 0.4s;
 
     h1 {
       color: var(--clw-tx);
+      font-family: var(--fuente_title);
       transition: color 0.5s
     }
 

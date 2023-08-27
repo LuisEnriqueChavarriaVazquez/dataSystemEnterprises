@@ -140,6 +140,7 @@
 
     &__code {
         color: var(--clbk-tx);
+        font-family: var(--fuente_text);
         margin-bottom: 15px;
         display: block;
         font-weight: 500;
@@ -149,11 +150,13 @@
         font-size: 24px;
         font-weight: 700;
         color: #0d0925;
+        font-family: var(--fuente_text);
         margin-bottom: 20px;
     }
 
     &__text {
         color: #4e4a67;
+        font-family: var(--fuente_text);
         margin-bottom: 30px;
         line-height: 1.5em;
     }
@@ -164,6 +167,7 @@
         padding: 15px 35px;
         border-radius: 5px;
         color: var(--cl-green-5);
+        font-family: var(--fuente_text);
         box-shadow: 5px 5px 0px var(--cl-grey-3);
         text-decoration: none;
         font-weight: 500;
