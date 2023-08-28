@@ -26,3 +26,34 @@
         }
     }
 }
+
+
+/*Estilos para el ranking general*/
+.contenedorGraficos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+    padding: 40px;
+    
+    position: relative;
+
+    height: auto;
+    width: 95%;
+
+    box-sizing: border-box;
+
+    div{
+        background-color: var(--cl-grey-1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 30px;
+
+        canvas{
+            width: 100%;
+        }
+    }
+}

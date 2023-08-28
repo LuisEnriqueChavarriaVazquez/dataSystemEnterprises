@@ -187,7 +187,6 @@ function paginaSiguiente(){
     }
 }
 
-
 function paginaAnterior(){
     if (paginaActual>0){
         mostrarPagina(paginaActual-1)

@@ -44,15 +44,19 @@ function peticionEmpresa(listaEmpresas){
     </div>
     `;
 
+    //Aqui guardaremos la lista de empresas que el usuario eligio en el index
+    let empresaLista = [];
+
+    //Hacemos las peticiones de los datos de las empresas
     listaEmpresas.forEach((empresa) => { 
-        // Realizar la solicitud GET al archivo HTML
+        // Realizar la solicitud GET al archivo HTML para comprobar que el archivo existe
         fetch(`https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/${empresa}-income-statement.html`)
         .then((response) => response.text())
         .then((html) => {
-            // Acceder al contenido del archivo HTML
-            containerListCompanies[0].innerHTML += `
-                <input class="empresasAgregadasRanking" type="hidden" value="${empresa}"></input>
-            `;
+            
+            //Guardamos en memoria el nombre de las empresas que ha seleccionado el usuario para que pueda verlo en los rankings
+            empresaLista.push(`${empresa}`);
+            localStorage.setItem('lista_empresas_ranking_provenientes_del_index', JSON.stringify(empresaLista));
 
             //Mensaje de listo
             mdtoast(`${listaEmpresas.length} Empresas agregadas.`, { 
