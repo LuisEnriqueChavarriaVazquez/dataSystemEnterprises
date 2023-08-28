@@ -19,11 +19,13 @@
 <script defer src="js/colorPicker.js"></script>
 <script defer src="js/fontPicker.js"></script>
 <script defer src="js/pagination.js"></script>
+<!-- <script defer src="js/convertPDF.js"></script> -->
 
 <!--External-->
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
 <link rel="stylesheet" href="sass/external/mdtoast.min.css">
 <script defer src="js/external/mdtoast.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 <!--Buscador de empresas-->
 <script defer src="js/buscadores/estilosInputBusquedaEmpresaSola.js"></script>
@@ -126,7 +128,7 @@
                     </select>
                 </section>
 
-                <section class="containerTables">
+                <section class="containerTables" id="pdfContent">
                     <!--Informacion de las empresas-->
                     <div class="card-message">
                         <div class="card-image card-imageInfo border-4" id="busqueda"></div>
@@ -137,7 +139,7 @@
 
         </section>
 
-        
+        <!-- <div class="btn" id="convertButton">convertir</div> -->
         
     </section>
 

@@ -27,8 +27,8 @@
             height: 100%;
 
             padding: 10px 15px;
-            font-size: 25px;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
             color: var(--clw-tx);
             font-family: var(--fuente_text);
 
@@ -39,6 +39,55 @@
             justify-content: center;
             align-items: end;
 
+        }
+    }
+}
+
+
+/*Sepia and dark mode*/
+.container-light-mode{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 450px;
+    gap: 30px;
+
+    .light-mode-card{
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        background-color: var(--cl-grey-1);
+        box-shadow: 5px 5px 0 var(--cl-grey-3);
+        cursor: pointer;
+
+        display: grid;
+        grid-template-columns: .3fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+
+        &:hover{
+            background-color: var(--cl-grey-1);
+            box-shadow: 10px 10px 0 var(--cl-grey-4);
+        }
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+
+            padding: 10px 15px;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--clgreen-tx);
+            background-color: var(--cl-grey-2);
+            font-family: var(--fuente_text);
         }
     }
 }
