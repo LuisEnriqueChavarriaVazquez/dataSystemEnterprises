@@ -1,0 +1,73 @@
+:root{
+    /*Colores fondo*/
+    --clw: #FFF;
+    --clbk: rgb(38, 39, 41);
+
+    --cl-grey-1: rgb(240, 240, 240);
+    --cl-grey-2: rgb(230, 230, 230);
+    --cl-grey-3: rgb(215, 215, 215);
+    --cl-grey-4: rgb(200, 200, 200);
+    --cl-grey-5: rgb(185, 185, 185);
+    --cl-grey-6: rgb(170, 170, 170);
+    --cl-grey-7: rgb(155, 155, 155);
+
+    --cl-green-0: #a444ff;
+    --cl-green-1: #8d35df;
+    --cl-green-2: #7016c5;
+    --cl-green-3: #4B0092;
+    --cl-green-4: #380469;
+    --cl-green-5: #2c084e;
+    --cl-green-6: #1c0531;
+
+    /*Textos*/
+    --clw-tx: rgb(247, 247, 247);
+    --clbk-tx: rgb(40, 40, 40);
+    --clg-tx: rgb(70, 70, 70);
+    --clgreen-tx: #380469;
+}
+
+/*Cards con la seccion de informacion*/
+#endeudamiento{
+    background-image: url('../../img/icons/endeudamiento_ca_3.svg');
+}
+
+#rentabilidad{
+    background-image: url('../../img/icons/rentabilidad_ca_3.svg');
+}
+
+#rotacion{
+    background-image: url('../../img/icons/rotacion_ca_3.svg');
+}
+
+#liquidez{
+    background-image: url('../../img/icons/liquidez_ca_3.svg');
+}
+
+#busqueda{
+    background-image: url('../../img/icons/busqueda_ca_3.svg');
+}
+
+#listo{
+    background-image: url('../../img/icons/listo_ca_3.svg');
+}
+
+#index_rotacion{
+    background-image: url('../../img/icons/rotacion_indice_ca_3.svg');
+}
+
+#index_endeudamiento{
+    background-image: url('../../img/icons/endeudamiento_indice_ca_3.svg');
+}
+
+#index_liquidez{
+    background-image: url('../../img/icons/liquidez_indice_ca_3.svg');
+}
+
+#index_rentabilidad{
+    background-image: url('../../img/icons/rentabilidad_indice_ca_3.svg');
+}
+
+#index_welcome{
+    background-image: url('../../img/icons/index_welcome_ca_3.svg');
+}
+
