@@ -22,6 +22,17 @@
     }
 }
 
+.btnLink{
+    width: 80px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    color: var(--clgreen-tx);
+}
+
 .buttonBrwoser_empresas{
     width: 45px;
     height: 45px;
