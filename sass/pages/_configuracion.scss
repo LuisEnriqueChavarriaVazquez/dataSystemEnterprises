@@ -91,3 +91,40 @@
         }
     }
 }
+
+.custom-range {
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+    height: 30px; /* Altura del rango */
+    background-color: var(--cl-grey-3); /* Color de fondo */
+    border: none; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 40px 30px;
+    outline: none; /* Elimina el contorno al hacer clic */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.custom-range::-webkit-slider-runnable-track,
+.custom-range::-moz-range-track {
+    background-color: var(--cl-green-1);
+    height: 8px;
+    border-radius: 10px;
+}
+
+.custom-range::-webkit-slider-thumb,
+.custom-range::-moz-range-thumb {
+    background-color: var(--cl-green-5);
+    border: none;
+    width: 20px; /* Tamaño del control deslizante */
+    height: 20px; /* Tamaño del control deslizante */
+    border-radius: 50%; /* Control deslizante redondeado */
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del control deslizante */
+    appearance: none;
+
+    transition: all .1s ease-in-out;
+}
+
+.custom-range:focus::-webkit-slider-thumb,
+.custom-range:focus::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+}
