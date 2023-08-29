@@ -33,6 +33,33 @@
     color: var(--clgreen-tx);
 }
 
+.btnHelp{
+    width: 110px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    
+    color: var(--clw-tx);
+    background-color: var(--cl-green-3);
+    box-shadow: 5px 5px 0 var(--cl-green-4);
+
+    &:hover{
+        background-color: var(--cl-green-5);
+        box-shadow: 7px 7px 0 var(--cl-green-4);
+    }
+
+    i{
+        font-size: 20px;
+    }
+}
+
 .buttonBrwoser_empresas{
     width: 45px;
     height: 45px;
