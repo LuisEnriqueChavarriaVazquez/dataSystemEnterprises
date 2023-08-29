@@ -5,7 +5,8 @@ var driver = new Driver({
     nextBtnText: 'Siguiente',
     prevBtnText: 'Anterior',   
     keyboardControl: true,
-    opacity: .7,
+    opacity: .2,
+    stageBackground:"rgb(255,255,255,.01)"
 });
 
 //Accedemos al boton de ayuda
