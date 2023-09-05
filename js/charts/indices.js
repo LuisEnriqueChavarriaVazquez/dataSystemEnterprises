@@ -227,8 +227,8 @@ let rows = tempDiv.querySelectorAll('.genTbl.reportTbl tbody tr');
 
 let datosFinancieros = {};
 
-//iteramos a traves de las filas y obtemos los datos del periodo mas cercano
-
+//iteramos a traves de las filas y obtenemos los datos del periodo mas reciente, los guardamos en forma de diccionario para que sea facil de 
+//recuperar la data
 rows.forEach(row =>{
     let cells = row.querySelectorAll('td');
     if (cells.length > 1){
