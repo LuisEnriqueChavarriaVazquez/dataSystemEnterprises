@@ -169,9 +169,9 @@ fetch(url_nombres_solos)
 setTimeout(() => {
   let selectorOpciones = document.getElementById("test_index");
   let lista_empresa = document.getElementById("lista_empresa");
-  console.log(array_income);
-  console.log(array_balance_sheet);
-  console.log(array_nombres_solos);
+  // console.log(array_income);
+  // console.log(array_balance_sheet);
+  // console.log(array_nombres_solos);
 
   array_nombres_solos.forEach((nombre_empresa) => {
     selectorOpciones.innerHTML += `
