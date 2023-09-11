@@ -59,3 +59,4 @@ select_radar.addEventListener('click', () => {
     eraseContentGraficas();
     g_radar.setAttribute('style', 'display: grid; grid-template-columns: 1fr;');
 });
+
