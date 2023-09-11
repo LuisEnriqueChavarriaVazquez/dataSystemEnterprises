@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" id="cuerpoPagina">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +27,7 @@
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
 
 <!--Graficas-->
+<script defer src="js/charts/seleccionarTipoGráfico.js"></script>
 <script defer src="js/charts/obtenerDataParaGraficos.js"></script>
 <script defer src="js/charts/a_color_chart.js"></script>
 <script defer src="js/charts/barras_horizontal_general.js"></script>
@@ -68,21 +70,21 @@
                         <p class="titleOption">Ranking general</p>
                     </div>
                 </a>
-                
+
                 <a href="ranking.html" class="linkOpt">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-chart-simple"></i>
                         <p class="titleOption">Rankings</p>
                     </div>
                 </a>
-                
+
                 <a href="informacion.html" class="linkOpt">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-circle-info"></i>
                         <p class="titleOption">Información</p>
                     </div>
                 </a>
-                
+
                 <a href="empresas.html" class="linkOpt">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-industry"></i>
@@ -112,125 +114,135 @@
 
 
         </section>
-        
+
         <section class="contenedor border-3-right" id="contenidoPrincipal">
 
-            <!--Datos de los indices de las empresas-->
-            <section id="contenedor">
+            <section class="informacionContainerExtra">
+                <section class="informacionContainer_title">
+                    <p>Ranking general</p>
+                </section>
 
+                <!--Graficas de los indices-->
+                <section class="graficosInformacion">
+                    <section class="container_graphs" id="g_barras">
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_rentabilidad"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_endeudamiento"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_rotacion"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_liquidez"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_dona">
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_rentabilidad"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_endeudamiento"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_rotacion"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_liquidez"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_pastel">
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_rentabilidad"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_endeudamiento"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_rotacion"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_liquidez"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_linea">
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_rentabilidad"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_endeudamiento"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_rotacion"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_liquidez"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_polar">
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_rentabilidad"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_endeudamiento"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_rotacion"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_liquidez"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_radar" style="display: grid; grid-template-columns: 1fr;">
+                        <div class="border-2 shadow-1">
+                            <canvas id="radar_general"></canvas>
+                        </div>
+                    </section>
+                </section>
+
+                <!--Datos de los indices de las empresas-->
+                <section class="contenedorIndices" id="contenedor">
+
+                </section>
             </section>
 
-            <!--Graficas de los indices-->
-            <section class="container_graphs" id="g_barras">
-                <div class="border-2 shadow-1">
-                    <canvas id="barras_rentabilidad"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="barras_endeudamiento"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="barras_rotacion"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="barras_liquidez"></canvas>
-                </div>
-            </section>
-
-            <section class="container_graphs" id="g_dona">
-                <div class="border-2 shadow-1">
-                    <canvas id="dona_rentabilidad"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="dona_endeudamiento"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="dona_rotacion"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="dona_liquidez"></canvas>
-                </div>
-            </section>
-
-            <section class="container_graphs" id="g_pastel">
-                <div class="border-2 shadow-1">
-                    <canvas id="pastel_rentabilidad"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="pastel_endeudamiento"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="pastel_rotacion"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="pastel_liquidez"></canvas>
-                </div>
-            </section>
-
-            <section class="container_graphs" id="g_linea">
-                <div class="border-2 shadow-1">
-                    <canvas id="linea_rentabilidad"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="linea_endeudamiento"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="linea_rotacion"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="linea_liquidez"></canvas>
-                </div>
-            </section>
-
-            <section class="container_graphs" id="g_polar">
-                <div class="border-2 shadow-1">
-                    <canvas id="polar_rentabilidad"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="polar_endeudamiento"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="polar_rotacion"></canvas>
-                </div>
-
-                <div class="border-2 shadow-1">
-                    <canvas id="polar_liquidez"></canvas>
-                </div>
-            </section>
-
-            <section class="container_graphs" id="g_radar" 
-            style="display: grid; grid-template-columns: 1fr;">
-                <div class="border-2 shadow-1">
-                    <canvas id="radar_general"></canvas>
-                </div>
-            </section>
-            
         </section>
 
         <!--Botones para personalizar el tipo de gráfica que se ve-->
         <section class="containerButtonTipoGrafica">
-    
+
             <div id="select-dropdown" class="closed">
-                <div id="select-default" class="select default">Select Format</div>
-                <div class="select option" data-id="hexpound">Hex - #FFFFFF</div>
-                <div class="select option" data-id="hexclean">Hex - FFFFFF</div>
-                <div class="select option" data-id="rgb">RGB - (255,255,255)</div>
-                <div class="select option" data-id="rgba">RGBA - (255,255,255,1.0)</div>
+                <div id="select-default" class="select default">Tipo de gráfico</div>
+                <div class="select option" id="select_barras"><i class="fa-solid fa-chart-bar"></i> &nbsp; Barras</div>
+                <div class="select option" id="select_dona"><i class="fa-solid fa-circle-notch"></i> &nbsp; Dona</div>
+                <div class="select option" id="select_pastel"><i class="fa-solid fa-chart-pie"></i> &nbsp; Pastel</div>
+                <div class="select option" id="select_linea"><i class="fa-solid fa-chart-line"></i> &nbsp; Linea</div>
+                <div class="select option" id="select_polar"><i class="fa-regular fa-circle-dot"></i> &nbsp; Polar</div>
+                <div class="select option" id="select_radar"><i class="fa-solid fa-satellite-dish"></i> &nbsp; Radar
+                </div>
             </div>
-    
+
         </section>
 
     </section>
@@ -243,4 +255,5 @@
     </div>
 
 </body>
+
 </html>
