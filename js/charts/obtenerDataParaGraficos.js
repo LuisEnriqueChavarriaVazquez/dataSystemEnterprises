@@ -24,7 +24,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     for (let empresa in datosJsonParaGrafica) {
         if (datosJsonParaGrafica.hasOwnProperty(empresa)) {
             nombreEmpresaGraph.push(empresa);
-            rentabilidadEmpresaGraph.push(datosJsonParaGrafica[empresa].rentabilidad);
+            rentabilidadEmpresaGraph.push((datosJsonParaGrafica[empresa].rentabilidad));
             endeudamientoEmpresaGraph.push(datosJsonParaGrafica[empresa].endeudamiento);
             rotacionEmpresaGraph.push(datosJsonParaGrafica[empresa].rotacion);
             liquidezEmpresaGraph.push(datosJsonParaGrafica[empresa].liquidez);
