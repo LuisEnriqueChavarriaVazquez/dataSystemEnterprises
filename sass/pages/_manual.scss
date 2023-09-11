@@ -1,0 +1,46 @@
+.manualContainer{
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 60px;
+    
+    position: relative;
+
+    height: auto;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    color: var(--clbk-tx);
+
+    div{
+        //Le restamos al 100% del contenedor 120px de padding por lado
+        width: calc( 100% - 120px);
+        height: auto;
+        display: grid;
+        grid-template-rows: 123px auto;
+
+        .cardText{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            p, .card-image{
+                position: relative;
+                width: 100% !important;
+            }
+
+            .card-image{
+                height: 400px;
+            }
+
+            p{
+                display: block;
+            }
+
+        }
+    }
+}
