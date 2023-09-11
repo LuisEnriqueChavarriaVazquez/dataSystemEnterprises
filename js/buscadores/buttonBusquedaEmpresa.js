@@ -10,6 +10,7 @@ let searchCompanyButton_index_all = document.getElementById('searchCompanyButton
 let paginasDeEmpresas=[];
 const empresasPagina=3;
 let paginaActual=0;
+let empresasIndicesValor = {};
 
 
 
@@ -53,9 +54,12 @@ function calculaIndicesFinancieros(empresa,html){
         liquidez: datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]
     };
 
-    console.log(empresa)
-    console.log(indices);
+    empresasIndicesValor[empresa] = indices;
 
+    
+    
+    localStorage.setItem("empresaConIndices", JSON.stringify(empresasIndicesValor));;
+    
 
 }
 
@@ -99,7 +103,10 @@ searchCompanyButton.addEventListener('click', () => {
 
     // CALCULAMOS LOS INDICES FINANCIEROS PARA LAS EMPRESAS QUE EL USUARIO SELECCIONO
     traerEstadoResultado(elementosEncontrados);
-    
+
+    empresasIndicesValor = {}
+
+
 
     if(elementosEncontrados.length<empresasPagina){
         //Llamamos a la funcion para hacer la peticion de la empresa
@@ -125,6 +132,8 @@ searchCompanyButton_index_all.addEventListener('click', () => {
     
     //CALCULAMOS LOS INDICES FINANCIEROS PARA TODAS LAS EMPRESAS DISPONIBLES
     traerEstadoResultado(array_nombres_solos);
+
+    empresasIndicesValor = {}
 
 
     paginasDeEmpresas = divideEmpresasPagina(array_nombres_solos, empresasPagina);
