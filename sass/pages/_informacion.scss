@@ -28,6 +28,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 10vh 100vh 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     .graficosInformacion{
         display: grid;
@@ -46,6 +48,7 @@
             position: relative;
             height: 100vh;
             width: 100%;
+            
         }
     }
 

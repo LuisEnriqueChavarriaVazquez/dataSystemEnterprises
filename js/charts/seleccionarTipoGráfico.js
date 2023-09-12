@@ -60,3 +60,29 @@ select_radar.addEventListener('click', () => {
     g_radar.setAttribute('style', 'display: grid; grid-template-columns: 1fr;');
 });
 
+
+//Selectores de tipo de vista
+let gridBtn = document.getElementById('btnGridVista');
+let listaBtn = document.getElementById('btnListaVista');
+
+let contenedorPrincipalAjustable = document.getElementsByClassName('informacionContainerExtra');
+
+gridBtn.addEventListener('click', () => {
+    container_graphs_arr.forEach(element => {
+        var styleAtributo = element.getAttribute('style');
+        if(styleAtributo && styleAtributo.includes('display: grid')){
+            element.setAttribute('style', 'display: grid; grid-template-columns: 1fr 1fr;');
+        }
+    });
+        contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
+})
+
+listaBtn.addEventListener('click', () => {
+    container_graphs_arr.forEach(element => {
+        var styleAtributo = element.getAttribute('style');
+        if(styleAtributo && styleAtributo.includes('display: grid')){
+            element.setAttribute('style', 'display: grid; grid-template-columns: 1fr;');
+        }
+    });
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 200vh 100vh;');
+})
