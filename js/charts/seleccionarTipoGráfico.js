@@ -1,3 +1,6 @@
+//Contenedor para modificar la grid de las gráficas
+let contenedorPrincipalAjustable = document.getElementsByClassName('informacionContainerExtra');
+
 //Selectores de gráficas
 let select_barras = document.getElementById('select_barras');
 let select_dona = document.getElementById('select_dona');
@@ -33,26 +36,31 @@ g_barras.setAttribute('style', 'display: grid;');
 select_barras.addEventListener('click', () => {
     eraseContentGraficas();
     g_barras.setAttribute('style', 'display: grid;');
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
 });
 
 select_dona.addEventListener('click', () => {
     eraseContentGraficas();
     g_dona.setAttribute('style', 'display: grid;');
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
 });
 
 select_pastel.addEventListener('click', () => {
     eraseContentGraficas();
     g_pastel.setAttribute('style', 'display: grid;');
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
 });
 
 select_linea.addEventListener('click', () => {
     eraseContentGraficas();
     g_linea.setAttribute('style', 'display: grid;');
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
 });
 
 select_polar.addEventListener('click', () => {
     eraseContentGraficas();
     g_polar.setAttribute('style', 'display: grid;');
+    contenedorPrincipalAjustable[0].setAttribute('style', 'grid-template-rows: 10vh 100vh 100vh;');
 });
 
 select_radar.addEventListener('click', () => {
@@ -65,7 +73,6 @@ select_radar.addEventListener('click', () => {
 let gridBtn = document.getElementById('btnGridVista');
 let listaBtn = document.getElementById('btnListaVista');
 
-let contenedorPrincipalAjustable = document.getElementsByClassName('informacionContainerExtra');
 
 gridBtn.addEventListener('click', () => {
     container_graphs_arr.forEach(element => {
