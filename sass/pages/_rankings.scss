@@ -103,19 +103,32 @@
 //Estilos para personalizar el selector de tipo de gráfico
 .containerButtonTipoGrafica{
     position: fixed;
-    top: 70px;
-    right: 160px;
+    top: 50px;
+    right: 80px;
+
+    width: 500px;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a{
+            margin: 10px;
+        }
+    }
 }
 
 #select-dropdown {
 	color: var(--clbk-tx);
 	width:250px;
 	margin:auto;
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin-top:-20px;
-	margin-left:-125px;
+	position:relative;
 
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -124,9 +137,12 @@
 	-ms-user-select: none;
 	user-select: none;
 	cursor:pointer;
+
+    top: -22.5px;
+    right: -55px;
 }
 .select {
-	background-color:var(--cl-grey-3);
+	background-color:var(--clw);
 	text-align:center;
 	font-weight:bold;
 	text-transform:uppercase;
@@ -140,8 +156,6 @@
     border-radius: 10px 10px 0 0;
 
 	position:absolute;
-	left:50%;
-	margin-left:-115px;
 }
 .select:last-child {
 	border-bottom:none;

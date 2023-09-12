@@ -60,6 +60,27 @@
     }
 }
 
+.btnGrid{
+    width: 110px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--clbk-tx);
+    background-color: var(--cl-grey-1);
+    box-shadow: 5px 5px 0 var(--cl-grey-2);
+
+    &:hover{
+        background-color: var(--cl-grey-5);
+        box-shadow: 7px 7px 0 var(--cl-grey-4);
+    }
+
+    i{
+        font-size: 20px;
+    }
+}
+
 .buttonBrwoser_empresas{
     width: 45px;
     height: 45px;
