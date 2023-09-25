@@ -47,25 +47,25 @@ function guardarTodaLaDataEnArraysMemoria(){
     //Separamos los indices especificos en array particulares
     //(1) Indices de rentabilidad
     function separarIndicesRentabilidad(datos) {
-        const margenDeUtilidad = [];
-        const rendimientosSobreActivosTotales = [];
-        const rendimientosSobreCapitalContable = [];
+        const margen_de_utilidad = [];
+        const rendimientos_sobre_activos_totales = [];
+        const rendimientos_sobre_capital_contable = [];
       
         for (let i = 0; i < datos.length; i++) {
-          margenDeUtilidad.push(Number(datos[i].margen_de_utilidad));
-          rendimientosSobreActivosTotales.push(Number(datos[i].rendimientos_sobre_activos_totales));
-          rendimientosSobreCapitalContable.push(Number(datos[i].rendimientos_sobre_capital_contable));
+          margen_de_utilidad.push(Number(datos[i].margen_de_utilidad));
+          rendimientos_sobre_activos_totales.push(Number(datos[i].rendimientos_sobre_activos_totales));
+          rendimientos_sobre_capital_contable.push(Number(datos[i].rendimientos_sobre_capital_contable));
         }
       
         return {
-          margenDeUtilidad,
-          rendimientosSobreActivosTotales,
-          rendimientosSobreCapitalContable,
+          margen_de_utilidad,
+          rendimientos_sobre_activos_totales,
+          rendimientos_sobre_capital_contable,
         };
     }
       
     let indicesSeparadosRentabilidad = separarIndicesRentabilidad(rentabilidad_especifica);
-    localStorage.setItem("indicesSeparadosRentabilidad", indicesSeparadosRentabilidad);
+    localStorage.setItem("indicesSeparadosRentabilidad", JSON.stringify(indicesSeparadosRentabilidad));
 
     //(2) Indices de liquidez
     function separarIndicesLiquidez(datos) {
@@ -90,7 +90,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     }
       
     let indicesSeparadosLiquidez = separarIndicesLiquidez(liquidez_especifica);
-    localStorage.setItem("indicesSeparadosLiquidez", indicesSeparadosLiquidez);
+    localStorage.setItem("indicesSeparadosLiquidez", JSON.stringify(indicesSeparadosLiquidez));
 
     //(3) Indices de endeudamiento
     function separarIndicesEndeudamiento(datos) {
@@ -109,7 +109,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     }
         
     let indicesSeparadosEndeudamiento = separarIndicesEndeudamiento(endeudamiento_especifica);
-    localStorage.setItem("indicesSeparadosEndeudamiento", indicesSeparadosEndeudamiento);
+    localStorage.setItem("indicesSeparadosEndeudamiento", JSON.stringify(indicesSeparadosEndeudamiento));
 
     //(4) Indices de rotacion
     function separarIndicesRotacion(datos) {
@@ -134,7 +134,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     }
       
     let indicesSeparadosRotacion = separarIndicesRotacion(rotacion_especifica);
-    localStorage.setItem("indicesSeparadosRotacion", indicesSeparadosRotacion);
+    localStorage.setItem("indicesSeparadosRotacion", JSON.stringify(indicesSeparadosRotacion));
     
     //Guardamos indices generales en memoria
     localStorage.setItem("nombreEmpresaGraph", nombreEmpresaGraph);
@@ -144,7 +144,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     localStorage.setItem("liquidezEmpresaGraph", "[" + liquidezEmpresaGraph + "]");
 
     //Si quieres imprimir los datos de indices especificos hazle asi
-    console.log("Margen de Utilidad:", indicesSeparadosRentabilidad.margenDeUtilidad);
+    console.log("Margen de Utilidad:", indicesSeparadosRentabilidad.rendimientos_sobre_capital_contable);
 
     //Si quieres imprimir nombres hazlo asi
     let exampleNombres = localStorage.getItem('nombreEmpresaGraph').split(",");
