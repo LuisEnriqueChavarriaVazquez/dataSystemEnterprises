@@ -11,12 +11,11 @@ let paginasDeEmpresas=[];
 const empresasPagina=3;
 let paginaActual=0;
 let empresasIndicesValor = {};
-
-
+let datosFinancieros = {};
 
 // funcion para calcular los indices financieros correspondientes a la empresa en cuestion en base a los datos 
 //del periodo más reciente
-function calculaIndicesFinancieros(empresa,html){
+function calculaIndicesFinancieros(empresa,html, contadorCalculo){
 
     let  edoResultados=html;
 
@@ -29,55 +28,99 @@ function calculaIndicesFinancieros(empresa,html){
     //obtenemos todas las filas de la tabla
     let rows = tempDiv.querySelectorAll('.genTbl.reportTbl tbody tr');
 
-    let datosFinancieros = {};
-
-    //iteramos a traves de las filas y obtenemos los datos del periodo mas reciente, los guardamos en forma de diccionario para que sea facil de 
-    //recuperar la data
+    //iteramos a traves de las filas y obtenemos los datos del periodo mas reciente, los guardamos en forma de diccionario para que sea facil de recuperar la data
     rows.forEach(row =>{
         let cells = row.querySelectorAll('td');
         if (cells.length > 1){
             let label = cells[0].textContent.trim();
             let value = parseFloat(cells[1].textContent.trim().replace(',',''));
-
+            
             if(!isNaN(value)){
                 datosFinancieros[label] = value;
             }
         }
     })
-
-    //AHORA CALCULAMOS LOS INDICES QUE NECESITAMOS
-
-    let indices = {
-        rentabilidad: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"],
-        endeudamiento: datosFinancieros["Total de gastos de operación"] / datosFinancieros["Ventas Netas"],
-        rotacion: datosFinancieros["Ventas Netas"] / datosFinancieros["Utilidad bruta"],
-        liquidez: datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]
-    };
-
-    empresasIndicesValor[empresa] = indices;
-
     
+    //El contador de calculo sirve para evaluar si estamos en la primera o segunda tabla de una empresa
+    /**
+     * Cuando el valor es 2 significa que ya tenemos los datos necesarios para calcular los indices
+    */
+   
+    if(contadorCalculo == 1){
+        console.log("Primera tabla almacenada");
+        //console.log('datosFinancieros: ', datosFinancieros);
+        console.log("Longitud", Object.keys(datosFinancieros).length);
+    }else if(contadorCalculo == 2){ //Como ya tenemos las dos tablas ya podemos hacer calculos
+        console.log("Segunda tabla almacenada");
+        console.log('datosFinancieros: ', datosFinancieros);
+        console.log("Longitud", Object.keys(datosFinancieros).length);
+
+        //AHORA CALCULAMOS LOS INDICES QUE NECESITAMOS
+        let indices = {
+            rentabilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+            endeudamiento: (datosFinancieros["Total de gastos de operación"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+            rotacion: (datosFinancieros["Ventas Netas"] / datosFinancieros["Utilidad bruta"]).toFixed(3),
+            liquidez: (datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+        };
     
-    localStorage.setItem("empresaConIndices", JSON.stringify(empresasIndicesValor));;
+        //Indice de rentabilidad de forma especifica
+        let indices_rentabilidad = {
+            margen_de_utilidad: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"],
+            rendimientos_sobre_activos_totales: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas netas totales"],
+            rendimientos_sobre_capital_contable: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"],
+        }
     
+        //En este array vamos sumando los mini arrays de indices
+        empresasIndicesValor[empresa] = indices;
+        //console.log('empresasIndicesValor: ', empresasIndicesValor);
+
+        //Guardamos en memoria los indices
+        localStorage.setItem("empresaConIndices", JSON.stringify(empresasIndicesValor));
+
+        let memoriaValor = localStorage.getItem("empresaConIndices");
+        console.log('memoriaValor: ', memoriaValor);
+
+        //Reiniciamos el objeto para que cuando busquemos otra empresa el dato cambie
+        datosFinancieros = {};
+    }
 
 }
 
 
 // Funcion auxiliar que nos trae los estados de resultandos correspondientes a las empresas que se estan buscando para así
 // calcular sus indices financieros
-function traerEstadoResultado(arrayEmpresasSeleccionadas) {
-    arrayEmpresasSeleccionadas.forEach(empresa => { 
-        fetch(`https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/${empresa}-income-statement.html`)
-        .then(response => response.text())
-        .then(html => {
-            calculaIndicesFinancieros(empresa, html);
-        })
-        .catch(error => {
+
+/**
+ * NOTA IMPORTANTE... Modifique las funciones para que sean asincronas...
+ * Esto porque cuando son muchos datos, aveces estas funciones se ejecutaban en desorden,
+ * cuando son asincronas se garantiza que se ejecuten de forma secuencial,
+ * la única desventaja es que esto puede ralentizar el proceso cuando son muchos datos, pero fue la unica manera que encontre de
+ * evitar que se ejecutaran en desorden.
+ */
+async function traerEstadoResultado(arrayEmpresasSeleccionadas) {
+    for (const empresa of arrayEmpresasSeleccionadas) {
+        try {
+            const response = await fetch(`https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/${empresa}-income-statement.html`);
+            const html = await response.text();
+            calculaIndicesFinancieros(empresa, html, 1);
+        } catch (error) {
             console.error(`Error al obtener datos de ${empresa}:`, error);
-        });
-    });
+        }
+    }
 }
+
+async function traerBalanceResultado(arrayEmpresasSeleccionadas) {
+    for (const empresa of arrayEmpresasSeleccionadas) {
+        try {
+            const response = await fetch(`https://raw.githubusercontent.com/LuisEnriqueChavarriaVazquez/getInvestingServiceData/main/generatedFiles/${empresa}-balance-sheet.html`);
+            const html = await response.text();
+            calculaIndicesFinancieros(empresa, html, 2);
+        } catch (error) {
+            console.error(`Error al obtener datos de ${empresa}:`, error);
+        }
+    }
+}
+
 
 
 //funcion para dividir los array de empresas en el numero que deseamos por pagina
@@ -103,6 +146,7 @@ searchCompanyButton.addEventListener('click', () => {
 
     // CALCULAMOS LOS INDICES FINANCIEROS PARA LAS EMPRESAS QUE EL USUARIO SELECCIONO
     traerEstadoResultado(elementosEncontrados);
+    traerBalanceResultado(elementosEncontrados);
 
     empresasIndicesValor = {}
 
@@ -132,6 +176,7 @@ searchCompanyButton_index_all.addEventListener('click', () => {
     
     //CALCULAMOS LOS INDICES FINANCIEROS PARA TODAS LAS EMPRESAS DISPONIBLES
     traerEstadoResultado(array_nombres_solos);
+    traerBalanceResultado(array_nombres_solos);
 
     empresasIndicesValor = {}
 
@@ -176,12 +221,6 @@ function renderEmpresasEnPagina(pagina){
                 <div class="income_statement">${html}</div>
             </div>
             `;         
-
-            //Mensaje de listo
-            mdtoast('Busqueda de empresa lista.', { 
-                interaction: false,
-                duration: 1000
-            });
         })
         .catch((error) => {
             console.error("Recurso no disponible:", error);
