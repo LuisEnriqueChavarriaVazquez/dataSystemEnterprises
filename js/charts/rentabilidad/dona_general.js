@@ -11,74 +11,60 @@
     // //Si quieres imprimir numeros hazlo asi...
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
-//DONA RENTABILIDAD
-const dona_rentabilidad = document.getElementById("dona_rentabilidad");
+    var dataRentabilidadEsp = localStorage.getItem('indicesSeparadosRentabilidad');
+    var dataRentabilidadEspOBJ = JSON.parse(dataRentabilidadEsp);
+    var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 
-const data_dona_rentabilidad = {
+//DONA Margen de utilidad
+const dona_margen_de_utilidad = document.getElementById("dona_margen_de_utilidad");
+
+const data_dona_margen_de_utilidad = {
   labels: localStorage.getItem('nombreEmpresaGraph').split(","),
   datasets: [{
-    label: 'índice de rentabilidad',
-    data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
+    label: 'Margen de utilidad',
+    data: dataRentabilidadEspOBJ.margen_de_utilidad,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(dona_rentabilidad, {
+new Chart(dona_margen_de_utilidad, {
   type: 'doughnut',
-  data: data_dona_rentabilidad
+  data: data_dona_margen_de_utilidad
 });
 
-//DONA ENDEUDAMIENTO
-const dona_endeudamiento = document.getElementById("dona_endeudamiento");
+//DONA rendimientos_sobre_activos_totales
+const dona_rendimientos_sobre_activos_totales = document.getElementById("dona_rendimientos_sobre_activos_totales");
 
-const data_dona_endeudamiento = {
+const data_dona_rendimientos_sobre_activos_totales = {
   labels: localStorage.getItem('nombreEmpresaGraph').split(","),
   datasets: [{
-    label: 'índice de endeudamiento',
-    data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
+    label: 'Rendimientos sobre activos totales',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_activos_totales,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(dona_endeudamiento, {
+new Chart(dona_rendimientos_sobre_activos_totales, {
   type: 'doughnut',
-  data: data_dona_endeudamiento
+  data: data_dona_rendimientos_sobre_activos_totales
 });
 
-//DONA rotacion
-const dona_rotacion = document.getElementById("dona_rotacion");
+//DONA rendimientos_sobre_capital_contable
+const dona_rendimientos_sobre_capital_contable = document.getElementById("dona_rendimientos_sobre_capital_contable");
 
-const data_dona_rotacion = {
+const data_dona_rendimientos_sobre_capital_contable = {
   labels: localStorage.getItem('nombreEmpresaGraph').split(","),
   datasets: [{
-    label: 'índice de rotación',
-    data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
+    label: 'Margen de utilidad',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_capital_contable,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(dona_rotacion, {
+new Chart(dona_rendimientos_sobre_capital_contable, {
   type: 'doughnut',
-  data: data_dona_rotacion
-});
-
-//DONA Liquidez
-const dona_liquidez = document.getElementById("dona_liquidez");
-
-const data_dona_liquidez = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
-  datasets: [{
-    label: 'índice de liquidez',
-    data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
-    backgroundColor: backgroundColor_dinamico,
-    hoverOffset: 4
-  }]
-};
-
-new Chart(dona_liquidez, {
-  type: 'doughnut',
-  data: data_dona_liquidez
+  data: data_dona_rendimientos_sobre_capital_contable
 });

@@ -11,24 +11,27 @@
     // //Si quieres imprimir numeros hazlo asi...
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
-//Linea rentabilidad
-const linea_rentabilidad = document.getElementById("linea_rentabilidad");
+    var dataRentabilidadEsp = localStorage.getItem('indicesSeparadosRentabilidad');
+    var dataRentabilidadEspOBJ = JSON.parse(dataRentabilidadEsp);
+    var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 
-const labels_linea_rentabilidad = localStorage.getItem('nombreEmpresaGraph').split(",");
-const data_linea_rentabilidad = {
-  labels: labels_linea_rentabilidad,
+//Linea margen_de_utilidad
+const linea_margen_de_utilidad = document.getElementById("linea_margen_de_utilidad");
+
+const data_linea_margen_de_utilidad = {
+  labels: labels,
   datasets: [{
-    label: 'índice de rentabilidad',
-    data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
+    label: 'Margen de utilidad',
+    data: dataRentabilidadEspOBJ.margen_de_utilidad,
     fill: false,
     borderColor: backgroundColor_dinamico[3],
     tension: 0.1
   }]
 };
 
-let linea_rentabilidad_OBJ = new Chart(linea_rentabilidad, {
+let linea_margen_de_utilidad_OBJ = new Chart(linea_margen_de_utilidad, {
   type: 'line',
-  data: data_linea_rentabilidad,
+  data: data_linea_margen_de_utilidad,
   options: {
     plugins: {
       zoom: {
@@ -46,24 +49,23 @@ let linea_rentabilidad_OBJ = new Chart(linea_rentabilidad, {
   }
 });
 
-//Linea endeudamiento
-const linea_endeudamiento = document.getElementById("linea_endeudamiento");
+//Linea margen_de_utilidad
+const linea_rendimientos_sobre_activos_totales = document.getElementById("linea_rendimientos_sobre_activos_totales");
 
-const labels_linea_endeudamiento = localStorage.getItem('nombreEmpresaGraph').split(",");
-const data_linea_endeudamiento = {
-  labels: labels_linea_endeudamiento,
+const data_linea_rendimientos_sobre_activos_totales = {
+  labels: labels,
   datasets: [{
-    label: 'índice de endeudamiento',
-    data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
+    label: 'Rendimientos_sobre_activos_totales',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_activos_totales,
     fill: false,
     borderColor: backgroundColor_dinamico[3],
     tension: 0.1
   }]
 };
 
-let linea_endeudamiento_OBJ = new Chart(linea_endeudamiento, {
+let linea_rendimientos_sobre_activos_totales_OBJ = new Chart(linea_rendimientos_sobre_activos_totales, {
   type: 'line',
-  data: data_linea_endeudamiento,
+  data: data_linea_rendimientos_sobre_activos_totales,
   options: {
     plugins: {
       zoom: {
@@ -81,24 +83,23 @@ let linea_endeudamiento_OBJ = new Chart(linea_endeudamiento, {
   }
 });
 
-//Linea rotacion
-const linea_rotacion = document.getElementById("linea_rotacion");
+//Linea margen_de_utilidad
+const linea_rendimientos_sobre_capital_contable = document.getElementById("linea_rendimientos_sobre_capital_contable");
 
-const labels_linea_rotacion = localStorage.getItem('nombreEmpresaGraph').split(",");
-const data_linea_rotacion = {
-  labels: labels_linea_rotacion,
+const data_linea_rendimientos_sobre_capital_contable = {
+  labels: labels,
   datasets: [{
-    label: 'índice de rotacion',
-    data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
+    label: 'Rendimientos sobre capital contable',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_capital_contable,
     fill: false,
     borderColor: backgroundColor_dinamico[3],
     tension: 0.1
   }]
 };
 
-let linea_rotacion_OBJ = new Chart(linea_rotacion, {
+let linea_rendimientos_sobre_capital_contable_OBJ = new Chart(linea_rendimientos_sobre_capital_contable, {
   type: 'line',
-  data: data_linea_rotacion,
+  data: data_linea_rendimientos_sobre_capital_contable,
   options: {
     plugins: {
       zoom: {
@@ -115,39 +116,3 @@ let linea_rotacion_OBJ = new Chart(linea_rotacion, {
     }
   }
 });
-
-//Linea liquidez
-const linea_liquidez = document.getElementById("linea_liquidez");
-
-const labels_linea_liquidez = localStorage.getItem('nombreEmpresaGraph').split(",");
-const data_linea_liquidez = {
-  labels: labels_linea_liquidez,
-  datasets: [{
-    label: 'índice de liquidez',
-    data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
-    fill: false,
-    borderColor: backgroundColor_dinamico[3],
-    tension: 0.1
-  }]
-};
-
-let linea_liquidez_OBJ = new Chart(linea_liquidez, {
-  type: 'line',
-  data: data_linea_liquidez,
-  options: {
-    plugins: {
-      zoom: {
-        zoom: {
-          wheel: {
-            enabled: true,
-          },
-          pinch: {
-            enabled: true
-          },
-          mode: 'xy',
-        }
-      }
-    }
-  }
-});
-

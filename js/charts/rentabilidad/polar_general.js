@@ -11,84 +11,67 @@
     // //Si quieres imprimir numeros hazlo asi...
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
+    var dataRentabilidadEsp = localStorage.getItem('indicesSeparadosRentabilidad');
+    var dataRentabilidadEspOBJ = JSON.parse(dataRentabilidadEsp);
+    var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
+
 //Polar rentabilidad
-const polar_rentabilidad = document.getElementById("polar_rentabilidad");
+const polar_margen_de_utilidad = document.getElementById("polar_margen_de_utilidad");
 
-const data_polar_rentabilidad = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const data_polar_margen_de_utilidad = {
+  labels: labels,
   datasets: [
     {
-      label: "índice de rentabilidad",
-      data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
+      label: "Margen de utilidad",
+      data: dataRentabilidadEspOBJ.margen_de_utilidad,
       backgroundColor: backgroundColor_dinamico,
     },
   ],
 };
 
-new Chart(polar_rentabilidad, {
+new Chart(polar_margen_de_utilidad, {
   type: "polarArea",
-  data: data_polar_rentabilidad,
+  data: data_polar_margen_de_utilidad,
   options: {},
 });
 
-//Polar endeudamiento
-const polar_endeudamiento = document.getElementById("polar_endeudamiento");
+//Polar rentabilidad
+const polar_rendimientos_sobre_activos_totales = document.getElementById("polar_rendimientos_sobre_activos_totales");
 
-const data_polar_endeudamiento = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const data_polar_rendimientos_sobre_activos_totales = {
+  labels: labels,
   datasets: [
     {
-      label: "índice de endeudamiento",
-      data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
+      label: "Rendimientos sobre activos totales",
+      data: dataRentabilidadEspOBJ.rendimientos_sobre_activos_totales,
       backgroundColor: backgroundColor_dinamico,
     },
   ],
 };
 
-new Chart(polar_endeudamiento, {
+new Chart(polar_rendimientos_sobre_activos_totales, {
   type: "polarArea",
-  data: data_polar_endeudamiento,
+  data: data_polar_rendimientos_sobre_activos_totales,
   options: {},
 });
 
-//Polar rotacion
-const polar_rotacion = document.getElementById("polar_rotacion");
+//Polar rentabilidad
+const polar_rendimientos_sobre_capital_contable = document.getElementById("polar_rendimientos_sobre_capital_contable");
 
-const data_polar_rotacion = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const data_polar_rendimientos_sobre_capital_contable = {
+  labels: labels,
   datasets: [
     {
-      label: "índice de rotación",
-      data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
+      label: "Rendimientos sobre capital contable",
+      data: dataRentabilidadEspOBJ.rendimientos_sobre_capital_contable,
       backgroundColor: backgroundColor_dinamico,
     },
   ],
 };
 
-new Chart(polar_rotacion, {
+new Chart(polar_rendimientos_sobre_capital_contable, {
   type: "polarArea",
-  data: data_polar_rotacion,
+  data: data_polar_rendimientos_sobre_capital_contable,
   options: {},
 });
-
-//Polar liquidez
-const polar_liquidez = document.getElementById("polar_liquidez");
-
-const data_polar_liquidez = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
-  datasets: [
-    {
-      label: "índice de liquidez",
-      data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
-      backgroundColor: backgroundColor_dinamico,
-    },
-  ],
-};
-
-new Chart(polar_liquidez, {
-  type: "polarArea",
-  data: data_polar_liquidez,
-  options: {},
-});
-
 

@@ -1,11 +1,15 @@
-const radar_general = document.getElementById("radar_general");
+var dataRentabilidadEsp = localStorage.getItem('indicesSeparadosRentabilidad');
+var dataRentabilidadEspOBJ = JSON.parse(dataRentabilidadEsp);
+var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 
-const data_radar_general = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const radar_rentabilidad_esp = document.getElementById("radar_rentabilidad_esp");
+
+const data_radar_rentabilidad_esp = {
+  labels: labels,
   datasets: [
     {
-      label: "Rentabilidad",
-      data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
+      label: "Margen_de_utilidad",
+      data: dataRentabilidadEspOBJ.margen_de_utilidad,
       fill: true,
       backgroundColor: backgroundColor_dinamico[6],
       borderColor: backgroundColor_dinamico[6],
@@ -15,8 +19,8 @@ const data_radar_general = {
       pointHoverBorderColor: "rgb(255, 99, 132)",
     },
     {
-      label: "Endeudamiento",
-      data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
+      label: "Rendimientos_sobre_activos_totales",
+      data: dataRentabilidadEspOBJ.rendimientos_sobre_activos_totales,
       fill: true,
       backgroundColor: backgroundColor_dinamico[4],
       borderColor: backgroundColor_dinamico[4],
@@ -26,8 +30,8 @@ const data_radar_general = {
       pointHoverBorderColor: "rgb(255, 99, 132)",
     },
     {
-      label: "Rotación",
-      data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
+      label: "Rendimientos_sobre_capital_contable",
+      data: dataRentabilidadEspOBJ.rendimientos_sobre_capital_contable,
       fill: true,
       backgroundColor: backgroundColor_dinamico[2],
       borderColor: backgroundColor_dinamico[2],
@@ -36,23 +40,12 @@ const data_radar_general = {
       pointHoverBackgroundColor: "#fff",
       pointHoverBorderColor: "rgb(255, 99, 132)",
     },
-    {
-      label: "Liquidez",
-      data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
-      fill: true,
-      backgroundColor: backgroundColor_dinamico[0],
-      borderColor: backgroundColor_dinamico[0],
-      pointBackgroundColor: backgroundColor_dinamico[0],
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(255, 99, 132)",
-    },
   ],
 };
 
-new Chart(radar_general, {
+new Chart(radar_rentabilidad_esp, {
   type: "radar",
-  data: data_radar_general,
+  data: data_radar_rentabilidad_esp,
   options: {
     elements: {
       line: {

@@ -11,74 +11,60 @@
     // //Si quieres imprimir numeros hazlo asi...
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
-//Pastel rentabilidad
-const pastel_rentabilidad = document.getElementById("pastel_rentabilidad");
+    var dataRentabilidadEsp = localStorage.getItem('indicesSeparadosRentabilidad');
+    var dataRentabilidadEspOBJ = JSON.parse(dataRentabilidadEsp);
+    var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 
-const data_pastel_rentabilidad = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+//Pastel rentabilidad
+const pastel_margen_de_utilidad = document.getElementById("pastel_margen_de_utilidad");
+
+const data_pastel_margen_de_utilidad = {
+  labels: labels,
   datasets: [{
-    label: 'índice de rentabilidad',
-    data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
+    label: 'Margen de utilidad',
+    data: dataRentabilidadEspOBJ.margen_de_utilidad,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(pastel_rentabilidad, {
+new Chart(pastel_margen_de_utilidad, {
   type: 'pie',
-  data: data_pastel_rentabilidad
+  data: data_pastel_margen_de_utilidad
 });
 
 //Pastel endeudamiento
-const pastel_endeudamiento = document.getElementById("pastel_endeudamiento");
+const pastel_rendimientos_sobre_activos_totales = document.getElementById("pastel_rendimientos_sobre_activos_totales");
 
-const data_pastel_endeudamiento = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const data_pastel_rendimientos_sobre_activos_totales = {
+  labels: labels,
   datasets: [{
-    label: 'índice de endeudamiento',
-    data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
+    label: 'Rendimientos sobre activos totales',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_activos_totales,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(pastel_endeudamiento, {
+new Chart(pastel_rendimientos_sobre_activos_totales, {
   type: 'pie',
-  data: data_pastel_endeudamiento
+  data: data_pastel_rendimientos_sobre_activos_totales
 });
 
 //Pastel rotacion
-const pastel_rotacion = document.getElementById("pastel_rotacion");
+const pastel_rendimientos_sobre_capital_contable = document.getElementById("pastel_rendimientos_sobre_capital_contable");
 
-const data_pastel_rotacion = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
+const data_pastel_rendimientos_sobre_capital_contable = {
+  labels: labels,
   datasets: [{
-    label: 'índice de rotación',
-    data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
+    label: 'Rendimientos sobre capital contable',
+    data: dataRentabilidadEspOBJ.rendimientos_sobre_capital_contable,
     backgroundColor: backgroundColor_dinamico,
     hoverOffset: 4
   }]
 };
 
-new Chart(pastel_rotacion, {
+new Chart(pastel_rendimientos_sobre_capital_contable, {
   type: 'pie',
-  data: data_pastel_rotacion
-});
-
-//Pastel liquidez
-const pastel_liquidez = document.getElementById("pastel_liquidez");
-
-const data_pastel_liquidez = {
-  labels: localStorage.getItem('nombreEmpresaGraph').split(","),
-  datasets: [{
-    label: 'índice de liquidez',
-    data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
-    backgroundColor: backgroundColor_dinamico,
-    hoverOffset: 4
-  }]
-};
-
-new Chart(pastel_liquidez, {
-  type: 'pie',
-  data: data_pastel_liquidez
-});
+  data: data_pastel_rendimientos_sobre_capital_contable
+})
