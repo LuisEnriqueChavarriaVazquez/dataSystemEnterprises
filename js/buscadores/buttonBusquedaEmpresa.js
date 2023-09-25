@@ -55,20 +55,32 @@ function calculaIndicesFinancieros(empresa,html, contadorCalculo){
         console.log('datosFinancieros: ', datosFinancieros);
         console.log("Longitud", Object.keys(datosFinancieros).length);
 
-        //AHORA CALCULAMOS LOS INDICES QUE NECESITAMOS
+        //Indice de rentabilidad de forma especifica
+        let indices_rentabilidad = {
+            //Resultado neto == Utilidad neta
+            margen_de_utilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+            rendimientos_sobre_activos_totales: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas netas totales"]).toFixed(3),
+            rendimientos_sobre_capital_contable: (datosFinancieros["Resultado neto"] / datosFinancieros["Capital contable"]).toFixed(3),
+        }
+
+        let indices_liquidez = {
+            capital_de_trabajo: (datosFinancieros["Total de activos corrientes"] - datosFinancieros["Total pasivos corrientes"]).toFixed(3),
+            //En la primera division lo que se hace calcular Rotacion de inventario, luego rotacion de cuentas por cobrar y luego por pagar en la ultima division
+            capital_operativo: ((datosFinancieros["Inventarios, Neto"] / datosFinancieros["Costo de venta"]) - (datosFinancieros["Ventas Netas"]/datosFinancieros["Cuentas por cobrar, Neto"]) - (datosFinancieros["Costo de venta"]/datosFinancieros["Cuentas por pagar"])).toFixed(3),
+            prueba_del_acido: ((datosFinancieros["Total de activos corrientes"] - datosFinancieros["Inventarios, Neto"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(3),
+            razon_de_liquidez: ((datosFinancieros["Total de activos corrientes"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(3),
+        }
+
+        //AHORA CALCULAMOS de forma general
         let indices = {
             rentabilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(3),
             endeudamiento: (datosFinancieros["Total de gastos de operación"] / datosFinancieros["Ventas Netas"]).toFixed(3),
             rotacion: (datosFinancieros["Ventas Netas"] / datosFinancieros["Utilidad bruta"]).toFixed(3),
             liquidez: (datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+            indices_rentabilidad_especificos: indices_rentabilidad,
+            indices_liquidez_especificos: indices_liquidez
         };
     
-        //Indice de rentabilidad de forma especifica
-        let indices_rentabilidad = {
-            margen_de_utilidad: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"],
-            rendimientos_sobre_activos_totales: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas netas totales"],
-            rendimientos_sobre_capital_contable: datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"],
-        }
     
         //En este array vamos sumando los mini arrays de indices
         empresasIndicesValor[empresa] = indices;
