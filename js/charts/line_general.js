@@ -26,9 +26,24 @@ const data_linea_rentabilidad = {
   }]
 };
 
-new Chart(linea_rentabilidad, {
+let linea_rentabilidad_OBJ = new Chart(linea_rentabilidad, {
   type: 'line',
-  data: data_linea_rentabilidad
+  data: data_linea_rentabilidad,
+  options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
+  }
 });
 
 //Linea endeudamiento
@@ -46,9 +61,24 @@ const data_linea_endeudamiento = {
   }]
 };
 
-new Chart(linea_endeudamiento, {
+let linea_endeudamiento_OBJ = new Chart(linea_endeudamiento, {
   type: 'line',
-  data: data_linea_endeudamiento
+  data: data_linea_endeudamiento,
+  options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
+  }
 });
 
 //Linea rotacion
@@ -66,9 +96,24 @@ const data_linea_rotacion = {
   }]
 };
 
-new Chart(linea_rotacion, {
+let linea_rotacion_OBJ = new Chart(linea_rotacion, {
   type: 'line',
-  data: data_linea_rotacion
+  data: data_linea_rotacion,
+  options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
+  }
 });
 
 //Linea liquidez
@@ -86,8 +131,23 @@ const data_linea_liquidez = {
   }]
 };
 
-new Chart(linea_liquidez, {
+let linea_liquidez_OBJ = new Chart(linea_liquidez, {
   type: 'line',
-  data: data_linea_liquidez
+  data: data_linea_liquidez,
+  options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
+  }
 });
 

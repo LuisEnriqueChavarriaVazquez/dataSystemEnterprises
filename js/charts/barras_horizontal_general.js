@@ -11,12 +11,11 @@
     // //Si quieres imprimir numeros hazlo asi...
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
+    var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
+    const tipoGrafico = labels.length > 7 ? 'line' : 'bar';
+
 //BARRAS HORIZONTAL RENTABILIDAD
 const barras_rentabilidad = document.getElementById("barras_rentabilidad");
-
-var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
-
-const tipoGrafico = labels.length > 7 ? 'line' : 'bar';
 
 const data_barras_rentabilidad = {
   labels: labels,
@@ -31,11 +30,24 @@ const data_barras_rentabilidad = {
   }]
 };
 
-new Chart(barras_rentabilidad, {
+let barras_rentabilidad_OBJ = new Chart(barras_rentabilidad, {
   type: tipoGrafico,
   data: data_barras_rentabilidad,
   options: {
     indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
   }
 });
 
@@ -55,11 +67,24 @@ const data_barras_endeudamiento = {
   }]
 };
 
-new Chart(barras_endeudamiento, {
+let barras_endeudamiento_OBJ = new Chart(barras_endeudamiento, {
   type: tipoGrafico,
   data: data_barras_endeudamiento,
   options: {
     indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
   }
 });
 
@@ -79,11 +104,24 @@ const data_barras_rotacion = {
   }]
 };
 
-new Chart(barras_rotacion, {
+let barras_rotacion_OBJ = new Chart(barras_rotacion, {
   type:tipoGrafico,
   data: data_barras_rotacion,
   options: {
     indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
   }
 });
 
@@ -103,10 +141,23 @@ const data_barras_liquidez = {
   }]
 };
 
-new Chart(barras_liquidez, {
+let barras_liquidez_OBJ = new Chart(barras_liquidez, {
   type: tipoGrafico,
   data: data_barras_liquidez,
   options: {
     indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
   }
 });

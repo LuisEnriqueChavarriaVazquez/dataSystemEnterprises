@@ -103,13 +103,13 @@
 //Estilos para personalizar el selector de tipo de gráfico
 .containerButtonTipoGrafica{
     position: fixed;
-    top: 50px;
+    top: 60px;
     right: 80px;
 
-    width: 500px;
+    width: 650px;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1.5fr;
     grid-template-rows: auto;
     gap: 10px;
 

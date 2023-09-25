@@ -24,12 +24,15 @@
 <!--External-->
 <script defer src="js/external/utils.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
 
 <!--Graficas-->
 <script defer src="js/charts/seleccionarTipoGráfico.js"></script>
 <script defer src="js/charts/obtenerDataParaGraficos.js"></script>
 <script defer src="js/charts/a_color_chart.js"></script>
+<script defer src="js/charts/a_chart_reset_zoom.js"></script>
 <script defer src="js/charts/barras_horizontal_general.js"></script>
 <script defer src="js/charts/dona_general.js"></script>
 <script defer src="js/charts/pastel_general.js"></script>
@@ -239,13 +242,19 @@
             <div>
                 <div>
                     <a class="btn btnGrid" id="btnGridVista">
-                        <i class="fa-solid fa-border-all"></i> Grid
+                        <i class="fa-solid fa-border-all"></i> Cuadricula
                     </a>
                 </div>
                 
                 <div>
                     <a class="btn btnGrid" id="btnListaVista">
                         <i class="fa-solid fa-table-list"></i> Lista
+                    </a>
+                </div>
+
+                <div>
+                    <a class="btn btnGrid" id="btnReset">
+                        <i class="fa-solid fa-rotate-right"></i> Reset
                     </a>
                 </div>
             </div>
