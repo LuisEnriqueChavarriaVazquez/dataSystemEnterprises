@@ -12,6 +12,7 @@ function guardarTodaLaDataEnArraysMemoria(){
     //Accedemos a los datos de las empresas
     let datosEmpresaAlmacenados = localStorage.getItem('empresaConIndices');
     let datosJsonParaGrafica = JSON.parse(datosEmpresaAlmacenados);
+    console.log('datosJsonParaGrafica: ', datosJsonParaGrafica);
 
     //Reservamos el espacio para los arrays de nombres de empresas
     let nombreEmpresaGraph = [];

@@ -72,40 +72,40 @@ function calculaIndicesFinancieros(empresa,html, contadorCalculo){
         //Indice de rentabilidad de forma especifica
         let indices_rentabilidad = {
             //Resultado neto == Utilidad neta
-            margen_de_utilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(3),
-            rendimientos_sobre_activos_totales: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas netas totales"]).toFixed(3),
-            rendimientos_sobre_capital_contable: (datosFinancieros["Resultado neto"] / datosFinancieros["Capital contable"]).toFixed(3),
+            margen_de_utilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(2),
+            rendimientos_sobre_activos_totales: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas netas totales"]).toFixed(2),
+            rendimientos_sobre_capital_contable: (datosFinancieros["Resultado neto"] / datosFinancieros["Capital contable"]).toFixed(2),
         }
 
         //Indices especificos de liquidez
         let indices_liquidez = {
-            capital_de_trabajo: (datosFinancieros["Total de activos corrientes"] - datosFinancieros["Total pasivos corrientes"]).toFixed(3),
+            capital_de_trabajo: (datosFinancieros["Total de activos corrientes"] - datosFinancieros["Total pasivos corrientes"]).toFixed(2),
             //En la primera division lo que se hace calcular Rotacion de inventario, luego rotacion de cuentas por cobrar y luego por pagar en la ultima division
-            capital_operativo: ((datosFinancieros["Inventarios, Neto"] / datosFinancieros["Costo de venta"]) - (datosFinancieros["Ventas Netas"]/datosFinancieros["Cuentas por cobrar, Neto"]) - (datosFinancieros["Costo de venta"]/datosFinancieros["Cuentas por pagar"])).toFixed(3), //Pendiente duda
-            prueba_del_acido: ((datosFinancieros["Total de activos corrientes"] - datosFinancieros["Inventarios, Neto"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(3),
-            razon_de_liquidez: ((datosFinancieros["Total de activos corrientes"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(3),
+            capital_operativo: ((datosFinancieros["Inventarios, Neto"] / datosFinancieros["Costo de venta"]) - (datosFinancieros["Ventas Netas"]/datosFinancieros["Cuentas por cobrar, Neto"]) - (datosFinancieros["Costo de venta"]/datosFinancieros["Cuentas por pagar"])).toFixed(2), //Pendiente duda
+            prueba_del_acido: ((datosFinancieros["Total de activos corrientes"] - datosFinancieros["Inventarios, Neto"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(2),
+            razon_de_liquidez: ((datosFinancieros["Total de activos corrientes"]) / datosFinancieros["Total pasivos corrientes"]).toFixed(2),
         }
 
         //Indices especificos de endeudamiento
         let indices_endeudamiento = {
-            razon_de_cobertura_de_interes: (datosFinancieros["Total pasivo"] / datosFinancieros["Deuda a largo plazo, Total"]).toFixed(3),
-            apalancamiento_sobre_activo_total: ((datosFinancieros["Resultado antes de los impuestos a la utilidad"]) / (datosFinancieros["Intereses pagados (Utilidad), Neto"] * -1)).toFixed(3), //Pendiente duda
+            razon_de_cobertura_de_interes: (datosFinancieros["Total pasivo"] / datosFinancieros["Deuda a largo plazo, Total"]).toFixed(2),
+            apalancamiento_sobre_activo_total: ((datosFinancieros["Resultado antes de los impuestos a la utilidad"]) / (datosFinancieros["Intereses pagados (Utilidad), Neto"] * -1)).toFixed(2), //Pendiente duda
         }
 
         //Indices especificos de rotacion
         let indices_rotacion = {
-            rotacion_de_activos_fijos: (datosFinancieros["Ventas Netas"] / datosFinancieros["Total de activos corrientes"]).toFixed(3),
-            rotacion_de_activos_totales: (datosFinancieros["Ventas Netas"] / datosFinancieros["Total activo"]).toFixed(3),
-            rotacion_de_cuentas_por_cobrar: (((cuentasPorCobrarSegundoValor + datosFinancieros["Cuentas por cobrar, Neto"])/2) / (datosFinancieros["Ventas Netas"]/90)).toFixed(3),
-            rotacion_de_inventarios: (((inventarioSegundoValor + datosFinancieros["Inventarios, Neto"])/2) / (datosFinancieros["Costo de venta"]/90)).toFixed(3),
+            rotacion_de_activos_fijos: (datosFinancieros["Ventas Netas"] / datosFinancieros["Total de activos corrientes"]).toFixed(2),
+            rotacion_de_activos_totales: (datosFinancieros["Ventas Netas"] / datosFinancieros["Total activo"]).toFixed(2),
+            rotacion_de_cuentas_por_cobrar: (((cuentasPorCobrarSegundoValor + datosFinancieros["Cuentas por cobrar, Neto"])/2) / (datosFinancieros["Ventas Netas"]/90)).toFixed(2),
+            rotacion_de_inventarios: (((inventarioSegundoValor + datosFinancieros["Inventarios, Neto"])/2) / (datosFinancieros["Costo de venta"]/90)).toFixed(2),
         }
 
         //AHORA CALCULAMOS de forma general
         let indices = {
-            rentabilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(3),
-            endeudamiento: (datosFinancieros["Total de gastos de operación"] / datosFinancieros["Ventas Netas"]).toFixed(3),
-            rotacion: (datosFinancieros["Ventas Netas"] / datosFinancieros["Utilidad bruta"]).toFixed(3),
-            liquidez: (datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]).toFixed(3),
+            rentabilidad: (datosFinancieros["Resultado neto"] / datosFinancieros["Ventas Netas"]).toFixed(2),
+            endeudamiento: (datosFinancieros["Total de gastos de operación"] / datosFinancieros["Ventas Netas"]).toFixed(2),
+            rotacion: (datosFinancieros["Ventas Netas"] / datosFinancieros["Utilidad bruta"]).toFixed(2),
+            liquidez: (datosFinancieros["Utilidad bruta"] / datosFinancieros["Ventas Netas"]).toFixed(2),
             indices_rentabilidad_especificos: indices_rentabilidad,
             indices_liquidez_especificos: indices_liquidez,
             indices_endeudamiento_especificos: indices_endeudamiento,
@@ -125,7 +125,6 @@ function calculaIndicesFinancieros(empresa,html, contadorCalculo){
                 }
             }
         }
-
         reemplazarNaNConCero(indices);
     
     
@@ -135,6 +134,7 @@ function calculaIndicesFinancieros(empresa,html, contadorCalculo){
         //Guardamos en memoria los indices
         localStorage.setItem("empresaConIndices", JSON.stringify(empresasIndicesValor));
 
+        //Comprobamos que este en memoria...
         let memoriaValor = localStorage.getItem("empresaConIndices");
         console.log('memoriaValor: ', memoriaValor);
 
