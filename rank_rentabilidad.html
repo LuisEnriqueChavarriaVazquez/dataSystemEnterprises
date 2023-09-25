@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking de rentabilidad</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <link rel="stylesheet" href="sass/styles.css">
@@ -18,6 +19,9 @@
 <script defer src="js/colorPicker.js"></script>
 <script defer src="js/fontPicker.js"></script>
 <script defer src="js/brilloSepiaPickerConfig.js"></script>
+
+<!--Assets-->
+<script defer src="js/assets/wavesEffect.js"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
@@ -89,15 +93,21 @@
                 <section class="informacionContainer_title">
                     <p>Rankings de rentabilidad</p>
                 </section>
-
+                
+                <div class="container-fluid">
+                    <canvas id="top5_rentabilidad"></canvas>
+                </div>
 
 
             </section>
+       
+                
 
-        </section>
+
 
 
     </section>
+    <script src="js/charts/top5_barras_chart.js"></script>
 
     <!--Carga de pantalla-->
     <div id="loader">
