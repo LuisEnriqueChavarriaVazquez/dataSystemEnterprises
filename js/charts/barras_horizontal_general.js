@@ -15,10 +15,13 @@
 const barras_rentabilidad = document.getElementById("barras_rentabilidad");
 
 var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
+
+const tipoGrafico = labels.length > 7 ? 'line' : 'bar';
+
 const data_barras_rentabilidad = {
   labels: labels,
   datasets: [{
-    axis: 'y',
+    axis: tipoGrafico === 'line' ? 'x' : 'y',
     label: 'índice de rentabilidad',
     data: JSON.parse(localStorage.getItem('rentabilidadEmpresaGraph')),
     fill: true,
@@ -29,21 +32,20 @@ const data_barras_rentabilidad = {
 };
 
 new Chart(barras_rentabilidad, {
-  type: 'bar',
+  type: tipoGrafico,
   data: data_barras_rentabilidad,
   options: {
-    indexAxis: 'y',
+    indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
   }
 });
 
 //BARRAS HORIZONTAL ENDEUDAMIENTO
 const barras_endeudamiento = document.getElementById("barras_endeudamiento");
 
-var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 const data_barras_endeudamiento = {
   labels: labels,
   datasets: [{
-    axis: 'y',
+    axis:tipoGrafico === 'line' ? 'x' : 'y',
     label: 'índice de endeudamiento',
     data: JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')),
     fill: true,
@@ -54,21 +56,20 @@ const data_barras_endeudamiento = {
 };
 
 new Chart(barras_endeudamiento, {
-  type: 'bar',
+  type: tipoGrafico,
   data: data_barras_endeudamiento,
   options: {
-    indexAxis: 'y',
+    indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
   }
 });
 
 //BARRAS HORIZONTAL ROTACION
 const barras_rotacion = document.getElementById("barras_rotacion");
 
-var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 const data_barras_rotacion = {
   labels: labels,
   datasets: [{
-    axis: 'y',
+    axis:tipoGrafico === 'line' ? 'x' : 'y',
     label: 'índice de rotación',
     data: JSON.parse(localStorage.getItem('rotacionEmpresaGraph')),
     fill: true,
@@ -79,21 +80,20 @@ const data_barras_rotacion = {
 };
 
 new Chart(barras_rotacion, {
-  type: 'bar',
+  type:tipoGrafico,
   data: data_barras_rotacion,
   options: {
-    indexAxis: 'y',
+    indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
   }
 });
 
 //BARRAS HORIZONTAL LIQUIDEZ
 const barras_liquidez = document.getElementById("barras_liquidez");
 
-var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
 const data_barras_liquidez = {
   labels: labels,
   datasets: [{
-    axis: 'y',
+    axis: tipoGrafico === 'line' ? 'x' : 'y',
     label: 'índice de liquidez',
     data: JSON.parse(localStorage.getItem('liquidezEmpresaGraph')),
     fill: true,
@@ -104,9 +104,9 @@ const data_barras_liquidez = {
 };
 
 new Chart(barras_liquidez, {
-  type: 'bar',
+  type: tipoGrafico,
   data: data_barras_liquidez,
   options: {
-    indexAxis: 'y',
+    indexAxis: tipoGrafico === 'line' ? 'x' : 'y',
   }
 });
