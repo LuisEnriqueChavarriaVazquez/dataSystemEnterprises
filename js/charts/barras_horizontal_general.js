@@ -12,7 +12,7 @@
     // console.log(JSON.parse(localStorage.getItem('endeudamientoEmpresaGraph')));
 
     var labels = localStorage.getItem('nombreEmpresaGraph').split(",");
-    const tipoGrafico = labels.length > 7 ? 'line' : 'bar';
+    const tipoGrafico = labels.length > 8 ? 'line' : 'bar';
 
 //BARRAS HORIZONTAL RENTABILIDAD
 const barras_rentabilidad = document.getElementById("barras_rentabilidad");

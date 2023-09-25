@@ -38,14 +38,14 @@ $(document).ready(function () {
         .html("<em>" + li.text() + "</em><i></i>")
         .hide()
         .appendTo(select.children("div"));
-      a.slideDown(400, function () {
+      a.slideDown(350, function () {
         setTimeout(function () {
           a.addClass("shown");
           select.children("div").children("span").addClass("hide");
           select
             .find("option:contains(" + li.text() + ")")
             .prop("selected", true);
-        }, 500);
+        }, 200);
       });
       setTimeout(function () {
         if (li.prev().is(":last-child")) {
@@ -59,11 +59,11 @@ $(document).ready(function () {
           li.next().removeClass("afterRemove");
         }, 200);
 
-        li.slideUp(400, function () {
+        li.slideUp(350, function () {
           li.remove();
           select.removeClass("clicked");
         });
-      }, 600);
+      }, 200);
     }
   });
 

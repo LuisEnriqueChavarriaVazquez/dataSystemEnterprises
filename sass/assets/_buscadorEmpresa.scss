@@ -70,7 +70,7 @@ $primary: var(--cl-green-3);
         font-size: 14px;
         min-height: 44px;
         box-shadow: 0 4px 16px 0 rgba(#162a5a, 0.12);
-        transition: box-shadow 0.3s ease;
+        transition: box-shadow 0.2s ease;
         &:hover {
             box-shadow: 0 4px 24px -1px rgba(#162a5a, 0.16);
         }
@@ -90,7 +90,7 @@ $primary: var(--cl-green-3);
                 height: 8px;
                 border-bottom: 8px solid var(--cl-green-3);
                 top: 43%;
-                transition: all 0.3s ease;
+                transition: all 0.2s ease;
             }
             &:before {
                 right: 12px;
@@ -109,7 +109,7 @@ $primary: var(--cl-green-3);
             cursor: pointer;
             top: 8px;
             line-height: 28px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             &.hide {
                 opacity: 0;
                 visibility: hidden;
@@ -170,19 +170,19 @@ $primary: var(--cl-green-3);
             }
             &.notShown {
                 opacity: 0;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.2s ease;
                 &:before {
                     width: 28px;
-                    transition: width 0.45s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.2s;
+                    transition: width 0.25s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.1s;
                 }
                 i {
                     opacity: 0;
-                    transition: all 0.3s ease 0.3s;
+                    transition: all 0.2s ease 0.2s;
                 }
                 em {
                     opacity: 0;
                     transform: translate(-6px, 0);
-                    transition: all 0.4s ease 0.3s;
+                    transition: all 0.2s ease 0.1s;
                 }
                 &.shown {
                     opacity: 1;
@@ -201,20 +201,20 @@ $primary: var(--cl-green-3);
             &.remove {
                 &:before {
                     width: 28px;
-                    transition: width 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s;
+                    transition: width 0.2s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s;
                 }
                 i {
                     opacity: 0;
-                    transition: all 0.3s ease 0s;
+                    transition: all 0.1s ease 0s;
                 }
                 em {
                     opacity: 0;
                     transform: translate(-12px, 0);
-                    transition: all 0.4s ease 0s;
+                    transition: all 0.2s ease 0s;
                 }
                 &.disappear {
                     opacity: 0;
-                    transition: opacity 0.5s ease 0s;
+                    transition: opacity 0.2s ease 0s;
                 }
             }
         }
@@ -236,9 +236,9 @@ $primary: var(--cl-green-3);
         transform-origin: 0 0;
         filter: drop-shadow(0 12px 20px rgba(#162a5a, 0.08));
         transition:
-            all 0.4s ease,
-            transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44),
-            filter 0.3s ease 0.2s;
+            all 0.1s ease,
+            transform 0.1s cubic-bezier(0.87, -0.41, 0.19, 1.44),
+            filter 0.2s ease 0.1s;
         overflow-y: scroll;
         height: 600px;
         li {
@@ -249,11 +249,11 @@ $primary: var(--cl-green-3);
             overflow: hidden;
             position: relative;
             transition:
-                background 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease 0.3s,
-                opacity 0.5s ease 0.3s,
-                border-radius 0.3s ease 0.3s;
+                background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease 0.2s,
+                opacity 0.2s ease 0.2s,
+                border-radius 0.1s ease 0.1s;
             &:first-child {
                 border-radius: 8px 8px 0 0;
                 &:last-child {
@@ -307,8 +307,8 @@ $primary: var(--cl-green-3);
                 transform: scale(0);
                 opacity: 0;
                 transition:
-                    transform 0.35s ease,
-                    opacity 0.4s ease;
+                    transform 0.15s ease,
+                    opacity 0.1s ease;
                 &.show {
                     transform: scale(1);
                     opacity: 1;
