@@ -18,19 +18,34 @@
 <script defer src="js/colorPicker.js"></script>
 <script defer src="js/fontPicker.js"></script>
 <script defer src="js/brilloSepiaPickerConfig.js"></script>
-
-<!--Assets-->
-<script defer src="js/assets/wavesEffect.js"></script>
-
-<!--Icons-->
-<script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
+<!-- <script defer src="js/buscadores/rankingGeneralEmpresa_index.js"></script> -->
+<script defer src="js/buscadores/datosFinancierosEmpresas.js"></script>
 
 <!--External-->
 <script defer src="js/external/utils.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
+<script defer src="js/external/jquery-3.7.0.min.js"></script>
 
 <!--Graficas-->
-<script defer src="js/charts/chart_1.js"></script>
+<script defer src="js/charts/seleccionarTipoGráfico.js"></script>
+<script defer src="js/charts/obtenerDataParaGraficos.js"></script>
+<script defer src="js/charts/a_color_chart.js"></script>
+<script defer src="js/charts/a_chart_reset_zoom.js"></script>
+<script defer src="js/charts/endeudamiento/barras_horizontal_general.js"></script>
+<script defer src="js/charts/endeudamiento/dona_general.js"></script>
+<script defer src="js/charts/endeudamiento/pastel_general.js"></script>
+<script defer src="js/charts/endeudamiento/line_general.js"></script>
+<script defer src="js/charts/endeudamiento/polar_general.js"></script>
+<script defer src="js/charts/endeudamiento/radar_general.js"></script>
+
+<!--Assets-->
+<script defer src="js/assets/wavesEffect.js"></script>
+<script defer src="js/assets/selectorOpcionesTipoCard.js"></script>
+
+<!--Icons-->
+<script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
 
 <body>
 
@@ -91,46 +106,116 @@
 
         <section class="contenedor border-3-right" id="contenidoPrincipal">
 
-            <section class="informacionContainer">
-
+            <section class="informacionContainerExtra">
                 <section class="informacionContainer_title">
-                    <p>Rankings de endeudamiento</p>
+                    <p>Ranking endeudamiento</p>
                 </section>
 
-                <div id="contenedor"></div>
+                <!--Graficas de los indices-->
+                <section class="graficosInformacion">
+                    <section class="container_graphs" id="g_barras">
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_razon_de_cobertura_de_interes"></canvas>
+                        </div>
 
-                <!-- <section class="container_graphs">
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_1"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_2"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_3"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_4"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_5"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_6"></canvas>
-                    </div>
-                    <div class="border-2 shadow-1">
-                        <canvas id="chart_7"></canvas>
-                    </div>
-                </section> -->
+                        <div class="border-2 shadow-1">
+                            <canvas id="barras_apalancamiento_sobre_activo_total"></canvas>
+                        </div>
+                    </section>
 
+                    <section class="container_graphs" id="g_dona">
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_razon_de_cobertura_de_interes"></canvas>
+                        </div>
 
+                        <div class="border-2 shadow-1">
+                            <canvas id="dona_apalancamiento_sobre_activo_total"></canvas>
+                        </div>
+                    </section>
+                    
+                    <section class="container_graphs" id="g_linea">
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_razon_de_cobertura_de_interes"></canvas>
+                        </div>
 
+                        <div class="border-2 shadow-1">
+                            <canvas id="linea_apalancamiento_sobre_activo_total"></canvas>
+                        </div>
+                    </section>
+                    
+                    <section class="container_graphs" id="g_pastel">
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_razon_de_cobertura_de_interes"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="pastel_apalancamiento_sobre_activo_total"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_polar">
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_razon_de_cobertura_de_interes"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="polar_apalancamiento_sobre_activo_total"></canvas>
+                        </div>
+                    </section>
+
+                    <section class="container_graphs" id="g_radar" style="display: grid; grid-template-columns: 1fr;">
+                        <div class="border-2 shadow-1">
+                            <canvas id="radar_endeudamiento_esp"></canvas>
+                        </div>
+                    </section>
+                </section>
+
+                <!--Datos de los indices de las empresas-->
+                <section class="contenedorIndices" id="contenedor">
+
+                </section>
             </section>
 
         </section>
 
+        <!--Botones para personalizar el tipo de gráfica que se ve-->
+        <section class="containerButtonTipoGrafica">
+
+            <div id="select-dropdown" class="closed">
+                <div id="select-default" class="select default">Tipo de gráfico</div>
+                <div class="select option" id="select_barras"><i class="fa-solid fa-chart-bar"></i> &nbsp; Barras</div>
+                <div class="select option" id="select_dona"><i class="fa-solid fa-circle-notch"></i> &nbsp; Dona</div>
+                <div class="select option" id="select_pastel"><i class="fa-solid fa-chart-pie"></i> &nbsp; Pastel</div>
+                <div class="select option" id="select_linea"><i class="fa-solid fa-chart-line"></i> &nbsp; Linea</div>
+                <div class="select option" id="select_polar"><i class="fa-regular fa-circle-dot"></i> &nbsp; Polar</div>
+                <div class="select option" id="select_radar"><i class="fa-solid fa-satellite-dish"></i> &nbsp; Radar
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <a class="btn btnGrid" id="btnGridVista">
+                        <i class="fa-solid fa-border-all"></i> Cuadricula
+                    </a>
+                </div>
+                
+                <div>
+                    <a class="btn btnGrid" id="btnListaVista">
+                        <i class="fa-solid fa-table-list"></i> Lista
+                    </a>
+                </div>
+
+                <div>
+                    <a class="btn btnGrid" id="btnReset">
+                        <i class="fa-solid fa-rotate-right"></i> Reset
+                    </a>
+                </div>
+            </div>
+
+        </section>
 
     </section>
+
 
     <!--Carga de pantalla-->
     <div id="loader">
