@@ -17,24 +17,22 @@
 <script defer src="js/loader.js"></script>
 <script defer src="js/colorPicker.js"></script>
 <script defer src="js/fontPicker.js"></script>
+<script defer src="js/pagination.js"></script>
 <script defer src="js/brilloSepiaPickerConfig.js"></script>
-
-<!--Assets-->
-<script defer src="js/assets/wavesEffect.js"></script>
+<!-- <script defer src="js/convertPDF.js"></script> -->
 
 <!--External-->
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
 <link rel="stylesheet" href="sass/external/mdtoast.min.css">
 <script defer src="js/external/mdtoast.min.js"></script>
-<link rel="stylesheet" href="sass/external/driver.min.css"/>
-<script defer src="js/external/driver.min.js"></script>
-
-<!--Tutoriales-->
-<script defer src="js/tutoriales/index.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 <!--Buscador de empresas-->
-<script defer src="js/buscadores/estilosInputBusquedaEmpresaSola_index.js"></script>
-<script defer src="js/buscadores/buttonBusquedaEmpresa_index.js"></script>
+<script defer src="js/buscadores/estilosInputBusquedaEmpresaSola.js"></script>
+<script defer src="js/buscadores/buttonBusquedaEmpresa.js"></script>
+
+<!--Assets-->
+<script defer src="js/assets/wavesEffect.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -49,17 +47,18 @@
                 <img class="icon" id="iconSchool" src="img/icon.svg">
             </div>
 
+
             <!--Options-->
             <section class="mainContainer-menu-options">
                 <a href="index.html" class="linkOpt">
-                    <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light" id="a1tutorialButton">
+                    <div class="mainContainer-menu-option active-button  border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-house"></i>
                         <p class="titleOption">Inicio</p>
                     </div>
                 </a>
 
                 <a href="rankingGeneral.html" class="linkOpt">
-                    <div class="mainContainer-menu-option border-2 waves-effect waves-light" id="a2tutorialButton">
+                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-ranking-star"></i>
                         <p class="titleOption">Ranking general</p>
                     </div>
@@ -79,12 +78,6 @@
                     </div>
                 </a>
 
-                <a href="empresas.html" class="linkOpt">
-                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
-                        <i class="fa-sharp fa-solid fa-industry"></i>
-                        <p class="titleOption">Empresas</p>
-                    </div>
-                </a>
 
                 <a href="configuracion.html" class="linkOpt">
                     <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
@@ -97,13 +90,6 @@
                     <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-question"></i>
                         <p class="titleOption">Manual</p>
-                    </div>
-                </a>
-
-                <a href="contacto.html" class="linkOpt">
-                    <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
-                        <i class="fa-solid fa-address-book"></i>
-                        <p class="titleOption">Contacto</p>
                     </div>
                 </a>
             </section>
@@ -121,7 +107,7 @@
             <section class="informacionContainer">
 
                 <section class="informacionContainer_title">
-                    <p>Inicio</p>
+                    <p>Datos de empresa</p>
                 </section>
 
                 <!--Buscador de las empresas-->
@@ -129,42 +115,50 @@
                     <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton_index_all">
                         <i class="fa-solid fa-check-double"></i>
                     </div>
-                    <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton_index">
-                        <i class="fa-solid fa-check"></i>
+                    <div class="waves-effect waves-light shadow-1 buttonBrwoser_empresas" id="searchCompanyButton">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <select multiple data-placeholder="Selección de empresas" id="test_index">
+                    <select multiple data-placeholder="Selección de empresas" id="test">
                     </select>
                 </section>
 
-                <!--Listado de empresas seleccionadas-->
-                <section class="containerListCompanies">
-                    <div class="listCompanies">
-
-                        <div class="card-message">
-                            <div class="card-image card-imageInfo border-4" id="index_welcome"></div>
-                            <p class="textMessage">Realice alguna busqueda en la parte superior</p>
-                        </div>
-
+                <section class="containerTables" id="pdfContent">
+                    <!--Informacion de las empresas-->
+                    <div class="card-message">
+                        <div class="card-image card-imageInfo border-4" id="busqueda"></div>
+                        <p class="textMessage">Busque alguna empresa en la barra superior.</p>
                     </div>
                 </section>
-
             </section>
 
         </section>
 
-
+        <!-- <div class="btn" id="convertButton">convertir</div> -->
+        
     </section>
+
+    <!--Pagination-->
+    
+    <div class="pagination" id="pagination">
+        <div class="numbersContainer">
+            <div onclick="paginaAnterior()">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+
+            <div id="paginaActual" onclick=""></div>
+
+
+            <div onclick="paginaSiguiente()">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
 
     <!--Carga de pantalla-->
     <div id="loader">
         <span class="loader"></span>
         <p>Cargando...</p>
     </div>
-
-    <!--Button help-->
-    <a class="btn btnHelp" id="buttonComputerHelp">
-        <i class="fa-regular fa-circle-question"></i> Ayuda
-    </a>
 
 
 </body>
