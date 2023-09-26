@@ -23,6 +23,12 @@
 <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script defer src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link rel="stylesheet" href="sass/external/driver.min.css"/>
+<script defer src="js/external/driver.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!--Tutoriales-->
+<script defer src="js/tutoriales/informacion_liquidez.js"></script>
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
@@ -45,21 +51,21 @@
 
             <!--Options-->
             <section class="mainContainer-menu-options">
-                <a href="informacion.html" class="linkOpt">
+                <a href="informacion.html" class="linkOpt" id="a1tutorialButton">
                     <div class="mainContainer-menu-option active-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-arrow-left"></i>
                         <p class="titleOption">Regresar</p>
                     </div>
                 </a>
 
-                <a href="configuracion.html" class="linkOpt">
+                <a href="configuracion.html" class="linkOpt" id="a2tutorialButton">
                     <div class="mainContainer-menu-option extra-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-gear"></i>
                         <p class="titleOption">Configuracion</p>
                     </div>
                 </a>
 
-                <a href="manual.html" class="linkOpt">
+                <a href="manual.html" class="linkOpt" id="a3tutorialButton">
                     <div class="mainContainer-menu-option extra-button border-3 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-question"></i>
                         <p class="titleOption">Manual</p>
@@ -90,7 +96,7 @@
                                 </a>
                             </li>
                             <li class="tabs-controls__item waves-effect">
-                                <a href="#" class="tabs-controls__link" data-id="2">
+                                <a href="#" class="tabs-controls__link" data-id="2" id="a4tutorialButton">
                                     Razón de liquidez
                               </a>
                             </li>
@@ -202,6 +208,11 @@
         <span class="loader"></span>
         <p>Cargando...</p>
     </div>
+
+    <!--Button help-->
+    <a class="btn btnHelp" id="buttonComputerHelp">
+        <i class="fa-regular fa-circle-question"></i> Ayuda
+    </a>
 
 
 </body>
