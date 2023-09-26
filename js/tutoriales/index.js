@@ -12,7 +12,7 @@ var driver = new Driver({
 //Accedemos al boton de ayuda
 let buttonHelp = document.getElementById('buttonComputerHelp');
 //Boton del menu lateral
-let a12tutorialButton = document.getElementById('a12tutorialButton');
+let closeMenu2 = document.getElementById('closeMenu');
 
 // Define the steps for introduction
 driver.defineSteps([
@@ -20,111 +20,78 @@ driver.defineSteps([
     element: '#a1tutorialButton',
     popover: {
       className: 'first-step-popover-class',
-      title: 'Polilibro',
-      description: 'En esta sección podrá encontrar las unidades temáticas.',
-      position: 'bottom' 
+      title: 'Inicio',
+      description: 'En esta sección podrá elegir la empresa que desea analizar',
+      position: 'right' 
     }
   },
   {
     element: '#a2tutorialButton',
     popover: {
-      title: 'Glosario',
-      description: 'Aquí podra encontrar los conceptos más importantes de cada una de las unidades temáticas.',
-      position: 'bottom'
+      title: 'Ranking general',
+      description: 'En esta sección una vez que haya seleccionado la empresa de su gusto, podrá ver el ranking e índices de empresas.',
+      position: 'right'
     }
   },
   {
-    element: '#inputBrowser_empresas',
+    element: '#a3tutorialButton',
     popover: {
-      title: 'Contacto',
-      description: 'Encuentre toda la información de los docentes, así como su correo electrónico.',
-      position: 'bottom'
+      title: 'Rankings especificos',
+      description: 'En esta otra sección podra ver los diversos índices de forma más específica.',
+      position: 'right'
     }
   },
   {
     element: '#a4tutorialButton',
     popover: {
-      title: 'Manual',
-      description: 'Obtenga acceso al manual de usuario en formato digital y en formato PDF.',
-      position: 'bottom'
+      title: 'Información',
+      description: 'En esta sección podrá encontrar datos sobre cada uno de los índices y calculadoras para cada uno de ellos.',
+      position: 'right'
     }
   },
   {
     element: '#a5tutorialButton',
     popover: {
       title: 'Configuración',
-      description: 'Obtenga acceso a las configuraciones de la página (modo oscuro, modo lectura, configuración de textos, etc.)',
-      position: 'left'
+      description: 'Puede personalizar su experiencia en la plataforma en la sección de configuración.',
+      position: 'right'
     }
   },
   {
     element: '#a6tutorialButton',
     popover: {
-      title: 'Bienvenida',
-      
-      description: 'En esta pestaña encontrará el texto introductorio al sitio web.',
+      title: 'Manual',
+      description: 'En esta pestaña podrá ver con más detalle el manual de usuario.',
       position: 'right'
     }
   },
   {
-    element: '#a7tutorialButton',
-    popover: {
-      title: 'Metodología',
-      description: 'Aquí se describe la metodología empleada.',
-      position: 'bottom'
-    }
-  },
-  {
-    element: '#a8tutorialButton',
-    popover: {
-      title: 'Unidad de competencia',
-      description: 'Se describe la unidad de competencia.',
-      position: 'bottom'
-    }
-  },
-  {
-    element: '#a9tutorialButton',
-    popover: {
-      title: 'Evaluación de los aprendizajes',
-      description: 'Aqui se describre la forma de evaluación de los aprendizajes',
-      position: 'bottom'
-    }
-  },
-  {
-    element: '#a10tutorialButton',
-    popover: {
-      title: 'Requerimientos',
-      description: 'Se describen los requeirmientos necesarios para ejecutar el sitio web o aplicación en su dispositivo',
-      position: 'bottom'
-    }
-  },
-  {
-    element: '#a11tutorialButton',
-    popover: {
-      title: 'Fuentes de consulta',
-      description: 'En este apartado es posible ver las fuentes de consulta del sitio',
-      position: 'left'
-    }
-  },
-  {
-    element: '#a12tutorialButton',
+    element: '#closeMenu',
     onNext: () => {
-        a12tutorialButton.click();
+      closeMenu2.click();
     },
     popover: {
-      title: 'Boton de menu',
-      description: 'Dando click al boton del menú también puede acceder a la opciones anteriormente descritas.',
-      position: 'right'
+      title: 'Menú',
+      description: 'Este botón sirve para ampliar o cerrar el menu.',
+      position: 'top'
     }
   },
   {
-    element: '#mobile-demo',
+    element: '#searchCompanyButton',
     popover: {
-      title: 'Menu lateral',
-      description: 'El menú lateral es una excelente opción en caso de trabajar con dispositivos móviles.',
-      position: 'right'
-    },
+      title: 'Botón de busqueda',
+      description: 'Puede realizar la busqueda de solamente algunas empresas que haya elegido.',
+      position: 'bottom'
+    }
   },
+  {
+    element: '#searchCompanyButton_index_all',
+    popover: {
+      title: 'Botón de busqueda completa',
+      description: 'Puede buscar todas la empresas disponibles hasta el momento.',
+      position: 'bottom'
+    }
+  }
 ]);
 
 //Activamos el tutorial cuando presionamos el boton
