@@ -1,10 +1,10 @@
-.manualContainer{
+.manualContainer {
     display: flex;
     justify-content: left;
     align-items: flex-start;
     flex-direction: column;
     padding: 60px;
-    
+
     position: relative;
 
     height: auto;
@@ -14,33 +14,167 @@
 
     color: var(--clbk-tx);
 
-    div{
+    div {
         //Le restamos al 100% del contenedor 120px de padding por lado
-        width: calc( 100% - 120px);
+        width: calc(100% - 120px);
         height: auto;
         display: grid;
         grid-template-rows: 123px auto;
 
-        .cardText{
+        .cardText {
             width: 100%;
             height: auto;
             display: flex;
             justify-content: flex-start;
             align-items: center;
 
-            p, .card-image{
+            p,
+            .card-image {
                 position: relative;
                 width: 100% !important;
             }
 
-            .card-image{
+            .card-image {
                 height: 400px;
             }
 
-            p{
+            p {
                 display: block;
             }
-
         }
     }
+}
+
+/*Zoom de las fotos*/
+a.fancybox img {
+    width: 500px;
+    background-color: var(--cl-grey-2);
+    box-shadow: 7px 7px 0 var(--cl-grey-3);
+    border-radius: 10px;
+    margin: 20px;
+
+    &:hover{
+        background-color: var(--cl-grey-6);
+        box-shadow: 10px 10px 0 var(--cl-grey-5);
+    }
+}
+
+.fancybox-target {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+
+    margin: 40px;
+}
+
+.fancybox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 0%;
+    max-width: 0%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+
+}
+
+a.fancybox-close {
+    display: block;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    background: var(--clw);
+    color: var(--clbk-tx);
+    border-radius: 10px;
+    text-decoration: none;
+    position: absolute;
+    font-weight: 800;
+    top: -80px;
+    right: 20px;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    background-color: var(--clw);
+    box-shadow: 4px 4px 0 var(--cl-grey-1);
+
+    &:hover{
+        background-color: var(--cl-grey-3);
+        box-shadow: 7px 7px 0 var(--cl-grey-2);
+    }
+}
+
+a.fancybox-close:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: var(--clbk-tx);
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+a.fancybox-close:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: var(--clbk-tx);
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.fancybox-target:target {
+    opacity: 4;
+    top: 0;
+    bottom: 0;
+    transition: all .1s ease-in-out;
+}
+
+.fancybox-target:target img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.fancybox-target:target a.fancybox-close {
+    top: 0;
+}
+
+.fancybox-target:not(:target) {
+    opacity: 0;
+    top: -100000000px; /* Mueve la imagen hacia arriba para ocultarla */
+    bottom: 0; /* Mueve la imagen hacia abajo para ocultarla */
+}
+
+.fancybox-target:not(:target) img {
+    max-height: 0%;
+    max-width: 0%;
+}
+
+.fancybox-target:not(:target) a.fancybox-close {
+    top: -80px; /* Mueve el botón de cierre hacia arriba */
 }
