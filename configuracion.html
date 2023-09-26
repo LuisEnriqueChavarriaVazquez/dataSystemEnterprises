@@ -14,6 +14,12 @@
 <!--External-->
 <link rel="stylesheet" href="sass/external/mdtoast.min.css">
 <script defer src="js/external/mdtoast.min.js"></script>
+<link rel="stylesheet" href="sass/external/driver.min.css"/>
+<script defer src="js/external/driver.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!--Tutoriales-->
+<script defer src="js/tutoriales/configuracion.js"></script>
 
 <!--Scripts para funcionamiento-->
 <script defer src="js/menuLateral.js"></script>
@@ -51,28 +57,28 @@
                     </div>
                 </a>
 
-                <a href="configuracion.html" class="linkOpt">
+                <a href="configuracion.html" class="linkOpt" id="a1tutorialButton">
                     <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-palette"></i>
                         <p class="titleOption">Colores</p>
                     </div>
                 </a>
                 
-                <a href="configuracion_sepia.html" class="linkOpt">
+                <a href="configuracion_sepia.html" class="linkOpt" id="a2tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-eye"></i>
                         <p class="titleOption">Lectura</p>
                     </div>
                 </a>
                 
-                <a href="configuracion_texto.html" class="linkOpt">
+                <a href="configuracion_texto.html" class="linkOpt" id="a3tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-font"></i>
                         <p class="titleOption">Fuentes</p>
                     </div>
                 </a>
                 
-                <a href="configuracion_accesibilidad.html" class="linkOpt">
+                <a href="configuracion_accesibilidad.html" class="linkOpt" id="a4tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-glasses"></i>
                         <p class="titleOption">Accesibilidad</p>
@@ -165,6 +171,11 @@
         <span class="loader"></span>
         <p>Cargando...</p>
     </div>
+
+    <!--Button help-->
+    <a class="btn btnHelp" id="buttonComputerHelp">
+        <i class="fa-regular fa-circle-question"></i> Ayuda
+    </a>
 
 
 </body>

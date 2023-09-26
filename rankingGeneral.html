@@ -25,8 +25,15 @@
 <script defer src="js/external/utils.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
+<script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
+<link rel="stylesheet" href="sass/external/driver.min.css"/>
+<script defer src="js/external/driver.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!--Tutoriales-->
+<script defer src="js/tutoriales/rankingGeneral.js"></script>
 
 <!--Graficas-->
 <script defer src="js/charts/seleccionarTipoGráfico.js"></script>
@@ -60,42 +67,42 @@
 
             <!--Options-->
             <section class="mainContainer-menu-options">
-                <a href="index.html" class="linkOpt">
+                <a href="index.html" class="linkOpt" id="a1tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-house"></i>
                         <p class="titleOption">Inicio</p>
                     </div>
                 </a>
 
-                <a href="rankingGeneral.html" class="linkOpt">
+                <a href="rankingGeneral.html" class="linkOpt" id="a2tutorialButton">
                     <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-ranking-star"></i>
                         <p class="titleOption">Ranking general</p>
                     </div>
                 </a>
 
-                <a href="ranking.html" class="linkOpt">
+                <a href="ranking.html" class="linkOpt" id="a3tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-chart-simple"></i>
                         <p class="titleOption">Rankings</p>
                     </div>
                 </a>
 
-                <a href="informacion.html" class="linkOpt">
+                <a href="informacion.html" class="linkOpt" id="a4tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-circle-info"></i>
                         <p class="titleOption">Información</p>
                     </div>
                 </a>
 
-                <a href="configuracion.html" class="linkOpt">
+                <a href="configuracion.html" class="linkOpt" id="a5tutorialButton">
                     <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-gear"></i>
                         <p class="titleOption">Configuracion</p>
                     </div>
                 </a>
 
-                <a href="manual.html" class="linkOpt">
+                <a href="manual.html" class="linkOpt" id="a6tutorialButton">
                     <div class="mainContainer-menu-option extra-button border-2 waves-effect waves-light">
                         <i class="fa-sharp fa-solid fa-question"></i>
                         <p class="titleOption">Manual</p>
@@ -228,7 +235,7 @@
         <!--Botones para personalizar el tipo de gráfica que se ve-->
         <section class="containerButtonTipoGrafica">
 
-            <div id="select-dropdown" class="closed">
+            <div id="select-dropdown" class="closed" id="a7tutorialButton">
                 <div id="select-default" class="select default">Tipo de gráfico</div>
                 <div class="select option" id="select_barras"><i class="fa-solid fa-chart-bar"></i> &nbsp; Barras</div>
                 <div class="select option" id="select_dona"><i class="fa-solid fa-circle-notch"></i> &nbsp; Dona</div>
@@ -245,7 +252,7 @@
                         <i class="fa-solid fa-border-all"></i> Cuadricula
                     </a>
                 </div>
-                
+
                 <div>
                     <a class="btn btnGrid" id="btnListaVista">
                         <i class="fa-solid fa-table-list"></i> Lista
@@ -269,6 +276,11 @@
         <span class="loader"></span>
         <p>Cargando...</p>
     </div>
+
+    <!--Button help-->
+    <a class="btn btnHelp" id="buttonComputerHelp">
+        <i class="fa-regular fa-circle-question"></i> Ayuda
+    </a>
 
 </body>
 

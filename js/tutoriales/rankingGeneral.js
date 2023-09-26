@@ -12,7 +12,7 @@ var driver = new Driver({
 //Accedemos al boton de ayuda
 let buttonHelp = document.getElementById('buttonComputerHelp');
 //Boton del menu lateral
-let closeMenu2 = document.getElementById('closeMenu');
+let closeMenu3 = document.getElementById('select-default');
 
 // Define the steps for introduction
 driver.defineSteps([
@@ -60,7 +60,7 @@ driver.defineSteps([
   {
     element: '#a6tutorialButton',
     onNext: () => {
-      closeMenu2.click();
+      closeMenu3.click();
     },
     popover: {
       title: 'Manual',
@@ -69,26 +69,34 @@ driver.defineSteps([
     }
   },
   {
-    element: '#closeMenu',
+    element: '#select-default',
     popover: {
-      title: 'Menú',
-      description: 'Este botón sirve para ampliar o cerrar el menu.',
-      position: 'top'
+      title: 'Selector de tipo de gráfico',
+      description: 'Este boton permite hacer una selección del tipo de gráfico deseado',
+      position: 'left'
     }
   },
   {
-    element: '#searchCompanyButton',
+    element: '#btnGridVista',
     popover: {
-      title: 'Botón de busqueda',
-      description: 'Puede realizar la busqueda de solamente algunas empresas que haya elegido.',
+      title: 'Botón de cuadrícula',
+      description: 'Este botón da la posibilidad de ver las gráficas en modo cuadrícula',
       position: 'bottom'
     }
   },
   {
-    element: '#searchCompanyButton_index_all',
+    element: '#btnListaVista',
     popover: {
-      title: 'Botón de busqueda completa',
-      description: 'Puede buscar todas la empresas disponibles hasta el momento.',
+      title: 'Botón de lista',
+      description: 'Con este botón se pueden ver los elementos en modo de lista.',
+      position: 'bottom'
+    }
+  },
+  {
+    element: '#btnReset',
+    popover: {
+      title: 'Botón de reinicio',
+      description: 'Puede reiniciar el zoom de los gráficos con este boton.',
       position: 'bottom'
     }
   }

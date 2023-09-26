@@ -27,6 +27,12 @@
 <script defer src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <script defer src="js/external/jquery-3.7.0.min.js"></script>
+<link rel="stylesheet" href="sass/external/driver.min.css"/>
+<script defer src="js/external/driver.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!--Tutoriales-->
+<script defer src="js/tutoriales/rankingParticular.js"></script>
 
 <!--Graficas-->
 <script defer src="js/charts/seleccionarTipoGráfico.js"></script>
@@ -68,28 +74,28 @@
                     </div>
                 </a>
 
-                <a href="rank_endeudamiento.html" class="linkOpt">
+                <a href="rank_endeudamiento.html" class="linkOpt" id="a1tutorialButton">
                     <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
                         <i class="fa-solid fa-receipt"></i>
                         <p class="titleOption">Endeudamiento</p>
                     </div>
                 </a>
 
-                <a href="rank_liquidez.html" class="linkOpt">
+                <a href="rank_liquidez.html" class="linkOpt" id="a2tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-solid fa-money-bill-1-wave"></i>
                         <p class="titleOption">Liquidez</p>
                     </div>
                 </a>
 
-                <a href="rank_rentabilidad.html" class="linkOpt">
+                <a href="rank_rentabilidad.html" class="linkOpt" id="a3tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-solid fa-money-bill-trend-up"></i>
                         <p class="titleOption">Rentabilidad</p>
                     </div>
                 </a>
 
-                <a href="rank_rotacion.html" class="linkOpt">
+                <a href="rank_rotacion.html" class="linkOpt" id="a4tutorialButton">
                     <div class="mainContainer-menu-option border-2 waves-effect waves-light">
                         <i class="fa-solid fa-money-bill-transfer"></i>
                         <p class="titleOption">Rotación</p>
@@ -227,6 +233,11 @@
         <span class="loader"></span>
         <p>Cargando...</p>
     </div>
+
+    <!--Button help-->
+    <a class="btn btnHelp" id="buttonComputerHelp">
+        <i class="fa-regular fa-circle-question"></i> Ayuda
+    </a>
 
 
 </body>
