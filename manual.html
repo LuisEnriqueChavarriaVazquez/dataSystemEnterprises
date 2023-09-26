@@ -13,6 +13,16 @@
 
 <!--external-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script defer src="js/external/jquery-3.7.0.min.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script defer src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link rel="stylesheet" href="sass/external/driver.min.css"/>
+<script defer src="js/external/driver.min.js"></script>
+<!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+<!--Tutoriales-->
+<script defer src="js/tutoriales/informacion_rentabilidad.js"></script>
 
 <!--Scripts para funcionamiento-->
 <script defer src="js/menuLateral.js"></script>
@@ -24,6 +34,9 @@
 
 <!--Assets-->
 <script defer src="js/assets/wavesEffect.js"></script>
+<script defer src="js/tabsInfo.js"></script>
+<script defer src="js/external/modals.js"></script>
+
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -74,10 +87,35 @@
                     <p>Manual de usuario</p>
                 </section>
 
+                <section class="page">
+                    <section class="tabs-container-controls">
+                        <ul class="tabs-controls">
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link tabs-controls__link--active" data-id="1">
+                                    Índices de rentabilidad
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="2" id="a4tutorialButton">
+                                    Margen de utilidad
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="3">
+                                    Rendimiento sobre activos totales (RAT)
+                                </a>
+                            </li>
+                            <li class="tabs-controls__item waves-effect">
+                                <a href="#" class="tabs-controls__link" data-id="4">
+                                    Rendimiento sobre el capital contable
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
 
                 <section class="manualContainer">
 
-                    <div class="card-tabs border-3 card--current">
+                    <div class="card-tabs border-3 card--current" id="1">
                         <p class="cardTitle border-3-top">ínicio</p>
                         <div class="cardText">
                             <p>
@@ -102,7 +140,7 @@
                         </div>
                     </div>
 
-                    <div class="card-tabs border-3 card--current">
+                    <div class="card-tabs border-3 card--current" id="2">
                         <p class="cardTitle border-3-top">ínicio</p>
                         <div class="cardText">
                             <p>
@@ -119,7 +157,7 @@
                         </div>
                     </div>
 
-                    <div class="card-tabs border-3 card--current">
+                    <div class="card-tabs border-3 card--current" id="3">
                         <p class="cardTitle border-3-top">ínicio</p>
                         <div class="cardText">
                             <p>
