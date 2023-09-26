@@ -62,7 +62,7 @@ a.fancybox img {
 .fancybox-target {
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 1000px !important;
     height: 100vh;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out;
@@ -75,7 +75,7 @@ a.fancybox img {
 .fancybox-target img {
     margin: auto;
     position: absolute;
-    top: 0;
+    top: -20vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -87,7 +87,7 @@ a.fancybox img {
     -moz-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
-
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 a.fancybox-close {
