@@ -42,6 +42,14 @@ driver.defineSteps([
     }
   },
   {
+    element: '#a3_5tutorialButton',
+    popover: {
+      title: 'Punto de equilibrio',
+      description: 'En esta otra sección podra obtener el cálculo del punto de equilibrio de las empresas seleccionadas.',
+      position: 'right'
+    }
+  },
+  {
     element: '#a4tutorialButton',
     popover: {
       title: 'Información',
@@ -70,6 +78,9 @@ driver.defineSteps([
   },
   {
     element: '#closeMenu',
+    onNext: () => {
+      closeMenu2.click();
+    },
     popover: {
       title: 'Menú',
       description: 'Este botón sirve para ampliar o cerrar el menu.',

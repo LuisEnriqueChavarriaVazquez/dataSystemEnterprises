@@ -33,7 +33,8 @@
 
 <!--Graficas-->
 <script defer src="js/charts/a_color_chart.js"></script>
-<script defer src="js/charts/punto_equilibrio.js"></script>
+<script defer src="js/charts/puntoEquilibrio/punto_equilibrio.js"></script>
+<script defer src="js/charts/puntoEquilibrio/punto_equilibrioLinea.js"></script>
 
 <!--Icons-->
 <script defer src="https://kit.fontawesome.com/7769382a1c.js" crossorigin="anonymous"></script>
@@ -140,7 +141,16 @@
                     <p>Ganancia/pérdida para <span id="unidadesVendidas"></span> unidades: $<span id="gananciaPerdida"></span></p>
 
                     <h2>Gráfica</h2>
-                    <canvas id="puntoEquilibrioChart"></canvas>
+                    <section class="container_graphs">
+                        <div class="border-2 shadow-1">
+                            <canvas id="puntoEquilibrioChart"></canvas>
+                        </div>
+
+                        <div class="border-2 shadow-1">
+                            <canvas id="puntoEquilibrioLine"></canvas>
+                        </div>
+                    </section>
+
 
                 </div>
 
