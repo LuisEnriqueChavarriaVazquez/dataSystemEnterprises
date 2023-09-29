@@ -3,8 +3,6 @@ let elements_to_search = document.getElementsByClassName('shown');
 
 //Button para realizar la busqueda
 let searchCompanyButton = document.getElementById('searchCompanyButton');
-let searchCompanyButton_index_all = document.getElementById('searchCompanyButton_index_all');
-
 
 //variables y constantes para la paginacion
 let paginasDeEmpresas=[];
@@ -231,26 +229,6 @@ searchCompanyButton.addEventListener('click', () => {
     
 });
 
-//Procedemos a hacer la busqueda de todos los elementos...
-searchCompanyButton_index_all.addEventListener('click', () => {
-
-    //peticionEmpresa(array_nombres_solos);
-    
-    //CALCULAMOS LOS INDICES FINANCIEROS PARA TODAS LAS EMPRESAS DISPONIBLES
-    traerEstadoResultado(array_nombres_solos);
-    traerBalanceResultado(array_nombres_solos);
-
-    empresasIndicesValor = {}
-
-
-    paginasDeEmpresas = divideEmpresasPagina(array_nombres_solos, empresasPagina);
-    mostrarPagina(0);
-   
-
-});
-
-
-
 
 function renderEmpresasEnPagina(pagina){
     let contenedorDatosEmpresas = document.getElementsByClassName("containerTables");
@@ -334,7 +312,7 @@ function peticionEmpresa(listaEmpresas){
             `;
 
             //Mensaje de listo
-            mdtoast('Busqueda de empresa lista.', { 
+            mdtoast('Empresa encontrada.', { 
                 interaction: false,
                 duration: 1000
             });
