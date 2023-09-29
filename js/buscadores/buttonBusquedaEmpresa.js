@@ -203,6 +203,10 @@ searchCompanyButton.addEventListener('click', () => {
         return textoSinBandera;
     });
 
+    //Cerramos el listado de empresas una vez hecha la busqueda
+    let buttonArrow = document.getElementById('buttonArrow');
+    buttonArrow.click();
+
 
     // CALCULAMOS LOS INDICES FINANCIEROS PARA LAS EMPRESAS QUE EL USUARIO SELECCIONO
     traerEstadoResultado(elementosEncontrados);
@@ -223,9 +227,6 @@ searchCompanyButton.addEventListener('click', () => {
         paginasDeEmpresas = divideEmpresasPagina(elementosEncontrados, empresasPagina);
         mostrarPagina(0);
     }
-
-    
-
     
 });
 
