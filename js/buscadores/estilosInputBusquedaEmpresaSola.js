@@ -165,7 +165,7 @@ fetch(url_nombres_solos)
   });
 
 //////////////////
-//Metemos las opciones de las empresas (nombres en el input)
+//Metemos las opciones de las empresas (Metemos los nombres de empresa en el buscador)
 setTimeout(() => {
   let selectorOpciones = document.getElementById("test");
   let lista_empresa = document.getElementById("lista_empresa");
@@ -173,15 +173,16 @@ setTimeout(() => {
   //console.log(array_balance_sheet);
   //console.log(array_nombres_solos);
 
+  //findCompanyWithFlagEmoji es una función ubicada en el archivo en buscadores/agregarBanderasBuscador.js
   array_nombres_solos.forEach((nombre_empresa) => {
     selectorOpciones.innerHTML += `
-        <option value="${nombre_empresa}">${nombre_empresa}</option>
+        <option value="${nombre_empresa}">${findCompanyWithFlagEmoji(nombre_empresa)}</option>
       `;
   });
 
   array_nombres_solos.forEach((nombre_empresa) => {
     lista_empresa.innerHTML += `
-        <li>${nombre_empresa}</li>
+        <li>${findCompanyWithFlagEmoji(nombre_empresa)}</li>
       `;
   });
 }, 500);

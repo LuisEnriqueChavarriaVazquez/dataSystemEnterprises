@@ -198,7 +198,11 @@ searchCompanyButton.addEventListener('click', () => {
     let elements_to_searchArr = [...elements_to_search];
     //Aqui guardaremos los elementos que el usuarios desee buscar
     let elementosEncontrados = elements_to_searchArr.map(element => {
-        return element.innerText;
+        //Quitamos el icono de bandera al final de la empresa
+        var textoSinBandera = element.innerText;
+        textoSinBandera = textoSinBandera.slice(0, -5);
+        //Retornamos el nombre de la empresa
+        return textoSinBandera;
     });
 
 
