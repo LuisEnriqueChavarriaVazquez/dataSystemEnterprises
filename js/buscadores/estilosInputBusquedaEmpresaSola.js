@@ -175,9 +175,11 @@ setTimeout(() => {
 
   //findCompanyWithFlagEmoji es una función ubicada en el archivo en buscadores/agregarBanderasBuscador.js
   array_nombres_solos.forEach((nombre_empresa) => {
-    selectorOpciones.innerHTML += `
-        <option value="${nombre_empresa}">${findCompanyWithFlagEmoji(nombre_empresa)}</option>
+    if(nombre_empresa.includes('?cid') != true){
+      selectorOpciones.innerHTML += `
+      <option value="${nombre_empresa}">${findCompanyWithFlagEmoji(nombre_empresa)}</option>
       `;
+    } 
   });
 
   array_nombres_solos.forEach((nombre_empresa) => {

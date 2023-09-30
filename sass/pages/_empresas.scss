@@ -1,8 +1,8 @@
-.containerTables{
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center; 
-    flex-direction: column; 
+.containerTables {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 
     position: relative;
 
@@ -12,11 +12,11 @@
     margin-bottom: 30px;
 }
 
-.containerColorTables{
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: center; 
-    flex-direction: column; 
+.containerColorTables {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 
     position: relative;
 
@@ -29,21 +29,20 @@
     background-color: var(--cl-grey-1);
 }
 
-
-#balance_sheet{
-    width: auto; 
-    height: auto; 
+#balance_sheet {
+    width: auto;
+    height: auto;
     margin: 10px 100px;
 }
 
-#income_statement{
-    width: auto; 
-    height: auto; 
+#income_statement {
+    width: auto;
+    height: auto;
     margin: 10px 100px;
 }
 
 /*Pagination*/
-.pagination{
+.pagination {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,16 +56,17 @@
     margin: 0 0 50px 0;
 
     background-color: var(--cl-grey-1);
-    box-shadow: 5px 5px 0px var(--cl-grey-3) ;
+    box-shadow: 5px 5px 0px var(--cl-grey-3);
     padding: 10px 10px;
     border-radius: 5px;
+    z-index: 0;
 
-    .numbersContainer{
+    .numbersContainer {
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
 
-        div{
+        div {
             width: 45px;
             height: 45px;
             background-color: var(--cl-grey-3);
@@ -78,10 +78,241 @@
             justify-content: center;
             align-items: center;
 
-            &:hover{
+            &:hover {
                 background-color: var(--cl-grey-4);
-                box-shadow: 3px 3px 0px var(--cl-grey-5);
+                box-shadow: 3px 3px 0px var(--1);
             }
         }
+    }
+}
+
+//Diseño de los botones para los filtros
+.filtrosContainer {
+    display: none;
+    background-color: var(--cl-green-3);
+    height: calc(100vh - 60px - 94.7px); //60px del padding y 94 del menu
+    width: 32%;
+
+    padding: 20px;
+    border-radius: 0 0 10px 0;
+
+    position: absolute;
+    top: calc(94.7px + 30px);
+
+    overflow-y: scroll;
+    z-index: 1;
+
+    .containerOptionsFilters {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 10px;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+//Estilo de los botones de opciones
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    user-select: none;
+    & > * {
+        margin: 0.5rem 0.5rem;
+    }
+}
+
+.checkbox-group-legend {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--1);
+    text-align: center;
+    line-height: 1.125;
+    margin-bottom: 1.25rem;
+}
+
+.checkbox-input {
+    // Code to hide the input
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    &:checked + .checkbox-tile {
+        border-color: var(--cl-green-5);
+        box-shadow: 0 5px 10px rgba(#000, 0.1);
+        color: var(--cl-green-5);
+        &:before {
+            transform: scale(1);
+            opacity: 1;
+            background-color: var(--cl-green-5);
+            border-color: var(--cl-green-5);
+        }
+
+        .checkbox-icon,
+        .checkbox-label {
+            color: var(--cl-green-5);
+        }
+    }
+
+    &:focus + .checkbox-tile {
+        border-color: var(--cl-green-5);
+        box-shadow:
+            0 5px 10px rgba(#000, 0.1),
+            0 0 0 4px var(--cl-green-5);
+        &:before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+.checkbox-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7.3rem;
+    min-height: 7.3rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--cl-green-1);
+    background-color: var(--clw);
+    box-shadow: 0 5px 10px rgba(#000, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid var(--cl-green-1);
+        background-color: var(--clw);
+        border-radius: 50%;
+        top: 0.25rem;
+        left: 0.25rem;
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.25s ease;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+        background-size: 12px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    &:hover {
+        border-color: var(--cl-green-5);
+        &:before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+.checkbox-icon {
+    transition: 0.375s ease;
+    color: var(--cl-green-5);
+    i {
+        font-size: 20px;
+    }
+}
+
+.checkbox-icon-flag {
+    font-size: 25px;
+}
+
+.checkbox-label {
+    color: var(--cl-green-5);
+    transition: 0.375s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+//Acordeon para los botones de filtros
+/* Core styles/functionality */
+.tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.tab__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+}
+.tab input:checked ~ .tab__content {
+    max-height: 100rem; //Establece la amplitud máxma del acordeon
+    background-color: var(--cl-green-4);
+}
+
+/* Visual styles */
+.accordion {
+    color: var(--cl-green-5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.tab__label,
+.tab__close {
+    display: flex;
+    color: var(--clw-tx);
+    background: var(--cl-green-5);
+    cursor: pointer;
+}
+.tab__label {
+    justify-content: space-between;
+    padding: 1rem;
+}
+.tab__label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transform: rotate(90deg);
+    transition: all 0.35s;
+}
+.tab input:checked + .tab__label::after {
+    transform: rotate(270deg);
+}
+.tab__content p {
+    margin: 0;
+    padding: 1rem;
+}
+.tab__close {
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+.accordion--radio {
+    --cl-green-5: var(--cl-green-3);
+}
+
+/* Small animation */
+.tab input:not(:checked) + .tab__label:hover::after {
+    animation: bounce 0.5s infinite;
+}
+@keyframes bounce {
+    25% {
+        transform: rotate(90deg) translate(0.25rem);
+    }
+    75% {
+        transform: rotate(90deg) translate(-0.25rem);
     }
 }
