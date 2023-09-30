@@ -51,12 +51,12 @@
 
     position: fixed;
     bottom: 0;
-    right: 50%;
+    right: 235px;
     transform: translateX(61%);
     margin: 0 0 50px 0;
 
-    background-color: var(--cl-grey-1);
-    box-shadow: 5px 5px 0px var(--cl-grey-3);
+    background-color: var(--cl-grey-4);
+    box-shadow: 5px 5px 0px var(--cl-grey-5);
     padding: 10px 10px;
     border-radius: 5px;
     z-index: 0;
@@ -64,12 +64,12 @@
     .numbersContainer {
         display: grid;
         grid-auto-flow: column;
-        grid-gap: 10px;
+        grid-gap: 5px;
 
         div {
-            width: 45px;
-            height: 45px;
-            background-color: var(--cl-grey-3);
+            width: 40px;
+            height: 40px;
+            background-color: var(--cl-grey-1);
             border-radius: 4px;
 
             cursor: pointer;
@@ -79,8 +79,8 @@
             align-items: center;
 
             &:hover {
-                background-color: var(--cl-grey-4);
-                box-shadow: 3px 3px 0px var(--1);
+                background-color: var(--clw);
+                box-shadow: 3px 3px 0px var(--cl-grey-1);
             }
         }
     }
@@ -94,7 +94,6 @@
     width: 32%;
 
     padding: 20px;
-    border-radius: 0 0 10px 0;
 
     position: absolute;
     top: calc(94.7px + 30px);

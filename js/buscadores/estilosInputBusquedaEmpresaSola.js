@@ -128,6 +128,7 @@ let url_nombres_solos =
 let array_income = "";
 let array_balance_sheet = "";
 let array_nombres_solos = "";
+let array_nombres_solos_sinOrdenar = "";
 
 //Los siguiente fetch son para jalar los datos de la empresa
 fetch(url_nombre_empresa_income)
