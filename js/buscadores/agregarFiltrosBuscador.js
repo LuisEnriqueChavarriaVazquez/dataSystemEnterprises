@@ -475,24 +475,183 @@ function agruparPorPais(expresionRegular) {
   return elementosConEtiquetas;
 }
 
-// Función para eliminar los textos con la bandera de USA
-function eliminarTextosConBandera(expresionRegular) {
-  // Obtenemos los nombres de empresas
+//Funcion para guardar las empresas originales en memoria
+function guardarOriginalesMemoria(){
   let listaActual = obtenerListaDeEmpresasActual();
-  console.log("listaActual: ", listaActual);
+  let listaOriginal = listaActual.map( element => {
+    return `<li>${element}</li>`
+  });
+  localStorage.setItem('originalLista', listaOriginal);
+}
 
-  // Expresión regular para buscar la bandera
-  const regex = expresionRegular;
+setTimeout(() => {
+  guardarOriginalesMemoria();
+},1000)
 
-  // Filtra los textos y elimina los que tienen la bandera
-  let elementosSinBanderas = listaActual.filter((texto) => !regex.test(texto));
-
-  //Le ponemos la etique li a cada elemento
-  let elementosSinBanderas_arr = elementosSinBanderas.map((elemento) => {
-    return `<li>${elemento}</li>`;
+// Función para eliminar los textos con la bandera de USA
+localStorage.setItem( "expresionRegularQuitar","");
+function eliminarTextosConBandera(expresionRegular, accion) {
+  // Obtenemos los nombres de empresas que no contengan display:none
+  let listaActual = document.getElementById("lista_empresa");
+  let listaActual_nodos = listaActual.childNodes;
+  let listaActual_nodos_arr = [...listaActual_nodos];
+  let listaActual_nodos_outerHtml = "";
+  listaActual_nodos_arr.filter(nodo => {
+    if(nodo != undefined){
+      listaActual_nodos_outerHtml += nodo.outerHTML;
+    }
+  });
+  listaActual_nodos_outerHtml = listaActual_nodos_outerHtml.replace(/undefined/g, '');
+  let listaActual_nodos_outerHtml_arr = listaActual_nodos_outerHtml.split("</li>");
+  let listaActual_nodos_outerHtml_arrfinal = listaActual_nodos_outerHtml_arr.map((elemento) => elemento + "</li>");
+  let listaActual_nodos_sinDisplayNone = listaActual_nodos_outerHtml_arrfinal.filter(empresa => {
+    if(!empresa.includes('display:none')){
+      return empresa;
+    }
   });
 
-  return elementosSinBanderas_arr;
+  //Actualizamos el contenido en memoria con la expresion regular
+  if(localStorage.getItem('expresionRegularQuitar') == null){
+    localStorage.setItem( "expresionRegularQuitar","")
+  }
+
+  function crearExpresionRegularDesdeTexto(texto) {
+    // Usamos una expresión regular para encontrar todas las banderas en el texto original
+    const banderasEnTexto = texto.match(/🇧🇷|🇨🇭|🇪🇸|🇵🇪|🇩🇪|🇦🇷|🇺🇸|🇲🇽|🇨🇱|🇻🇪|🇨🇴|🇷🇺/g);
+  
+    if (banderasEnTexto) {
+      // Usamos map para agregar "+" después de cada bandera y join para combinarlas con "|"
+      const expresionRegular = new RegExp(banderasEnTexto.map(bandera => `${bandera}+`).join('|'), 'g');
+      return expresionRegular;
+    } else {
+      // Si no se encuentran banderas en el texto, retornamos una expresión vacía
+      return new RegExp('', 'g');
+    }
+  }
+
+  function eliminarBandera(texto, bandera) {
+    const regex = new RegExp(`${bandera}`, 'g');
+    const resultado = texto.replace(regex, '');
+    return resultado;
+  }
+
+  let elementosSinBanderas = [];
+  if(accion == "remove"){
+    
+    //Guardamos/agregamos en memoria la nueva bandera
+    localStorage.setItem( 
+      "expresionRegularQuitar",
+      localStorage.getItem('expresionRegularQuitar') + expresionRegular
+    );
+
+    // Llama a la función para obtener la expresión regular
+    const regex = crearExpresionRegularDesdeTexto(localStorage.getItem('expresionRegularQuitar'));
+
+    //Hacemos 4 pasadas porque la expresion regular no es tan eficiente con muchos elementos (Se brinca elementos)
+    elementosSinBanderas = listaActual_nodos_sinDisplayNone.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas2 = elementosSinBanderas.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas3 = elementosSinBanderas2.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas4 = elementosSinBanderas3.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas5 = elementosSinBanderas4.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas6 = elementosSinBanderas5.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    let elementosSinBanderas7 = elementosSinBanderas6.filter(item => {
+      if(!regex.test(item)){
+        return item;
+      }
+    });
+    return elementosSinBanderas7;
+  }else if(accion == "add"){
+
+    //Elegimos la bandera que queremos quitar
+    let textoSinBandera = eliminarBandera(localStorage.getItem('expresionRegularQuitar'), expresionRegular);
+
+    //Guardamos/quitamos en memoria la nueva bandera
+    localStorage.setItem( 
+      "expresionRegularQuitar",
+      textoSinBandera
+    );
+
+    // Llama a la función para obtener la expresión regular
+    const regex = crearExpresionRegularDesdeTexto(localStorage.getItem('expresionRegularQuitar'));
+
+    //Obtenemos la lista original
+    let listaOriginal = localStorage.getItem('originalLista');
+    listaOriginal = listaOriginal.split(',');
+
+    //Si regex no esta vacio
+    if(regex != "/(?:)/g"){
+      console.log('regex: ', regex);
+      //Hacemos 4 pasadas porque la expresion regular no es tan eficiente con muchos elementos (Se brinca elementos)
+      elementosSinBanderas = listaOriginal.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      let elementosSinBanderas2 = elementosSinBanderas.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      let elementosSinBanderas3 = elementosSinBanderas2.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      let elementosSinBanderas4 = elementosSinBanderas3.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      let elementosSinBanderas5 = elementosSinBanderas4.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      let elementosSinBanderas6 = elementosSinBanderas5.filter(item => {
+        if(!regex.test(item)){
+          return item;
+        }
+      });
+      console.log('elementosSinBanderas: ', elementosSinBanderas6);
+      
+      return elementosSinBanderas;
+    }else{
+      console.log('regex: ', regex);
+      if(localStorage.getItem('empresasAgrupadas') == "activo"){
+        //Devuelve la lista por agrupamiento de pais
+        let empresasAgrupadas = localStorage.getItem('contenidoDeEmpresasBuscadorMemoria_agrupadas');
+        return empresasAgrupadas.split(',');
+      }else{
+        //Devuelve la lista desordenada
+        return listaOriginal;
+      }
+    }
+  }
+
 }
 
 /////////////////////////////////////////////////////
@@ -539,375 +698,126 @@ filtro_grupo_pais.addEventListener("click", () => {
       "contenidoDeEmpresasBuscadorMemoria_anterior",
       lista_empresa_actual.innerHTML
     );
+    localStorage.setItem(
+      "contenidoDeEmpresasBuscadorMemoria_agrupadas",
+      empresasAgrupadas
+    );
+    localStorage.setItem(
+      "empresasAgrupadas",
+      "activo"
+    );
     lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
     filtro_grupo_pais_bandera = true;
   } else {
+
     //Actualizamos el menu
     lista_empresa_actual.innerHTML = localStorage.getItem(
       "contenidoDeEmpresasBuscadorMemoria_anterior"
+    );
+    localStorage.setItem(
+      "empresasAgrupadas",
+      "inactivo"
     );
 
     filtro_grupo_pais_bandera = false;
   }
 });
 
-//Boton para quitar la bandera
-filtro_no_eua.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_eua_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇺🇸/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_eua_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_eua_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_mexico.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_mexico_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇲🇽/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_mexico_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_mexico_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_brasil.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_brasil_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇧🇷/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_brasil_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_brasil_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_chile.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_chile_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇨🇱/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_chile_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_chile_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_espana.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_espana_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇪🇸/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_espana_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_espana_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_peru.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_peru_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇵🇪/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_peru_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_peru_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_argentina.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_argentina_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇦🇷/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_argentina_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_argentina_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_venezuela.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_venezuela_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇻🇪/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_venezuela_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_venezuela_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_colombia.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_colombia_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇨🇴/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_colombia_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_colombia_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_rusia.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_rusia_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇷🇺/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_rusia_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_rusia_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_alemania.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_alemania_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇩🇪/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_alemania_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_alemania_bandera = false;
-  }
-});
-
-//Boton para quitar la bandera
-filtro_no_suiza.addEventListener("click", () => {
-  //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
-  //Debe ser obtenido aqui porque se carga de forma asincrona
-  let lista_empresa_actual = document.getElementById("lista_empresa");
-
-  if (filtro_no_suiza_bandera == false) {
-    ///////Agrupamiento por pais
-    let empresasAgrupadas = eliminarTextosConBandera(/🇨🇭/);
-
-    //Actualizamos el contenido
-    localStorage.setItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior",
-      lista_empresa_actual.innerHTML
-    );
-
-    //Actualizamos el contenido
-    lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-
-    filtro_no_suiza_bandera = true;
-  } else {
-    //Actualizamos el menu
-    lista_empresa_actual.innerHTML = localStorage.getItem(
-      "contenidoDeEmpresasBuscadorMemoria_anterior"
-    );
-
-    filtro_no_suiza_bandera = false;
-  }
-});
+////////////////////////////////////////////////////////////////////////////
+//Funcion para quitar a un pais en concreto
+function agregarOnclickBotonQuitarBandera(id_button, emoji_bandera, state_button){
+  //Boton para quitar la bandera
+  id_button.addEventListener("click", () => {
+    //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
+    //Debe ser obtenido aqui porque se carga de forma asincrona
+    let lista_empresa_actual = document.getElementById("lista_empresa");
+    
+    if (state_button == false) {
+      ///////Agrupamiento por pais
+      let empresasAgrupadas = eliminarTextosConBandera(emoji_bandera, "remove");
+      
+      //Actualizamos el contenido
+      lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
+      
+      state_button = true;
+    } else {
+      
+      ///////Agrupamiento por pais
+      let empresasAgrupadas = eliminarTextosConBandera(emoji_bandera, "add");
+      //Actualizamos el contenido
+      lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
+      
+      state_button = false;
+    }
+  });
+}
+
+// Define un arreglo de objetos que contiene la información de cada botón
+const paisesBotones = [
+  {
+    boton: filtro_no_eua,
+    regex: /🇺🇸/,
+    state: filtro_no_eua_bandera
+  },
+  {
+    boton: filtro_no_mexico,
+    regex: /🇲🇽/,
+    state: filtro_no_mexico_bandera
+  },
+  {
+    boton: filtro_no_argentina,
+    regex: /🇦🇷/,
+    state: filtro_no_argentina_bandera
+  },
+  {
+    boton: filtro_no_brasil,
+    regex: /🇧🇷/,
+    state: filtro_no_brasil_bandera
+  },
+  {
+    boton: filtro_no_espana,
+    regex: /🇪🇸/,
+    state: filtro_no_espana_bandera
+  },
+  {
+    boton: filtro_no_colombia,
+    regex: /🇨🇴/,
+    state: filtro_no_colombia_bandera
+  },
+  {
+    boton: filtro_no_suiza,
+    regex: /🇨🇭/,
+    state: filtro_no_suiza_bandera
+  },
+  {
+    boton: filtro_no_chile,
+    regex: /🇨🇱/,
+    state: filtro_no_chile_bandera
+  },
+  {
+    boton: filtro_no_venezuela,
+    regex: /🇻🇪/,
+    state: filtro_no_venezuela_bandera
+  },
+  {
+    boton: filtro_no_peru,
+    regex: /🇵🇪/,
+    state: filtro_no_peru_bandera
+  },
+  {
+    boton: filtro_no_rusia,
+    regex: /🇷🇺/,
+    state: filtro_no_rusia_bandera
+  },
+  {
+    boton: filtro_no_alemania,
+    regex: /🇩🇪/,
+    state: filtro_no_alemania_bandera
+  },
+];
+
+//Aplicamos el evento onclick a cada boton
+paisesBotones.forEach(pais => {
+  agregarOnclickBotonQuitarBandera(pais.boton, pais.regex, pais.state);
+})
