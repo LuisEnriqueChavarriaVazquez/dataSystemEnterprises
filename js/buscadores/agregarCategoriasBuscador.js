@@ -2117,12 +2117,18 @@ function asignarClicksCategorias(button, categoria, bandera) {
       });
       lista_empresa.innerHTML = textoEmpresa;
 
+      mdtoast("Empresas agrupadas por categoría", {
+        interaction: false,
+        duration: 1000,
+      });
+
       button.setAttribute("state", "true");
       bandera = true;
     } else {
       let empresaOriginal = localStorage.getItem("originalLista");
       empresaOriginal = empresaOriginal.replaceAll(/,/g, '');
       lista_empresa.innerHTML = empresaOriginal;
+
       button.setAttribute("state", "false");
       bandera = false;
     }

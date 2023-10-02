@@ -771,6 +771,11 @@ filtro_grupo_pais.addEventListener("click", () => {
     localStorage.setItem("empresasAgrupadas", "activo");
     lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
+    mdtoast("Empresas agrupadas por país", {
+      interaction: false,
+      duration: 1000,
+    });
+
     filtro_grupo_pais.setAttribute('state', 'true');
     filtro_grupo_pais_bandera = true;
   } else {
@@ -779,6 +784,11 @@ filtro_grupo_pais.addEventListener("click", () => {
       "contenidoDeEmpresasBuscadorMemoria_anterior"
     );
     localStorage.setItem("empresasAgrupadas", "inactivo");
+
+    mdtoast("Empresas agrupadas por país desactivado", {
+      interaction: false,
+      duration: 1000,
+    });
 
     filtro_grupo_pais.setAttribute('state', 'false');
     filtro_grupo_pais_bandera = false;
@@ -805,6 +815,11 @@ function agregarOnclickBotonQuitarBandera(
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
+      mdtoast("País ocultado", {
+        interaction: false,
+        duration: 1000,
+      });
+
       id_button.setAttribute('state', 'true');
       state_button = true;
     } else {
@@ -812,6 +827,11 @@ function agregarOnclickBotonQuitarBandera(
       let empresasAgrupadas = eliminarTextosConBandera(emoji_bandera, "add");
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
+
+      mdtoast("País mostrado", {
+        interaction: false,
+        duration: 1000,
+      });
 
       id_button.setAttribute('state', 'false');
       state_button = false;

@@ -154,3 +154,38 @@ a.fancybox-close {
     margin: 20px;
     right: 0;
 }
+
+
+//Estilos para el globo de la ventana de ayuda
+#driver-popover-item{
+    background-color: var(--clw) !important;
+    box-shadow: 8px 8px 0 var(--cl-grey-2) !important;
+
+    &:hover{
+        background-color: var(--clw) !important;
+        box-shadow: 12px 12px 0 var(--cl-grey-3) !important;
+    }
+}
+
+.driver-popover-title,
+.driver-popover-description{
+    font-family: var(--fuente_text) !important;
+}
+
+.driver-next-btn, .driver-prev-btn, .driver-close-btn{
+    padding: 10px 15px !important;
+    border-radius: 0.5rem !important;
+    text-decoration: none !important;
+    border: none !important;
+    font-family: var(--fuente_text) !important;
+    margin-top: 10px !important;
+
+    background-color: var(--cl-grey-1) !important;
+    box-shadow: 3px 3px 0 var(--cl-grey-2) !important;
+    cursor: pointer !important;
+
+    &:hover{
+        background-color: var(--cl-grey-1) !important;
+        box-shadow: 5px 5px 0 var(--cl-grey-3) !important;
+    }
+}
