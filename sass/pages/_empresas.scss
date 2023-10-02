@@ -9,7 +9,15 @@
     height: auto;
     width: 100%;
 
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .containerTables {
+        width: calc(100vw - 68.2833px) !important;
+    
+        margin-bottom: 30px;
+    }
 }
 
 .containerColorTables {
@@ -21,12 +29,24 @@
     position: relative;
 
     height: auto;
-    width: 65%;
+    width: calc(100vw - 320px - 60px);
 
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
     background-color: var(--cl-grey-1);
+}
+
+@media screen and (max-width: 1000px) {
+    .containerColorTables {
+        height: auto;
+        width: 65%;
+    
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: var(--cl-grey-1);
+    }
 }
 
 #balance_sheet {

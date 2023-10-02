@@ -1,20 +1,42 @@
 /* Estilo para la tabla principal */
+table{
+    width: 800px;
+}
+
 table.genTbl {
-    width: 1000px;
+    width: 800px;
     border-collapse: collapse;
+}
+
+@media screen and (max-width: 1000px) {
+
+    table{
+        width: 800px;
+    }
+
+    table.genTbl {
+        width: 800px !important;
+        border-collapse: collapse;
+    }
+
+}
+
+.income_statement,
+.balance_sheet{
+    width: 800px;
 }
 
 
 //Ajuste de las celdas para las tablas
 .openTr, .child, tr{
-    width: 1000px;
+    width: 800px;
     display: grid;
     grid-template-columns: 3fr .5fr .5fr .5fr .5fr;
     grid-template-rows: auto;
 }
 
 #header_row{
-    width: 1000px;
+    width: 800px;
     display: grid;
     grid-template-columns: 3fr .5fr .5fr .5fr .5fr;
     grid-template-rows: auto;
@@ -22,8 +44,16 @@ table.genTbl {
 
 /* Estilo para los encabezados de columna */
 th {
-    background-color: #f2f2f2;
+    margin-top: 10px;
+    background-color: var(--cl-green-4) !important;
+    color: var(--clw-tx);
     padding: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px 10px 0 0;
 }
 
 /* Estilo para las celdas de datos */
@@ -33,17 +63,18 @@ td {
 
 /* Estilo para las celdas de datos con fondo gris claro */
 tbody td {
-    background-color: #f9f9f9;
+    background-color: var(--clw);
+    color: var(--clbk-tx);
 }
 
 /* Estilo para las filas alternas en tono más claro */
 tbody tr:nth-child(odd) td {
-    background-color: #f2f2f2;
+    background-color: var(--cl-grey-1);
 }
 
 /* Estilo para el encabezado de fila */
 #header_row th {
-    background-color: #e0e0e0;
+    background-color: var(--cl-grey-2);
 }
 
 /* Estilo para las filas desplegables (con subtablas) */
@@ -59,20 +90,20 @@ tr.pointer {
 /* Estilo para las subtablas */
 table.reportTbl {
     border-collapse: collapse;
-    width: 1000px !important;
+    width: 800px !important;
 }
 
 /* Estilo para las filas de las subtablas */
 .genTbl.reportTbl tr {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--cl-grey-3);
 }
 
 /* Estilo para el fondo gris claro de las subtablas */
 .genTbl.reportTbl tr:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: var(--cl-grey-1);
 }
 
 /* Estilo para el fondo gris más claro de las subtablas */
 .genTbl.reportTbl tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--cl-grey-2);
 }

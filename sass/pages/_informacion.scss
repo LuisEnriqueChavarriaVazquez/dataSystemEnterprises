@@ -22,6 +22,18 @@
             font-family: var(--fuente_title);
         }
     }
+
+    @media screen and (max-width: 1000px) {
+        .informacionContainer_title{
+            padding-left: 10px;
+            
+            p{
+                border-radius: 0px !important;
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+    }
 }
 
 .informacionContainerExtra{

@@ -11,6 +11,16 @@
     grid-template-columns: 0.1fr 1.3fr;
 }
 
+@media screen and (max-width: 1000px) {
+    .mainContainer {
+        grid-template-columns: 0.25fr 1fr;
+    }
+    
+    .mainContainer-close {
+        grid-template-columns: 0.1fr 1.3fr;
+    }
+}
+
 .mainContainerStyle {
     display: grid;
     grid-template-rows: auto;
@@ -29,10 +39,23 @@
     overflow-x: scroll;
 }
 
+@media screen and (max-width: 1000px) {
+    .mainContainerStyle {
+        padding: 0px !important;
+        border-radius: 0 !important;
+    }
+
+    #mainContainerElement{
+        border-radius: 0 !important;
+    }
+    
+}
+
+
 //
 /*Contenedores para el listado de empresas seleccionado*/
 
-.containerListCompanies{
+.containerListCompanies {
     width: 100%;
     height: auto;
 
@@ -49,7 +72,7 @@
     padding: 10px;
 }
 
-.companyItem{
+.companyItem {
     background-color: var(--cl-grey-2);
     border-radius: 10px;
     padding: 3px 4px;
