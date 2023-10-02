@@ -1241,11 +1241,6 @@ let empresasPorCategorias = {
       categoria: "Alimentos y bebidas",
     },
     {
-      name: "nike",
-      country: "americas",
-      categoria: "Alimentos y bebidas",
-    },
-    {
       name: "procter-gamble",
       country: "americas",
       categoria: "Alimentos y bebidas",
@@ -1511,6 +1506,11 @@ let empresasPorCategorias = {
   Minoristas: [
     {
       name: "wal-mart-stores",
+      country: "americas",
+      categoria: "Minoristas",
+    },
+    {
+      name: "nike",
       country: "americas",
       categoria: "Minoristas",
     },
