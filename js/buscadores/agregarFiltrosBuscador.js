@@ -83,7 +83,7 @@ function agregarContenidoMenuFiltros() {
         </div>
         <div class="tab">
         <input type="radio" name="accordion-1" id="cb2">
-        <label for="cb2" class="tab__label">Ocultar países</label>
+        <label for="cb2" class="tab__label">Filtro por nación</label>
         <div class="tab__content">
             
             <section class="containerOptionsFilters">
@@ -226,13 +226,13 @@ function agregarContenidoMenuFiltros() {
 
         <div class="tab">
             <input type="radio" name="accordion-1" id="cb3">
-            <label for="cb3" class="tab__label">Tipo de empresa</label>
+            <label for="cb3" class="tab__label">Filtro por categoría</label>
             <div class="tab__content">
 
                 <section class="containerOptionsFilters">
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_tech"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_tech"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-microchip"></i>
@@ -243,7 +243,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_finanzas"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_finanzas"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-landmark"></i>
@@ -254,7 +254,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_alimentos"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_alimentos"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-utensils"></i>
@@ -265,7 +265,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_salud"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_salud"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-staff-snake"></i>
@@ -276,7 +276,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_manufactura"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_manufactura"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-industry"></i>
@@ -287,7 +287,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_minoristas"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_minoristas"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-store"></i>
@@ -298,7 +298,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_energia"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_energia"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-bolt"></i>
@@ -309,7 +309,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_comunicacion"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_comunicacion"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-satellite-dish"></i>
@@ -320,7 +320,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_transporte"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_transporte"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-truck-front"></i>
@@ -331,7 +331,7 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" id="filtro_solo_construccion"/>
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_construccion"/>
                             <span class="checkbox-tile">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-building"></i>
@@ -340,6 +340,61 @@ function agregarContenidoMenuFiltros() {
                             </span>
                         </label>
                     </div>
+                    <div class="checkbox">
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_seguros"/>
+                            <span class="checkbox-tile">
+                                <span class="checkbox-icon checkbox-icon-flag">
+                                    <i class="fa-solid fa-shield"></i>
+                                </span>
+                                <span class="checkbox-label">Seguros</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                      <label class="checkbox-wrapper">
+                          <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_agricultura"/>
+                          <span class="checkbox-tile">
+                              <span class="checkbox-icon checkbox-icon-flag">
+                                 <i class="fa-solid fa-seedling"></i>
+                              </span>
+                              <span class="checkbox-label">Agricultura</span>
+                          </span>
+                      </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_educacion"/>
+                        <span class="checkbox-tile">
+                            <span class="checkbox-icon checkbox-icon-flag">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </span>
+                            <span class="checkbox-label">Educación</span>
+                        </span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_turismo"/>
+                        <span class="checkbox-tile">
+                            <span class="checkbox-icon checkbox-icon-flag">
+                                <i class="fa-solid fa-umbrella-beach"></i>
+                            </span>
+                            <span class="checkbox-label">Turismo y viajes</span>
+                        </span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="checkbox-wrapper">
+                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_moda"/>
+                        <span class="checkbox-tile">
+                            <span class="checkbox-icon checkbox-icon-flag">
+                               <i class="fa-solid fa-shirt"></i>
+                            </span>
+                            <span class="checkbox-label">Moda y vestimenta</span>
+                        </span>
+                    </label>
+                  </div>
                 </section>
                 
             </div>
@@ -374,23 +429,6 @@ let filtro_no_peru = document.getElementById("filtro_no_peru");
 let filtro_no_rusia = document.getElementById("filtro_no_rusia");
 let filtro_no_alemania = document.getElementById("filtro_no_alemania");
 
-let filtro_solo_tech = document.getElementById("filtro_solo_tech");
-let filtro_solo_finanzas = document.getElementById("filtro_solo_finanzas");
-let filtro_solo_alimentos = document.getElementById("filtro_solo_alimentos");
-let filtro_solo_salud = document.getElementById("filtro_solo_salud");
-let filtro_solo_manufactura = document.getElementById(
-  "filtro_solo_manufactura"
-);
-let filtro_solo_minoristas = document.getElementById("filtro_solo_minoristas");
-let filtro_solo_energia = document.getElementById("filtro_solo_energia");
-let filtro_solo_comunicacion = document.getElementById(
-  "filtro_solo_comunicacion"
-);
-let filtro_solo_transporte = document.getElementById("filtro_solo_transporte");
-let filtro_solo_construccion = document.getElementById(
-  "filtro_solo_construccion"
-);
-
 //Variable para evitar que se presione dos veces el boton
 let filtro_alfabeto_descendente_bandera = false;
 let filtro_grupo_pais_bandera = false;
@@ -406,16 +444,6 @@ let filtro_no_venezuela_bandera = false;
 let filtro_no_peru_bandera = false;
 let filtro_no_rusia_bandera = false;
 let filtro_no_alemania_bandera = false;
-let filtro_solo_tech_bandera = false;
-let filtro_solo_finanzas_bandera = false;
-let filtro_solo_alimentos_bandera = false;
-let filtro_solo_salud_bandera = false;
-let filtro_solo_manufactura_bandera = false;
-let filtro_solo_minoristas_bandera = false;
-let filtro_solo_energia_bandera = false;
-let filtro_solo_comunicacion_bandera = false;
-let filtro_solo_transporte_bandera = false;
-let filtro_solo_construccion_bandera = false;
 
 //Funciones para los botones de filtros
 function obtenerListaDeEmpresasActual() {
@@ -476,182 +504,194 @@ function agruparPorPais(expresionRegular) {
 }
 
 //Funcion para guardar las empresas originales en memoria
-function guardarOriginalesMemoria(){
+function guardarOriginalesMemoria() {
   let listaActual = obtenerListaDeEmpresasActual();
-  let listaOriginal = listaActual.map( element => {
-    return `<li>${element}</li>`
+  let listaOriginal = listaActual.map((element) => {
+    return `<li>${element}</li>`;
   });
-  localStorage.setItem('originalLista', listaOriginal);
+  localStorage.setItem("originalLista", listaOriginal);
 }
 
 setTimeout(() => {
   guardarOriginalesMemoria();
-},1000)
+}, 1000);
 
 // Función para eliminar los textos con la bandera de USA
-localStorage.setItem( "expresionRegularQuitar","");
+localStorage.setItem("expresionRegularQuitar", "");
 function eliminarTextosConBandera(expresionRegular, accion) {
   // Obtenemos los nombres de empresas que no contengan display:none
   let listaActual = document.getElementById("lista_empresa");
   let listaActual_nodos = listaActual.childNodes;
   let listaActual_nodos_arr = [...listaActual_nodos];
   let listaActual_nodos_outerHtml = "";
-  listaActual_nodos_arr.filter(nodo => {
-    if(nodo != undefined){
+  listaActual_nodos_arr.filter((nodo) => {
+    if (nodo != undefined) {
       listaActual_nodos_outerHtml += nodo.outerHTML;
     }
   });
-  listaActual_nodos_outerHtml = listaActual_nodos_outerHtml.replace(/undefined/g, '');
-  let listaActual_nodos_outerHtml_arr = listaActual_nodos_outerHtml.split("</li>");
-  let listaActual_nodos_outerHtml_arrfinal = listaActual_nodos_outerHtml_arr.map((elemento) => elemento + "</li>");
-  let listaActual_nodos_sinDisplayNone = listaActual_nodos_outerHtml_arrfinal.filter(empresa => {
-    if(!empresa.includes('display:none')){
-      return empresa;
-    }
-  });
+  listaActual_nodos_outerHtml = listaActual_nodos_outerHtml.replace(
+    /undefined/g,
+    ""
+  );
+  let listaActual_nodos_outerHtml_arr =
+    listaActual_nodos_outerHtml.split("</li>");
+  let listaActual_nodos_outerHtml_arrfinal =
+    listaActual_nodos_outerHtml_arr.map((elemento) => elemento + "</li>");
+  let listaActual_nodos_sinDisplayNone =
+    listaActual_nodos_outerHtml_arrfinal.filter((empresa) => {
+      if (!empresa.includes("display:none")) {
+        return empresa;
+      }
+    });
 
   //Actualizamos el contenido en memoria con la expresion regular
-  if(localStorage.getItem('expresionRegularQuitar') == null){
-    localStorage.setItem( "expresionRegularQuitar","")
+  if (localStorage.getItem("expresionRegularQuitar") == null) {
+    localStorage.setItem("expresionRegularQuitar", "");
   }
 
   function crearExpresionRegularDesdeTexto(texto) {
     // Usamos una expresión regular para encontrar todas las banderas en el texto original
     const banderasEnTexto = texto.match(/🇧🇷|🇨🇭|🇪🇸|🇵🇪|🇩🇪|🇦🇷|🇺🇸|🇲🇽|🇨🇱|🇻🇪|🇨🇴|🇷🇺/g);
-  
+
     if (banderasEnTexto) {
       // Usamos map para agregar "+" después de cada bandera y join para combinarlas con "|"
-      const expresionRegular = new RegExp(banderasEnTexto.map(bandera => `${bandera}+`).join('|'), 'g');
+      const expresionRegular = new RegExp(
+        banderasEnTexto.map((bandera) => `${bandera}+`).join("|"),
+        "g"
+      );
       return expresionRegular;
     } else {
       // Si no se encuentran banderas en el texto, retornamos una expresión vacía
-      return new RegExp('', 'g');
+      return new RegExp("", "g");
     }
   }
 
   function eliminarBandera(texto, bandera) {
-    const regex = new RegExp(`${bandera}`, 'g');
-    const resultado = texto.replace(regex, '');
+    const regex = new RegExp(`${bandera}`, "g");
+    const resultado = texto.replace(regex, "");
     return resultado;
   }
 
   let elementosSinBanderas = [];
-  if(accion == "remove"){
-    
+  if (accion == "remove") {
     //Guardamos/agregamos en memoria la nueva bandera
-    localStorage.setItem( 
+    localStorage.setItem(
       "expresionRegularQuitar",
-      localStorage.getItem('expresionRegularQuitar') + expresionRegular
+      localStorage.getItem("expresionRegularQuitar") + expresionRegular
     );
 
     // Llama a la función para obtener la expresión regular
-    const regex = crearExpresionRegularDesdeTexto(localStorage.getItem('expresionRegularQuitar'));
+    const regex = crearExpresionRegularDesdeTexto(
+      localStorage.getItem("expresionRegularQuitar")
+    );
 
     //Hacemos 4 pasadas porque la expresion regular no es tan eficiente con muchos elementos (Se brinca elementos)
-    elementosSinBanderas = listaActual_nodos_sinDisplayNone.filter(item => {
-      if(!regex.test(item)){
+    elementosSinBanderas = listaActual_nodos_sinDisplayNone.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas2 = elementosSinBanderas.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas2 = elementosSinBanderas.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas3 = elementosSinBanderas2.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas3 = elementosSinBanderas2.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas4 = elementosSinBanderas3.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas4 = elementosSinBanderas3.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas5 = elementosSinBanderas4.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas5 = elementosSinBanderas4.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas6 = elementosSinBanderas5.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas6 = elementosSinBanderas5.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
-    let elementosSinBanderas7 = elementosSinBanderas6.filter(item => {
-      if(!regex.test(item)){
+    let elementosSinBanderas7 = elementosSinBanderas6.filter((item) => {
+      if (!regex.test(item)) {
         return item;
       }
     });
     return elementosSinBanderas7;
-  }else if(accion == "add"){
-
+  } else if (accion == "add") {
     //Elegimos la bandera que queremos quitar
-    let textoSinBandera = eliminarBandera(localStorage.getItem('expresionRegularQuitar'), expresionRegular);
-
-    //Guardamos/quitamos en memoria la nueva bandera
-    localStorage.setItem( 
-      "expresionRegularQuitar",
-      textoSinBandera
+    let textoSinBandera = eliminarBandera(
+      localStorage.getItem("expresionRegularQuitar"),
+      expresionRegular
     );
 
+    //Guardamos/quitamos en memoria la nueva bandera
+    localStorage.setItem("expresionRegularQuitar", textoSinBandera);
+
     // Llama a la función para obtener la expresión regular
-    const regex = crearExpresionRegularDesdeTexto(localStorage.getItem('expresionRegularQuitar'));
+    const regex = crearExpresionRegularDesdeTexto(
+      localStorage.getItem("expresionRegularQuitar")
+    );
 
     //Obtenemos la lista original
-    let listaOriginal = localStorage.getItem('originalLista');
-    listaOriginal = listaOriginal.split(',');
+    let listaOriginal = localStorage.getItem("originalLista");
+    listaOriginal = listaOriginal.split(",");
 
     //Si regex no esta vacio
-    if(regex != "/(?:)/g"){
-      console.log('regex: ', regex);
+    if (regex != "/(?:)/g") {
+      console.log("regex: ", regex);
       //Hacemos 4 pasadas porque la expresion regular no es tan eficiente con muchos elementos (Se brinca elementos)
-      elementosSinBanderas = listaOriginal.filter(item => {
-        if(!regex.test(item)){
+      elementosSinBanderas = listaOriginal.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      let elementosSinBanderas2 = elementosSinBanderas.filter(item => {
-        if(!regex.test(item)){
+      let elementosSinBanderas2 = elementosSinBanderas.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      let elementosSinBanderas3 = elementosSinBanderas2.filter(item => {
-        if(!regex.test(item)){
+      let elementosSinBanderas3 = elementosSinBanderas2.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      let elementosSinBanderas4 = elementosSinBanderas3.filter(item => {
-        if(!regex.test(item)){
+      let elementosSinBanderas4 = elementosSinBanderas3.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      let elementosSinBanderas5 = elementosSinBanderas4.filter(item => {
-        if(!regex.test(item)){
+      let elementosSinBanderas5 = elementosSinBanderas4.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      let elementosSinBanderas6 = elementosSinBanderas5.filter(item => {
-        if(!regex.test(item)){
+      let elementosSinBanderas6 = elementosSinBanderas5.filter((item) => {
+        if (!regex.test(item)) {
           return item;
         }
       });
-      console.log('elementosSinBanderas: ', elementosSinBanderas6);
-      
+      console.log("elementosSinBanderas: ", elementosSinBanderas6);
+
       return elementosSinBanderas;
-    }else{
-      console.log('regex: ', regex);
-      if(localStorage.getItem('empresasAgrupadas') == "activo"){
+    } else {
+      console.log("regex: ", regex);
+      if (localStorage.getItem("empresasAgrupadas") == "activo") {
         //Devuelve la lista por agrupamiento de pais
-        let empresasAgrupadas = localStorage.getItem('contenidoDeEmpresasBuscadorMemoria_agrupadas');
-        return empresasAgrupadas.split(',');
-      }else{
+        let empresasAgrupadas = localStorage.getItem(
+          "contenidoDeEmpresasBuscadorMemoria_agrupadas"
+        );
+        return empresasAgrupadas.split(",");
+      } else {
         //Devuelve la lista desordenada
         return listaOriginal;
       }
     }
   }
-
 }
 
 /////////////////////////////////////////////////////
@@ -702,23 +742,16 @@ filtro_grupo_pais.addEventListener("click", () => {
       "contenidoDeEmpresasBuscadorMemoria_agrupadas",
       empresasAgrupadas
     );
-    localStorage.setItem(
-      "empresasAgrupadas",
-      "activo"
-    );
+    localStorage.setItem("empresasAgrupadas", "activo");
     lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
     filtro_grupo_pais_bandera = true;
   } else {
-
     //Actualizamos el menu
     lista_empresa_actual.innerHTML = localStorage.getItem(
       "contenidoDeEmpresasBuscadorMemoria_anterior"
     );
-    localStorage.setItem(
-      "empresasAgrupadas",
-      "inactivo"
-    );
+    localStorage.setItem("empresasAgrupadas", "inactivo");
 
     filtro_grupo_pais_bandera = false;
   }
@@ -726,28 +759,31 @@ filtro_grupo_pais.addEventListener("click", () => {
 
 ////////////////////////////////////////////////////////////////////////////
 //Funcion para quitar a un pais en concreto
-function agregarOnclickBotonQuitarBandera(id_button, emoji_bandera, state_button){
+function agregarOnclickBotonQuitarBandera(
+  id_button,
+  emoji_bandera,
+  state_button
+) {
   //Boton para quitar la bandera
   id_button.addEventListener("click", () => {
     //Obtenemos el contenedor de empresas listadas (Es el contenedor del buscador)
     //Debe ser obtenido aqui porque se carga de forma asincrona
     let lista_empresa_actual = document.getElementById("lista_empresa");
-    
+
     if (state_button == false) {
       ///////Agrupamiento por pais
       let empresasAgrupadas = eliminarTextosConBandera(emoji_bandera, "remove");
-      
+
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-      
+
       state_button = true;
     } else {
-      
       ///////Agrupamiento por pais
       let empresasAgrupadas = eliminarTextosConBandera(emoji_bandera, "add");
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
-      
+
       state_button = false;
     }
   });
@@ -758,66 +794,66 @@ const paisesBotones = [
   {
     boton: filtro_no_eua,
     regex: /🇺🇸/,
-    state: filtro_no_eua_bandera
+    state: filtro_no_eua_bandera,
   },
   {
     boton: filtro_no_mexico,
     regex: /🇲🇽/,
-    state: filtro_no_mexico_bandera
+    state: filtro_no_mexico_bandera,
   },
   {
     boton: filtro_no_argentina,
     regex: /🇦🇷/,
-    state: filtro_no_argentina_bandera
+    state: filtro_no_argentina_bandera,
   },
   {
     boton: filtro_no_brasil,
     regex: /🇧🇷/,
-    state: filtro_no_brasil_bandera
+    state: filtro_no_brasil_bandera,
   },
   {
     boton: filtro_no_espana,
     regex: /🇪🇸/,
-    state: filtro_no_espana_bandera
+    state: filtro_no_espana_bandera,
   },
   {
     boton: filtro_no_colombia,
     regex: /🇨🇴/,
-    state: filtro_no_colombia_bandera
+    state: filtro_no_colombia_bandera,
   },
   {
     boton: filtro_no_suiza,
     regex: /🇨🇭/,
-    state: filtro_no_suiza_bandera
+    state: filtro_no_suiza_bandera,
   },
   {
     boton: filtro_no_chile,
     regex: /🇨🇱/,
-    state: filtro_no_chile_bandera
+    state: filtro_no_chile_bandera,
   },
   {
     boton: filtro_no_venezuela,
     regex: /🇻🇪/,
-    state: filtro_no_venezuela_bandera
+    state: filtro_no_venezuela_bandera,
   },
   {
     boton: filtro_no_peru,
     regex: /🇵🇪/,
-    state: filtro_no_peru_bandera
+    state: filtro_no_peru_bandera,
   },
   {
     boton: filtro_no_rusia,
     regex: /🇷🇺/,
-    state: filtro_no_rusia_bandera
+    state: filtro_no_rusia_bandera,
   },
   {
     boton: filtro_no_alemania,
     regex: /🇩🇪/,
-    state: filtro_no_alemania_bandera
+    state: filtro_no_alemania_bandera,
   },
 ];
 
 //Aplicamos el evento onclick a cada boton
-paisesBotones.forEach(pais => {
+paisesBotones.forEach((pais) => {
   agregarOnclickBotonQuitarBandera(pais.boton, pais.regex, pais.state);
-})
+});
