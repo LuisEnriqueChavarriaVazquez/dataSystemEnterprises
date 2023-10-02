@@ -2112,8 +2112,63 @@ function findCompanyWithCategory(text, arrayEmpresas) {
         category = "🔴"; // Emoji de una bandera genérica o el que desees en caso de que el país no esté definido
     }
 
+    // Determinar la bandera del país
+    var flagEmoji;
+    switch (matchedCompany.country) {
+      case "americas":
+        flagEmoji = "🇺🇸"; // Emoji de la bandera de Estados Unidos o el país que corresponda
+        break;
+      case "mexico":
+        flagEmoji = "🇲🇽"; // Emoji de la bandera de México o el país que corresponda
+        break;
+      case "canada":
+        flagEmoji = "🇨🇦"; // Emoji de la bandera de Canadá o el país que corresponda
+        break;
+      case "argentina":
+        flagEmoji = "🇦🇷"; // Emoji de la bandera de Argentina o el país que corresponda
+        break;
+      case "brazil":
+        flagEmoji = "🇧🇷"; // Emoji de la bandera de Brasil o el país que corresponda
+        break;
+      case "spain":
+        flagEmoji = "🇪🇸"; // Emoji de la bandera de España o el país que corresponda
+        break;
+      case "chile":
+        flagEmoji = "🇨🇱"; // Emoji de la bandera de Chile o el país que corresponda
+        break;
+      case "germany":
+        flagEmoji = "🇩🇪"; // Emoji de la bandera de Alemania o el país que corresponda
+        break;
+      case "switzerland":
+        flagEmoji = "🇨🇭"; // Emoji de la bandera de Suiza o el país que corresponda
+        break;
+      case "venezuela":
+        flagEmoji = "🇻🇪"; // Emoji de la bandera de Venezuela o el país que corresponda
+        break;
+      case "peru":
+        flagEmoji = "🇵🇪"; // Emoji de la bandera de Perú o el país que corresponda
+        break;
+      case "colombia":
+        flagEmoji = "🇨🇴"; // Emoji de la bandera de Colombia o el país que corresponda
+        break;
+      case "china":
+        flagEmoji = "🇨🇳"; // Emoji de la bandera de China o el país que corresponda
+        break;
+      case "india":
+        flagEmoji = "🇮🇳"; // Emoji de la bandera de India o el país que corresponda
+        break;
+      case "russia":
+        flagEmoji = "🇷🇺"; // Emoji de la bandera de Rusia o el país que corresponda
+        break;
+      case "japan":
+        flagEmoji = "🇯🇵"; // Emoji de la bandera de Japón o el país que corresponda
+        break;
+      default:
+        flagEmoji = "🌍"; // Emoji de una bandera genérica o el que desees en caso de que el país no esté definido
+    }
+
     // Devolver el nombre de la empresa con el emoji de la bandera
-    return matchedCompany.name + " " + category;
+    return matchedCompany.name + " " + flagEmoji + category;
   } else {
     // Si no se encontró una coincidencia, devolver un mensaje de error
     return matchedCompany.name;
@@ -2265,6 +2320,34 @@ categorias.forEach((categoriaObj) => {
   const { button, categoria, bandera } = categoriaObj;
   asignarClicksCategorias(button, categoria, bandera);
 });
+
+
+///////////////////////////////////////
+//Funcion para quitar el emoji de categoria de empresa cuando damos click sobre el 
+let longitudAnterior = 0; // Variable para almacenar la longitud anterior
+
+setInterval(() => {
+  let empresasSeleccionadas = document.getElementsByClassName("empresaSeleccionada");
+  let empresasSeleccionadas_arr = [...empresasSeleccionadas];
+  
+  // Verifica si la longitud ha cambiado
+  if (empresasSeleccionadas.length !== longitudAnterior) {
+    const regex = /🏭|⚡|💻|📶|🏦|🍔|🚑|🛒|🏢|🛻|💸|🌱|📖|🛩️|👔/g;
+    empresasSeleccionadas_arr.forEach((empresaSeleccionada) => {
+      if (regex.test(empresaSeleccionada.textContent)) {
+        let contenido = empresaSeleccionada.textContent;
+        let contenidoRecortado = contenido.slice(0, -2);
+        empresaSeleccionada.textContent = contenidoRecortado;
+      }
+    });
+    console.log("La longitud ha cambiado");
+    
+    // Actualiza la longitud anterior
+    longitudAnterior = empresasSeleccionadas.length;
+  }
+}, 1000);
+
+
 
 
 

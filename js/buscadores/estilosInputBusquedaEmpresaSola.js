@@ -40,7 +40,7 @@ $(document).ready(function () {
         .appendTo(select.children("div"));
       a.slideDown(350, function () {
         setTimeout(function () {
-          a.addClass("shown");
+          a.addClass("shown empresaSeleccionada");
           select.children("div").children("span").addClass("hide");
           select
             .find("option:contains(" + li.text() + ")")
