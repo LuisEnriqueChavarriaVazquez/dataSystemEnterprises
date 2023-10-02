@@ -225,6 +225,30 @@
     }
 }
 
+.checkbox-tile-reset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7.3rem;
+    min-height: 7.3rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--cl-green-1);
+    background-color: var(--clw);
+    box-shadow: 0 5px 10px rgba(#000, 0.1);
+    transition: 0.15s ease;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        border-color: var(--cl-green-5);
+        &:before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
 .checkbox-icon {
     transition: 0.375s ease;
     color: var(--cl-green-5);

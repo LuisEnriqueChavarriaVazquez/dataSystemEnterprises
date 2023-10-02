@@ -121,11 +121,6 @@ let empresasPorCategorias = {
       categoria: "Manufactura y Tecnología Industrial",
     },
     {
-      name: "arcelormittal-reg?cid=32439",
-      country: "spain",
-      categoria: "Manufactura y Tecnología Industrial",
-    },
-    {
       name: "emb-andina-b",
       country: "chile",
       categoria: "Manufactura y Tecnología Industrial",
@@ -558,27 +553,12 @@ let empresasPorCategorias = {
       categoria: "Energía y recursos",
     },
     {
-      name: "volcan-cmp-min?cid=102134",
-      country: "peru",
-      categoria: "Energía y recursos",
-    },
-    {
       name: "cerro-verde",
       country: "peru",
       categoria: "Energía y recursos",
     },
     {
-      name: "buenaventura-mining?cid=102138",
-      country: "peru",
-      categoria: "Energía y recursos",
-    },
-    {
       name: "minsur",
-      country: "peru",
-      categoria: "Energía y recursos",
-    },
-    {
-      name: "panoro-minerals-ltd?cid=102152",
       country: "peru",
       categoria: "Energía y recursos",
     },
@@ -603,22 +583,12 @@ let empresasPorCategorias = {
       categoria: "Energía y recursos",
     },
     {
-      name: "southern-copper-corp.?cid=950569",
-      country: "peru",
-      categoria: "Energía y recursos",
-    },
-    {
       name: "enersur-sa",
       country: "peru",
       categoria: "Energía y recursos",
     },
     {
       name: "celsia",
-      country: "colombia",
-      categoria: "Energía y recursos",
-    },
-    {
-      name: "canacol-energy-ltd?cid=102104",
       country: "colombia",
       categoria: "Energía y recursos",
     },
@@ -806,21 +776,6 @@ let empresasPorCategorias = {
     },
     {
       name: "afk-sistema_rts",
-      country: "russia",
-      categoria: "Tecnología y software",
-    },
-    {
-      name: "yandex?cid=102063",
-      country: "russia",
-      categoria: "Tecnología y software",
-    },
-    {
-      name: "tcs-group-holding-plc?cid=1153662",
-      country: "russia",
-      categoria: "Tecnología y software",
-    },
-    {
-      name: "mail.ru-grp-wi?cid=1163363",
       country: "russia",
       categoria: "Tecnología y software",
     },
@@ -1179,16 +1134,6 @@ let empresasPorCategorias = {
       categoria: "Finanzas y banca",
     },
     {
-      name: "credicorp-ltd?cid=102145",
-      country: "peru",
-      categoria: "Finanzas y banca",
-    },
-    {
-      name: "intercorp-financial-services-inc?cid=102146",
-      country: "peru",
-      categoria: "Finanzas y banca",
-    },
-    {
       name: "bco-continenta",
       country: "peru",
       categoria: "Finanzas y banca",
@@ -1311,11 +1256,6 @@ let empresasPorCategorias = {
       categoria: "Alimentos y bebidas",
     },
     {
-      name: "gruma-sab-adr?cid=27018",
-      country: "mexico",
-      categoria: "Alimentos y bebidas",
-    },
-    {
       name: "alsea",
       country: "mexico",
       categoria: "Alimentos y bebidas",
@@ -1327,11 +1267,6 @@ let empresasPorCategorias = {
     },
     {
       name: "bimbo-a",
-      country: "mexico",
-      categoria: "Alimentos y bebidas",
-    },
-    {
-      name: "becle-sa?cid=996175",
       country: "mexico",
       categoria: "Alimentos y bebidas",
     },
@@ -1357,11 +1292,6 @@ let empresasPorCategorias = {
     },
     {
       name: "brf-foods-on-ej-nm",
-      country: "brazil",
-      categoria: "Alimentos y bebidas",
-    },
-    {
-      name: "hypermarcas-sa?cid=18698",
       country: "brazil",
       categoria: "Alimentos y bebidas",
     },
@@ -1690,11 +1620,6 @@ let empresasPorCategorias = {
       categoria: "Minoristas",
     },
     {
-      name: "x5-retail-grp?cid=1061926",
-      country: "russia",
-      categoria: "Minoristas",
-    },
-    {
       name: "ozon-holdings-plc",
       country: "russia",
       categoria: "Minoristas",
@@ -1899,11 +1824,6 @@ let empresasPorCategorias = {
       categoria: "Transporte y Logística",
     },
     {
-      name: "intl.-cons.-air-grp?cid=13809",
-      country: "spain",
-      categoria: "Transporte y Logística",
-    },
-    {
       name: "logista",
       country: "spain",
       categoria: "Transporte y Logística",
@@ -1924,11 +1844,6 @@ let empresasPorCategorias = {
       categoria: "Transporte y Logística",
     },
     {
-      name: "eads?cid=962988",
-      country: "germany",
-      categoria: "Transporte y Logística",
-    },
-    {
       name: "kuehne---nagel",
       country: "switzerland",
       categoria: "Transporte y Logística",
@@ -1945,11 +1860,6 @@ let empresasPorCategorias = {
     },
     {
       name: "transneft-p_rts",
-      country: "russia",
-      categoria: "Transporte y Logística",
-    },
-    {
-      name: "globaltrans-inv?cid=1167212",
       country: "russia",
       categoria: "Transporte y Logística",
     },
@@ -2067,7 +1977,7 @@ function findCompanyWithCategory(text, arrayEmpresas) {
         category = "🏭"; // Emoji de la bandera de Estados Unidos o el país que corresponda
         break;
       case "Energía y recursos":
-        category = "⚡"; // Emoji de la bandera de México o el país que corresponda
+        category = "💡"; // Emoji de la bandera de México o el país que corresponda
         break;
       case "Tecnología y software":
         category = "💻"; // Emoji de la bandera de Canadá o el país que corresponda
@@ -2103,7 +2013,7 @@ function findCompanyWithCategory(text, arrayEmpresas) {
         category = "📖"; // Emoji de la bandera de China o el país que corresponda
         break;
       case "Turismo y Viajes":
-        category = "🛩️"; // Emoji de la bandera de India o el país que corresponda
+        category = "✈️"; // Emoji de la bandera de India o el país que corresponda
         break;
       case "Moda y Vestimenta":
         category = "👔"; // Emoji de la bandera de Rusia o el país que corresponda
@@ -2332,7 +2242,7 @@ setInterval(() => {
   
   // Verifica si la longitud ha cambiado
   if (empresasSeleccionadas.length !== longitudAnterior) {
-    const regex = /🏭|⚡|💻|📶|🏦|🍔|🚑|🛒|🏢|🛻|💸|🌱|📖|🛩️|👔/g;
+    const regex = /🏭|💡|💻|📶|🏦|🍔|🚑|🛒|🏢|🛻|💸|🌱|📖|✈️|👔/g;
     empresasSeleccionadas_arr.forEach((empresaSeleccionada) => {
       if (regex.test(empresaSeleccionada.textContent)) {
         let contenido = empresaSeleccionada.textContent;

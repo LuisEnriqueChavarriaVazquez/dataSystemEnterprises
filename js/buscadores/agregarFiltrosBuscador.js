@@ -57,8 +57,8 @@ function agregarContenidoMenuFiltros() {
             <section class="containerOptionsFilters">
                 <div class="checkbox" id="filtro_alfabeto_descendente">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" id="filtro_alfabeto_reset" state="false"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon">
                                 <i class="fa-solid fa-arrow-down-z-a"></i>
                             </span>
@@ -68,8 +68,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_grupo_pais" />
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_grupo_pais" />
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon">
                                 <i class="fa-solid fa-globe"></i>
                             </span>
@@ -89,8 +89,8 @@ function agregarContenidoMenuFiltros() {
             <section class="containerOptionsFilters">
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_eua"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_eua"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇺🇸
                             </span>
@@ -100,8 +100,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_mexico"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_mexico"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇲🇽
                             </span>
@@ -111,8 +111,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_argentina"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_argentina"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇦🇷
                             </span>
@@ -122,8 +122,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_brasil"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_brasil"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇧🇷
                             </span>
@@ -133,8 +133,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_espana"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_espana"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇪🇸
                             </span>
@@ -144,8 +144,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_alemania"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_alemania"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇩🇪
                             </span>
@@ -155,8 +155,8 @@ function agregarContenidoMenuFiltros() {
                 </div> 
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_suiza"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_suiza"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇨🇭
                             </span>
@@ -166,8 +166,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_chile"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_chile"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇨🇱
                             </span>
@@ -177,8 +177,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_venezuela"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_venezuela"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇻🇪
                             </span>
@@ -188,8 +188,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_peru"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_peru"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇵🇪
                             </span>
@@ -199,8 +199,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_colombia"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_colombia"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇨🇴
                             </span>
@@ -210,8 +210,8 @@ function agregarContenidoMenuFiltros() {
                 </div>
                 <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input" id="filtro_no_rusia"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input btnReset" state="false" id="filtro_no_rusia"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 🇷🇺
                             </span>
@@ -232,8 +232,8 @@ function agregarContenidoMenuFiltros() {
                 <section class="containerOptionsFilters">
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_tech"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_tech"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-microchip"></i>
                                 </span>
@@ -243,8 +243,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_finanzas"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_finanzas"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-landmark"></i>
                                 </span>
@@ -254,8 +254,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_alimentos"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_alimentos"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-utensils"></i>
                                 </span>
@@ -265,8 +265,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_salud"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_salud"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-staff-snake"></i>
                                 </span>
@@ -276,8 +276,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_manufactura"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_manufactura"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-industry"></i>
                                 </span>
@@ -287,8 +287,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_minoristas"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_minoristas"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-store"></i>
                                 </span>
@@ -298,8 +298,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_energia"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_energia"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-bolt"></i>
                                 </span>
@@ -309,8 +309,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_comunicacion"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_comunicacion"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-satellite-dish"></i>
                                 </span>
@@ -320,8 +320,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_transporte"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_transporte"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-truck-front"></i>
                                 </span>
@@ -331,8 +331,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_construccion"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_construccion"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-building"></i>
                                 </span>
@@ -342,8 +342,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_seguros"/>
-                            <span class="checkbox-tile">
+                            <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_seguros"/>
+                            <span class="checkbox-tile waves-effect">
                                 <span class="checkbox-icon checkbox-icon-flag">
                                     <i class="fa-solid fa-shield"></i>
                                 </span>
@@ -353,8 +353,8 @@ function agregarContenidoMenuFiltros() {
                     </div>
                     <div class="checkbox">
                       <label class="checkbox-wrapper">
-                          <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_agricultura"/>
-                          <span class="checkbox-tile">
+                          <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_agricultura"/>
+                          <span class="checkbox-tile waves-effect">
                               <span class="checkbox-icon checkbox-icon-flag">
                                  <i class="fa-solid fa-seedling"></i>
                               </span>
@@ -364,8 +364,8 @@ function agregarContenidoMenuFiltros() {
                   </div>
                   <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_educacion"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_educacion"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 <i class="fa-solid fa-user-graduate"></i>
                             </span>
@@ -375,8 +375,8 @@ function agregarContenidoMenuFiltros() {
                   </div>
                   <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_turismo"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_turismo"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                 <i class="fa-solid fa-umbrella-beach"></i>
                             </span>
@@ -386,8 +386,8 @@ function agregarContenidoMenuFiltros() {
                   </div>
                   <div class="checkbox">
                     <label class="checkbox-wrapper">
-                        <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_solo_moda"/>
-                        <span class="checkbox-tile">
+                        <input type="checkbox" class="checkbox-input buttonCategoria btnReset" state="false" id="filtro_solo_moda"/>
+                        <span class="checkbox-tile waves-effect">
                             <span class="checkbox-icon checkbox-icon-flag">
                                <i class="fa-solid fa-shirt"></i>
                             </span>
@@ -402,8 +402,8 @@ function agregarContenidoMenuFiltros() {
             <section style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: center;">
               <div class="checkbox" style="width: 100%;">
                 <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_reinicio"/>
-                    <span class="checkbox-tile" style="width: 100%;">
+                    <input type="checkbox" class="checkbox-input" state="false" id="filtro_reinicio"/>
+                    <span class="checkbox-tile-reset waves-effect" style="width: 100%;">
                         <span class="checkbox-icon checkbox-icon-flag">
                           <i class="fa-solid fa-rotate-right"></i>
                         </span>
@@ -413,8 +413,8 @@ function agregarContenidoMenuFiltros() {
               </div>
               <div class="checkbox" style="width: 100%;">
                 <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_reinicio"/>
-                    <span class="checkbox-tile" style="width: 100%;">
+                    <input type="checkbox" class="checkbox-input" state="false" id="filtro_borrado_seleccion"/>
+                    <span class="checkbox-tile-reset waves-effect" style="width: 100%;">
                         <span class="checkbox-icon checkbox-icon-flag">
                           <i class="fa-solid fa-eraser"></i>
                         </span>
@@ -771,6 +771,7 @@ filtro_grupo_pais.addEventListener("click", () => {
     localStorage.setItem("empresasAgrupadas", "activo");
     lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
+    filtro_grupo_pais.setAttribute('state', 'true');
     filtro_grupo_pais_bandera = true;
   } else {
     //Actualizamos el menu
@@ -779,6 +780,7 @@ filtro_grupo_pais.addEventListener("click", () => {
     );
     localStorage.setItem("empresasAgrupadas", "inactivo");
 
+    filtro_grupo_pais.setAttribute('state', 'false');
     filtro_grupo_pais_bandera = false;
   }
 });
@@ -803,6 +805,7 @@ function agregarOnclickBotonQuitarBandera(
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
+      id_button.setAttribute('state', 'true');
       state_button = true;
     } else {
       ///////Agrupamiento por pais
@@ -810,6 +813,7 @@ function agregarOnclickBotonQuitarBandera(
       //Actualizamos el contenido
       lista_empresa_actual.innerHTML = empresasAgrupadas.join("");
 
+      id_button.setAttribute('state', 'false');
       state_button = false;
     }
   });
