@@ -60,24 +60,17 @@
                     </div>
                 </a>
 
-                <a href="rankingGeneral.html" class="linkOpt">
-                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
-                        <i class="fa-sharp fa-solid fa-ranking-star"></i>
-                        <p class="titleOption">Ranking general</p>
-                    </div>
-                </a>
-
-                <a href="ranking.html" class="linkOpt">
-                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
-                        <i class="fa-sharp fa-solid fa-chart-simple"></i>
-                        <p class="titleOption">Rankings</p>
-                    </div>
-                </a>
-
-                <a href="informacion.html" class="linkOpt">
+                <a href="punto_equilibrio.html" class="linkOpt">
                     <div class="mainContainer-menu-option active-button border-2 waves-effect waves-light">
-                        <i class="fa-sharp fa-solid fa-circle-info"></i>
-                        <p class="titleOption">Información</p>
+                        <i class="fa-solid fa-square-root-variable"></i>
+                        <p class="titleOption">Método algebráico</p>
+                    </div>
+                </a>
+
+                <a href="punto_equilibrio_grafico.html" class="linkOpt">
+                    <div class="mainContainer-menu-option border-2 waves-effect waves-light">
+                        <i class="fa-solid fa-chart-area"></i>
+                        <p class="titleOption">Método gráfico</p>
                     </div>
                 </a>
                 
@@ -108,52 +101,74 @@
 
             <section class="informacionContainer">
                 <section class="informacionContainer_title">
-                    <p>Punto equilibrio</p>
+                    <p>Punto de equilibrio</p>
                 </section>
-                <div style="margin-left: 20px;">
+                <section class="contenedorPuntoEquilibrio">
+                    
+                    <div class="cardTitle border-2">
+                        ¿Qué es el punto de equilibrio?
+                            <p class="importantNote border-3-right">
+                                Indica el porcentaje del activo total que es financiado por proveedores y acreedores.
+                            </p>
+                    </div>
 
-                    <p>
-                        Indica el porcentaje del activo total que es financiado por proveedores y acreedores.
-                    </p>
-                    <p class="formulaStyle border-3">
-                        $$\text{Punto de equilibrio} = \frac{\text{Costos fijos}}{\text{(Precio de venta – Costo de
-                        venta)}}$$
-                    </p>
+                    <div class="cardTitle border-2">
+                        Fórmula
+                            <p class="formulaStylePuntoEquilibrio border-3">
+                                $$\text{Punto de equilibrio} = \frac{\text{Costos fijos}}{\text{(Precio de venta – Costo de
+                                venta)}}$$
+                            </p>
+                    </div>
 
-                    <p>A continuación podrás calcular el punto de equilibrio y verlo de manera grafica.</p>
-                    <form id="puntoEquilibrioForm">
-                        <label for="costos_fijos">Costos fijos: </label>
-                        <input type="text" id="costos_fijos" required><br><br>
+                    <div class="cardTitle border-2">
+                        Calculadora
+                        <p>A continuación podrás calcular el punto de equilibrio y verlo de manera grafica.</p>
+                            
+                        <form id="puntoEquilibrioForm">
+                            <div>
+                                <label for="costos_fijos"><i class="fa-solid fa-money-bill"></i>Costos fijos: </label>
+                                <input type="number" id="costos_fijos" required><br><br>
+                            </div>
+    
+                            <div>
+                                <label for="precio_venta"><i class="fa-solid fa-hand-holding-dollar"></i>Precio de venta: </label>
+                                <input type="number" id="precio_venta" required><br><br>
+                            </div>
+                                
+                            <div>
+                                <label for="costo_venta"><i class="fa-solid fa-credit-card"></i>Costo de venta: </label>
+                                <input type="number" id="costo_venta" required><br><br>
+                            </div>
+    
+                            <div>
+                                <label for="unidades_vendidas"><i class="fa-solid fa-layer-group"></i>Número de unidades vendidas:</label>
+                                <input type="number" id="unidades_vendidas" required><br><br>
+                            </div>
 
-                        <label for="precio_venta">Precio de venta: </label>
-                        <input type="text" id="precio_venta" required><br><br>
+                        </form>
+                        <a onclick="calcularPuntoEquilibrio();calcularPuntoEquilibrioLinea();" class="btn waves-effect"><i class="fa-solid fa-calculator"></i> &nbsp;&nbsp;Calcular</a>
+                    </div>
 
-                        <label for="costo_venta">Costo de venta: </label>
-                        <input type="text" id="costo_venta" required><br><br>
+                    <div class="cardTitle border-2">
+                        Resultado
+                        <p class="resultadoPuntoEquilibrio"><i class="fa-solid fa-scale-balanced"></i>El punto de equilibrio es: &nbsp;<span id="resultado"></span>.</p>
+                        <p class="resultadoPuntoEquilibrio"><i class="fa-solid fa-scale-unbalanced-flip"></i>Ganancia/pérdida para &nbsp;<span id="unidadesVendidas"></span> &nbsp; unidades: &nbsp;$<span id="gananciaPerdida"></span></p>
+                    </div>
 
-                        <label for="unidades_vendidas">Número de unidades vendidas:</label>
-                        <input type="number" id="unidades_vendidas" required><br><br>
+                    <div class="cardTitle cardGraficosPuntoEquilibrio border-2">
+                        Gráficos
+                        <section class="container_graphs">
+                            <div class="border-2 shadow-1">
+                                <canvas id="puntoEquilibrioChart"></canvas>
+                            </div>
+    
+                            <div class="border-2 shadow-1">
+                                <canvas id="puntoEquilibrioLine"></canvas>
+                            </div>
+                        </section>
+                    </div>
 
-                        <button type="button" onclick="calcularPuntoEquilibrio();calcularPuntoEquilibrioLinea();">Calcular</button>
-                    </form>
-
-                    <h2>Resultado</h2>
-                    <p>El punto de equilibrio es: <span id="resultado"></span>.</p>
-                    <p>Ganancia/pérdida para <span id="unidadesVendidas"></span> unidades: $<span id="gananciaPerdida"></span></p>
-
-                    <h2>Gráfica</h2>
-                    <section class="container_graphs">
-                        <div class="border-2 shadow-1">
-                            <canvas id="puntoEquilibrioChart"></canvas>
-                        </div>
-
-                        <div class="border-2 shadow-1">
-                            <canvas id="puntoEquilibrioLine"></canvas>
-                        </div>
-                    </section>
-
-
-                </div>
+                </section>
 
 
             </section>

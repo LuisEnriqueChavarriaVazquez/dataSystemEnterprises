@@ -1,0 +1,118 @@
+.contenedorPuntoEquilibrio{
+    display: grid;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+
+    padding: 40px 60px;
+
+    p,div{
+        width: 100% !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    div{
+        background-color: var(--cl-grey-1);
+    }
+
+    a{
+        width: 100%;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+    }
+}
+
+
+#puntoEquilibrioForm{
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 10px;
+    width: 100%;
+
+    div{   
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        label{
+            font-family: var(--fuente_text) !important;
+            font-size: 15px !important;
+            margin-right: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i{
+                margin-right: 20px;
+                font-size: 20px;
+                background-color: var(--cl-grey-3);
+                padding: 10px;
+                border-radius: 10px;
+            }
+        }
+
+        input{
+            border-radius: 10px;
+            padding: 5px 10px;
+            background-color: var(--clw);
+            box-shadow: 3px 3px 0 var(--cl-grey-3);
+            border: none;
+            outline: none;
+        
+            &:hover{
+                background-color: var(--cl-grey-2);
+                box-shadow: 5px 5px 0 var(--cl-grey-3);
+            }        
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+}
+
+.resultadoPuntoEquilibrio{
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+
+    i{
+        margin-right: 20px;
+        font-size: 20px;
+        background-color: var(--cl-grey-3);
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+.cardGraficosPuntoEquilibrio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    section{
+        width: 100%;
+        padding: 0 0 40px 0;
+    }
+}
