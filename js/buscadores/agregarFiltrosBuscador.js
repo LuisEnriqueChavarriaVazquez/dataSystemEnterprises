@@ -398,6 +398,32 @@ function agregarContenidoMenuFiltros() {
                 </section>
                 
             </div>
+            <br>
+            <section style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: center;">
+              <div class="checkbox" style="width: 100%;">
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_reinicio"/>
+                    <span class="checkbox-tile" style="width: 100%;">
+                        <span class="checkbox-icon checkbox-icon-flag">
+                          <i class="fa-solid fa-rotate-right"></i>
+                        </span>
+                        <span class="checkbox-label">Reiniciar filtros</span>
+                    </span>
+                </label>
+              </div>
+              <div class="checkbox" style="width: 100%;">
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" class="checkbox-input buttonCategoria" state="false" id="filtro_reinicio"/>
+                    <span class="checkbox-tile" style="width: 100%;">
+                        <span class="checkbox-icon checkbox-icon-flag">
+                          <i class="fa-solid fa-eraser"></i>
+                        </span>
+                        <span class="checkbox-label">Reiniciar selección</span>
+                    </span>
+                </label>
+              </div>
+            </section>
+            
         </div>
     </section>
     `;
