@@ -8,7 +8,16 @@
 
 @media screen and (max-width: 1000px) {
     .menu{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: row !important;
         border-radius: 0 !important;
+
+        width: 100%;
+
+        position: fixed;
+        bottom: 0;
     }
 }
 
@@ -37,11 +46,15 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .mainContainer-menu-options{
+        flex-direction: row;
+    }
+
     .mainContainer-menu-icon{
-        padding: 10px !important;
+        display: none;
     
         .icon{
-            width: 100%;
+            display: none;
         }
     }
     
@@ -62,12 +75,6 @@
     width: 90%;
 
     transition: all .2s ease-in-out;
-
-    @media screen and (max-width: 1000px) {
-        &{
-            margin: 0 0 10px 0;
-        }
-    }
 
     cursor: pointer;
 
@@ -95,8 +102,9 @@
 
     @media screen and (max-width: 1000px) {
         i{
-            font-size: 16px;
+            font-size: 19px;
             margin: 15px;
+            width: 30px;
         }
         
         p{
@@ -104,12 +112,35 @@
             margin: 15px 15px 15px 10px;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        i{
+            font-size: 17px;
+            margin: 15px 10px;
+            width: 23px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .mainContainer-menu-option{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .mainContainer-menu-option-close{
     width: 80% !important;
-    margin: 0 5px 10px 5px !important;
+    margin: 0 5px 10px 5px;
     grid-template-columns: 1fr 0fr !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .mainContainer-menu-option-close{
+        width: 80%;
+        margin: 10px 5px;
+    }
 }
 
 .mainContainer-menu-close{

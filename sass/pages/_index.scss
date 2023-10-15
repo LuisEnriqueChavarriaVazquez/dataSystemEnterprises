@@ -13,11 +13,11 @@
 
 @media screen and (max-width: 1000px) {
     .mainContainer {
-        grid-template-columns: 0.25fr 1fr;
+        grid-template-columns: 1fr 0fr;
     }
     
     .mainContainer-close {
-        grid-template-columns: 0.1fr 1.3fr;
+        grid-template-columns: 1fr 0fr;
     }
 }
 

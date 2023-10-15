@@ -165,7 +165,8 @@ function abrirMenu() {
 
 //Si no existe el valor en memoria lo establecemos
 if (!localStorage.getItem("estadoMenuLateral")) {
-  localStorage.setItem("estadoMenuLateral", "abierto");
+  closeMenuButton.click(); //Hace que el menu se cierre la primera vez que se carga la pagina. Eso evita errores en moviles
+  localStorage.setItem("estadoMenuLateral", "cerrado");
 } else {
   revisarStateMenuLateral();
 }
