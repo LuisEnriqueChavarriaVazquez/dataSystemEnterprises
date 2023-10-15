@@ -49,11 +49,12 @@ html {
 
 @media screen and (max-width: 1000px) {
     .inputBrowser_empresas {
-        left: 0px;
+        width: 100%;
+        left: 0 !important;
         top: 60px;
         background-color: var(--cl-green-3);
         padding: 10px;
-        z-index: 100000000000000000;
+        z-index: 1000000000000000000000000000000000000000000000000000000 !important;
     }
 }
 
