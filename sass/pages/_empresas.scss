@@ -14,8 +14,8 @@
 
 @media screen and (max-width: 1000px) {
     .containerTables {
-        width: calc(100vw - 68.2833px) !important;
-    
+        width: 100vw;
+        top: calc(68px + 65px);
         margin-bottom: 30px;
     }
 }

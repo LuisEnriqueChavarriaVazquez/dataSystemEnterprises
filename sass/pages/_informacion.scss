@@ -23,14 +23,26 @@
         }
     }
 
+    @media screen and (max-width: 1350px) {
+        .informacionContainer_title{
+            p{
+                display: none;
+            }
+        }
+    }
+
     @media screen and (max-width: 1000px) {
         .informacionContainer_title{
-            padding-left: 10px;
+            padding-left: 15px;
+            position: fixed;
+            z-index: 1000000000000000000000;
             
             p{
+                display: flex;
                 border-radius: 0px !important;
                 font-size: 25px;
                 font-weight: 600;
+                margin: 22px 0;
             }
         }
     }

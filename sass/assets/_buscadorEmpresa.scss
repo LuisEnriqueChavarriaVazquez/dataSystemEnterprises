@@ -43,7 +43,17 @@ html {
 
 @media (max-width: 1350px) {
     .inputBrowser_empresas {
-        left: 200px;
+        left: -40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .inputBrowser_empresas {
+        left: 0px;
+        top: 60px;
+        background-color: var(--cl-green-3);
+        padding: 10px;
+        z-index: 100000000000000000;
     }
 }
 
@@ -349,5 +359,35 @@ $primary: var(--cl-green-3);
     100% {
         opacity: 0;
         transform: scale(50, 50);
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .selectMultiple{
+        width: 650px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .selectMultiple{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .selectMultiple{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .selectMultiple{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .selectMultiple{
+        width: 300px;
     }
 }
