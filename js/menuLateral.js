@@ -28,6 +28,18 @@ closeMenuButton.addEventListener("click", () => {
 
 //Funcion para cerrar el menu
 function cerrarMenu() {
+  
+  //Cambiamos el tamaño del contenedor de los graficos
+  let container_graphs = document.getElementsByClassName('container_graphs');
+  let container_graphs_arr = [...container_graphs];
+  let menuContenidoPrincipal = document.getElementById('menuContenidoPrincipal');
+
+  container_graphs_arr.forEach(i => {
+    if(i.getAttribute('style') != "display: none;"){
+      i.setAttribute('style', 'width:' + (window.innerWidth - menuContenidoPrincipal.offsetWidth) +  "px; display: grid;");
+    }
+  })
+
   //Agregamos la clase para hacer grande y chico el menu (Se hace chico)
   mainContainerElement.classList.add("mainContainer-close");
   mainContainerElement.classList.remove("mainContainer");
@@ -92,6 +104,18 @@ function cerrarMenu() {
 
 //Funcion para abrir el menu
 function abrirMenu() {
+  
+  //Cambiamos el tamaño del contenedor de los graficos
+  let container_graphs = document.getElementsByClassName('container_graphs');
+  let container_graphs_arr = [...container_graphs];
+  let menuContenidoPrincipal = document.getElementById('menuContenidoPrincipal');
+
+  container_graphs_arr.forEach(i => {
+    if(i.getAttribute('style') != "display: none;"){
+      i.setAttribute('style', 'width:' + (window.innerWidth - menuContenidoPrincipal.offsetWidth - 400) +  "px; display: grid;");
+    }
+  })
+
   //Agregamos la clase para hacer grande y chico el menu (se hace grande)
   mainContainerElement.classList.add("mainContainer");
   mainContainerElement.classList.remove("mainContainer-close");

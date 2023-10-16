@@ -29,7 +29,6 @@
     }
 }
 
-
 #puntoEquilibrioForm{
 
     display: grid;
@@ -119,5 +118,56 @@
     section{
         width: 100%;
         padding: 0 0 40px 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contenedorPuntoEquilibrio{
+        width: calc(100vw);
+        height: calc(100vh - 100px - 69px);
+        padding: 20px;
+        margin-top: 82px;
+        box-sizing: border-box;
+
+        #puntoEquilibrioForm{
+            display: grid;
+            grid-template-columns: 1fr;
+
+            div{
+                input{
+                    width: 100px;
+                }
+            }
+        }
+
+        .container_graphs{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+
+            div{
+                width: calc(100vw - 80px) !important;
+            }
+        }
+
+        .cardTitle {
+            a{
+                width: 80vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .contenedorPuntoEquilibrio{
+        width: 100vw;
+
+        .resultadoPuntoEquilibrio{
+            font-size: 13px;
+        }
+    }
+
+    .cardPuntoEquilibrio {
+        display: none !important;
     }
 }

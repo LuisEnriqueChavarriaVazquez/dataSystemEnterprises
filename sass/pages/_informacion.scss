@@ -50,7 +50,8 @@
 
 @media screen and (max-width: 1000px) {
     .informacionContainer{
-        height: calc(100vh - 82px - 69px) !important;
+        width: 100%;
+        height: calc(100vh - 100px - 69px) !important;
     }
 }
 
@@ -77,8 +78,7 @@
         .container_graphs{
             position: relative;
             height: 100vh;
-            width: 100%;
-            
+            width: 80vw;
         }
     }
 
@@ -107,3 +107,14 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .container_graphs{
+        position: relative;
+        height: 100vh;
+        width: 100vw; 
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
