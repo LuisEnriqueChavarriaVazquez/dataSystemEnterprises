@@ -48,6 +48,12 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .informacionContainer{
+        height: calc(100vh - 82px - 69px) !important;
+    }
+}
+
 .informacionContainerExtra{
     display: grid;
     grid-template-columns: 1fr;
@@ -100,3 +106,4 @@
         //Ya estan los estilos en otra hoja
     }
 }
+
