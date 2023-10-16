@@ -147,6 +147,13 @@
     height: 500px;
 }
 
+@media screen and (max-width: 600px) {
+    .card-imageInfo{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
 .card-message {
     width: 600px;
     display: grid;

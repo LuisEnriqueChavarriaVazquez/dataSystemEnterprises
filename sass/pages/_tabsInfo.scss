@@ -97,6 +97,13 @@ $itemsCount: 8; // Adjust if tabs number changes
   align-items: flex-start;
 }
 
+@media screen and (max-width: 1000px) {
+  .cards-container-tabs {
+    padding: 130px 0 0 0;
+    height: calc(100vh);
+  }
+}
+
 .card-tabs {
   position: absolute;
   width: 80%;
