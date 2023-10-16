@@ -72,6 +72,26 @@
     border-radius: 10px;
 }
 
+@media screen and (max-width: 1000px) {
+    .tableTitle{
+        font-size: 20px;
+        font-weight: 600;
+    }    
+}
+
+@media screen and (max-width: 660px) {
+    .tableTitle{
+        font-size: 16px;
+    }    
+}
+
+@media screen and (max-width: 360px) {
+    .tableTitle{
+        font-size: 13.5px;
+    }    
+}
+
+
 .importantNote{
     border-left: 4px var(--cl-green-4) solid;
     background-color: var(--cl-grey-3);

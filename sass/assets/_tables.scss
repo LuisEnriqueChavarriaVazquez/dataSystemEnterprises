@@ -21,6 +21,50 @@ table.genTbl {
 
 }
 
+@media screen and (max-width: 860px) {
+    table{
+        width: 650px;
+    }
+
+    table.genTbl {
+        width: 650px !important;
+        border-collapse: collapse;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    table{
+        width: 460px;
+    }
+
+    table.genTbl {
+        width: 460px !important;
+        border-collapse: collapse;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    table{
+        width: 380px;
+    }
+
+    table.genTbl {
+        width: 380px !important;
+        border-collapse: collapse;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    table{
+        width: 290px;
+    }
+
+    table.genTbl {
+        width: 290px !important;
+        border-collapse: collapse;
+    }
+}
+
 .income_statement,
 .balance_sheet{
     width: 800px;
@@ -31,7 +75,7 @@ table.genTbl {
 .openTr, .child, tr{
     width: 800px;
     display: grid;
-    grid-template-columns: 3fr .5fr .5fr .5fr .5fr;
+    grid-template-columns: 2fr .5fr .5fr .5fr .5fr;
     grid-template-rows: auto;
 }
 
@@ -106,4 +150,107 @@ table.reportTbl {
 /* Estilo para el fondo gris más claro de las subtablas */
 .genTbl.reportTbl tr:nth-child(even) {
     background-color: var(--cl-grey-2);
+}
+
+@media screen and (max-width: 860px) {
+    .income_statement,
+    .balance_sheet{
+        width: 650px;
+    }
+    
+    
+    //Ajuste de las celdas para las tablas
+    .openTr, .child, tr{
+        width: 650px;
+    }
+    
+    #header_row{
+        width: 650px;
+    }
+
+    /* Estilo para las subtablas */
+    table.reportTbl {
+        width: 650px !important;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .income_statement,
+    .balance_sheet{
+        width: 460px;
+    }
+    
+    //Ajuste de las celdas para las tablas
+    th {
+        font-size: 10px;
+    }
+
+    .openTr, .child, tr{
+        width: 460px;
+        font-size: 12px;
+    }
+    
+    #header_row{
+        width: 460px;
+        grid-template-columns: 2fr .5fr .5fr .5fr .5fr;
+    }
+
+    /* Estilo para las subtablas */
+    table.reportTbl {
+        width: 460px !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .income_statement,
+    .balance_sheet{
+        width: 380px;
+    }
+    
+    //Ajuste de las celdas para las tablas
+    th {
+        font-size: 9.5px;
+    }
+
+    .openTr, .child, tr{
+        width: 380px;
+        font-size: 11px;
+    }
+    
+    #header_row{
+        width: 380px;
+        grid-template-columns: 2fr .5fr .5fr .5fr .5fr;
+    }
+
+    /* Estilo para las subtablas */
+    table.reportTbl {
+        width: 380px !important;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .income_statement,
+    .balance_sheet{
+        width: 290px;
+    }
+    
+    //Ajuste de las celdas para las tablas
+    th {
+        font-size: 9px;
+    }
+
+    .openTr, .child, tr{
+        width: 290px;
+        font-size: 10px;
+    }
+    
+    #header_row{
+        width: 290px;
+        grid-template-columns: 2fr .5fr .5fr .5fr .5fr;
+    }
+
+    /* Estilo para las subtablas */
+    table.reportTbl {
+        width: 290px !important;
+    }
 }
