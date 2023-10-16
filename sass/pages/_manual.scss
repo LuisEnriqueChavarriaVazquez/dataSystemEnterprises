@@ -45,6 +45,18 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .manualContainer {
+        padding: 150px 20px 50px 0px;
+        width: 100%;
+        height: calc(100vh - 69px) !important;
+
+        .card-tabs{
+            width: 80%;
+        }
+    }
+}
+
 /*Zoom de las fotos*/
 a.fancybox img {
     width: 500px;
@@ -57,6 +69,13 @@ a.fancybox img {
         background-color: var(--cl-grey-6);
         box-shadow: 10px 10px 0 var(--cl-grey-5);
     }
+}
+
+@media screen and (max-width: 1000px) {
+    a.fancybox img {
+        width: 300px;
+        margin: 10px;
+    } 
 }
 
 .fancybox-target {
@@ -132,6 +151,34 @@ a.fancybox-close {
 .fancybox-target:target img {
     max-height: 100%;
     max-width: 100%;
+}
+
+@media screen and (max-width: 1600px) {
+    .fancybox-target:target img {
+        max-height: 70%;
+        max-width: 70%;
+    } 
+}
+
+@media screen and (max-width: 1300px) {
+    .fancybox-target:target img {
+        max-height: 65%;
+        max-width: 65%;
+    } 
+}
+
+@media screen and (max-width: 1100px) {
+    .fancybox-target:target img {
+        max-height: 45%;
+        max-width: 45%;
+    } 
+}
+
+@media screen and (max-width: 700px) {
+    .fancybox-target:target img {
+        max-height: 30%;
+        max-width: 30%;
+    } 
 }
 
 .fancybox-target:target a.fancybox-close {

@@ -146,3 +146,42 @@ $itemsCount: 8; // Adjust if tabs number changes
     }
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .tabs-container-controls{
+    position: fixed;
+    top: 72.75px;
+    width: 100vw;
+    z-index: 10000000000000000;
+    
+    ul{
+      li{
+        width: 100%;
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs-container-controls{
+    
+    ul{
+      li{
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-size: 9.5px;
+        }
+      }
+    }
+  }
+}
