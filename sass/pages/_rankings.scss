@@ -107,6 +107,32 @@
     }
 }
 
+@media screen and (max-width: 1300px) {
+    .contenedorIndices{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    
+        h1{
+            font-size: 15px;
+        }
+    
+        div{
+            p{
+                margin: 5px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .contenedorIndices{
+        margin-top: 100vh;
+        display: none;
+    }
+}
+
 //Estilos para personalizar el selector de tipo de gráfico
 .containerButtonTipoGrafica{
     position: fixed;
@@ -190,4 +216,55 @@
 .default:active {
 	-webkit-transform: perspective( 600px ) rotateX( 45deg );
 	-webkit-perspective:600px;
+}
+
+//Botones para el modo lista y grid
+#btnGridVista, #btnListaVista{
+    display: static;
+}
+
+@media screen and (max-width: 1400px) {
+    .containerButtonTipoGrafica{
+        position: fixed;
+        top: 80px;
+        right: -120px;
+    
+        width: 650px;
+    
+        display: grid;
+        grid-template-columns: 2fr 0fr;
+    }
+
+    #btnGridVista, #btnListaVista{
+        display: none !important;
+    }
+
+    #btnReset{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .containerButtonTipoGrafica{
+        display: flex;
+        background-color: var(--cl-green-3);
+        width: 100vw;
+        height: 80px;
+        left: 0;
+    }
+
+    #btnGridVista, #btnListaVista{
+        display: none !important;
+    }
+
+    #btnReset{
+        display: none;
+    }
+
+    #select-dropdown{
+        position: relative;
+        left: 35vw;
+        top: -25px;
+    }
+
 }
