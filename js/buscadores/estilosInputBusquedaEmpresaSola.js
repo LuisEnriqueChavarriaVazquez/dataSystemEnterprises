@@ -20,7 +20,7 @@ $(document).ready(function () {
     }
   });
 
-  active.append($("<div />").addClass("arrow").attr('id', 'buttonArrow'));
+  active.append($("<div />").addClass("arrow blackText").attr('id', 'buttonArrow'));
   div.append(active).append(list);
 
   select.wrap(div);
